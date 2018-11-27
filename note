@@ -670,7 +670,7 @@ ext4   是本地文件系统
 
 gfs    是全局文件系统
 
-nfs    是网络文件系统
+nfs    是网络文件系统  搭建nfs，客户端要nfs-utils
 
 拓扑结构：
 50 客户端 eth1 192.168.2.50
@@ -1563,9 +1563,14 @@ usermod -G xxgroup jack 是这样添加？
 [root@51 ~]# chown lili:lili /home/lili/.ssh/authorized_keys 
 
 
+]# ssh-keygen -b 2048 -t rsa -N '' -f thekey
+]# ssh-copy-id -i ./thekey.pub root@192.168.1.22
+-b: 长度 -t ?  -N 密码(无)  -f: 路径和名字 默认是~/.ssh/id_rsa
+
 [root@51 ~]# ls /root/.ssh/
 id_rsa  id_rsa.pub  known_hosts
 51生成秘钥，公钥是id_rsa.pub,私钥是id_rsa
+
 [root@50 ~]# ls /root/.ssh/
 authorized_keys  id_rsa  id_rsa.pub  known_hosts
 51把公钥传给50,50将改公钥存放再authorized_keys。
@@ -2367,7 +2372,7 @@ E：非关系型
       启动,9300会先启，然后9200
     4.RESTful API接口---Web接口，直接浏览器访问
       curl 192.168.1.111:9200 成功
-2.集群：(ansible更好)
+2.集群：es1-es5 (ansible更好)
     1./etc/hosts 主机名ip全对应, yum 群体装包
     2.每一个机器的配置文件：
       cluster.name: c1 (相同)
@@ -2377,12 +2382,20 @@ E：非关系型
     3.全部重启服务，访问任意机器
       192.168.1.111:9200/_cluster/health?pretty
       集群好了，对elasticsearch集群增删改查要用http协议
+    4.装各种插件 head kopf bigdesk
+      /usr/share/elasticsearch/bin/plugin
+
+    ----day03 下午95分钟
 
 
-
+http协议：
+请求行: GET / HTTP/1.1 \r\n
+curl还支持ftp
 curl -i xxxxxxxx 请求头
 [root@es1 ~]# curl -XPOST 118.144.89.240/info.php
 curl -X xxxxxxxx 是发送操作
+curl xxxxxxxx -d xxx 上传文件或者字符串(用户密码认真)?
+curl xxxxxxxx -A xxx 改agent(浏览器)
 
 配置elasticsearch集群的时候，配置文件中node.name: es1   es2  ...   不同的主机不同，那么怎么ansible-playbook操作？
 可以用template模块，因为
@@ -2505,11 +2518,56 @@ authpriv.*    @@192.168.1.118:514
 重启，或者写日志，logstash哪里都会有记录。
 
 最后的\""之间不能有空隔!!
-match => { "message" => "(?<client_ip>[0-9.]+).*\[(?<time>.*) .*\] \"(?<method>[A-Z]+) \/ (?<proto>[A-Z]+)\/(?<version>[0-9.]+)\" [0-9]+ [0-9]+ \"\-\" \"(?<browser>[a-z]+\/.*)\"" }
+match => { "message" => "(?<client_ip>[0-9.]+).*\[(?<time>.*) .*\] \"(?<method>[A-Z]+) \/ (?<proto>[A-Z]+)\/(?<version>[0-9.]+)\" [0-9]+ [0-9]+ \"\-\" \"(?<browser>[a-z]+\/.*)\"" }  自己写的
 
 [root@httpd ~]# grep -Pv "^\s*($|#)" /etc/filebeat/filebeat.yml
 
 [root@logstash ~]# vim /opt/logstash/vendor/bundle/jruby/1.9/gems/logstash-patterns-core-2.0.5/patterns/grok-patterns
+
+
+architecture day05
+//////////////////////////////////////////////////////////
+
+浩方 的技术是 vpn
+
+安装java-1.8.0-openjdk-devel(自动解决依赖，安装了openjkd)
+
+[root@hadoop-nn01 hadoop]# jps
+1037 Jps
+[root@hadoop-nn01 hadoop]# java version
+
+如何看java的home呢？
+[root@hadoop-nn01 hadoop]# rpm -ql java-1.8.0-openjdk
+发现下面的四行是图片，倒数第5行是桌面图标，上面几行再/jar之前都相同，所以home是：/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-11.b12.el7.x86_64/jre
+而hadoop的配置文件在：/usr/local/hadoop/etc/hadoop 下面
+
+拷贝秘钥，hadoop-nn01也得给自己拷，因为这里seconderynamenode跟namenode放到了一起
+
+登陆hadoop.apache.org/docs/ 看文档怎么配置hadoop。
+点开对应版本，左边栏最下面有configureation.
+
+在hadoop-nn01配置好的后，直接将/usr/local/hadoop同步到node1-3。-a(归档模式，保留原文件的权限归属)，-S(对稀疏文件特殊处理)，-H(保留硬连接)，--delete(删除dest中src没有的文件)，-e(使用协议)。
+[root@nn01 hadoop]# for i in 22 23 24 ; do rsync -aSH --delete /usr/local/hadoop/ 
+\   192.168.1.$i:/usr/local/hadoop/  -e 'ssh' & done
+
+1.安装单机hadoop    主机名hadoop-nn01
+    1.安装java-1.8.0-openjdk-devel
+    2.解压hadoop的tar包，移动为/usr/local/hadoop
+    3.修改etc/hadoop/hadoop-env.sh中的JAVA_HOME，HADOOP_CONF_DIR。
+2.安装hadoop集群
+    1.hadoop-nn01,node1,node2,node3主机，/etc/hosts ip全对应。
+      hadoop-nno1: NameNode, SeconderyNameNode.
+      node1-node3: DataNode.
+    2.hadoop-nn01 拷秘钥给4台。
+    3.配置hadoop-nn01中/usr/local/hadoop/etc/hadoop/下面：hadoop-env.sh, core-site.xml, hdfs-site.xml, slaves
+    4.直接将/us/local/hadoop同步给node1-3
+    5.hdfs namenode -format ---> start-dfs.sh ---> ssh node1 jps, hdfs dfsadmin -report
+
+
+
+
+
+
 
 
 

@@ -725,7 +725,10 @@ ifconfig lo:1 192.168.4.253/32 意思是没有网络位，就一个ip
 
 
 cluster day3
-///////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+keepalive 本质是一个vip切换工具？
+比如再最后一阶段，两台nfsgw。keepallive只是负责切换ip? 
+
 lvs-dr工作原理：
 虚拟ip--vip进行分发，真实ip进行回包
 52 53两个web服务器通过vip接受到信息，然后用真实ip帮助vip回应，所以内核参数aro_announce改成2，但是arp广播有可能先被52或53接收，所以要arp_ignore改成1。
@@ -1539,6 +1542,11 @@ rpm -e --nodeps elinks 不删除依赖包的删除
 groupadd xxgroup
 
 usermod -G xxgroup jack 是这样添加？
+
+groupadd -g 200 g1
+useradd -u 200 -g g1 u1
+
+useradd -u 200 -g g1 -r u1 这样是创建系统用户，没有家目录..
 
 可以这样创建用户和添加组
 [root@51 ~]# useradd lili
@@ -2549,6 +2557,7 @@ architecture day05
 在hadoop-nn01配置好的后，直接将/usr/local/hadoop同步到node1-3。-a(归档模式，保留原文件的权限归属)，-S(对稀疏文件特殊处理)，-H(保留硬连接)，--delete(删除dest中src没有的文件)，-e(使用协议)。
 [root@nn01 hadoop]# for i in 22 23 24 ; do rsync -aSH --delete /usr/local/hadoop/ 
 \   192.168.1.$i:/usr/local/hadoop/  -e 'ssh' & done
+--->dest端也要安装rsync
 
 1.安装单机hadoop    主机名hadoop-nn01
     1.安装java-1.8.0-openjdk-devel
@@ -2562,6 +2571,67 @@ architecture day05
     3.配置hadoop-nn01中/usr/local/hadoop/etc/hadoop/下面：hadoop-env.sh, core-site.xml, hdfs-site.xml, slaves
     4.直接将/us/local/hadoop同步给node1-3
     5.hdfs namenode -format ---> start-dfs.sh ---> ssh node1 jps, hdfs dfsadmin -report
+
+
+architecture day06
+//////////////////////////////////////////////////////////
+NodeManager占用cpu，内存多
+DataNode占用磁盘io，网络io多
+NameNode占cpu，内存多
+ResourceManager是分割数据然后给NameNode计算，所以不是很占cpu，所以可以与NameNode放到一起。
+所以上面两个可以放到一起
+但是两个占用相同资源的不能放到一起。
+
+如果没有正常关机，那么4台机器的/var/hadoop下的数据可能就不一致了，所以stop，删除/var/hadoop下的数据，然后重新格式化启动
+
+vimdiff xx xx
+
+mapreduce.framework.name 让其不使用本机资源，而使用集群的管理框架
+
+[root@hadoop-nn01 hadoop]# for i in node{1..3}; do rsync -aSH --delete /usr/local/hadoop/etc ${i}:/usr/local/hadoop/ -e 'ssh' & done
+
+windows 装vim
+
+hadoop jar ./share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.3.jar wordcount /input /output
+上面的/input的完整路径是: hdfs://hadoop-nn01:9000/
+回想前一天的wordcount算法，命令跟上面基本相同，那么怎么区分/是本地的还是hdfs://xxxx:9000/的？
+主要看core-site.xml里的fs.defaultFS写的是啥
+如果是file:/// 那就是本地
+如果是hdfs://xxxxx  那就是hdfs的。
+
+nfs + rsync + inotify + keepalive  100G以下的可以，太大了会有进程方面的问题
+
+DRDB + heartbeat  同步数据实现高可用 300G以下
+
+hdfs + nfs(gateway) 可以好几个t
+
+要点：
+1.nfs网关只支持v3版本
+2.随机数据(如迅雷下载有的不是从头下载，而是分好几个点一起下载)需要缓存目录
+3.错误日志： logs/xxx.log  logs/xxx.out
+4.nfs网关是hadoop集群的一个客户端，所以/etc/hosts
+5.hadoop.proxyuser.nfsuser(代理用户).groups .hosts 是授权哪些主机可以访问。
+6.清空nfsgw的hadoop/logs目录内容不影响hadoop集群
+7.nfsgw的系统的原nfs-utils要卸了，用自己做的不用。
+8./etc/exports 是nfs的配置文件，nfs.exports.allowed.hosts使用java语言来配置这个文件。
+9.nfs.dump.dir设置转储文件。
+10.要让nfsuser代理用户对hadoop/logs目录有读写权限。
+11.先启动portmap(root),再启动nfs3(su 到代理用户),启动顺序变了就重启。
+12.再启一台机器,挂载。
+
+hadoop-daemon.sh stop namenode  这样!!
+
+
+architecture day07
+//////////////////////////////////////////////////////////
+事务?
+
+zookeeper如果4台机器1个obersver,那么3台至少启2台。
+
+
+
+
+
 
 
 

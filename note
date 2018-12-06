@@ -665,6 +665,7 @@ mount /dev/iscsi/vdb/ /var/www/html/  可能会挂载不上，因为链接所指
 
 cluster day02
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ext4   是本地文件系统
 /proc/ 下的是内存中映射过来的，为文件系统
 
@@ -711,6 +712,8 @@ ipvsadm -D -t xxx.xxx.xxx.xxx:xx 删除一个服务，d是删除一个real serve
 把上面的那个命令放到/etc/rc.local中
 [root@localhost ~]# vim /etc/rc.local
 
+给web1 web2绑定 lo虚拟ip的时候，千万不要绑192.168.1.100，而是要绑192.168.1.100/32.因为如果绑了192.168.1.100，那么远程就挂了。如果是秘钥登陆的云主机，那么也远程不了，那么只能重启了。
+
 系统重启后，会先读取/etc/rc.local
 所以把一些临时设值生效的写到这个文件中，再开机，也可以生效。
 echo 2 > /proc/sys/net/ipv4/conf/all/arp_announce  写到文件中
@@ -754,6 +757,14 @@ keeplive可以对她的realserver做健康性检查
 
 lvs     基于端口
 haproxy 基于端口(4层)，基于软件(7层)，并可以做健康检查
+
+haproxy.cfg:
+listen mycat_3306 *:3306 #instead of :8066 more like mys
+ql
+    mode    tcp        # mysql 得使用 tcp 协议,set here not in the default maybe well
+    option  tcpka      # 使用长连接,or every select will sent a connection
+    balance leastconn  # 最小连接调度算法,when tcpka used, balance roundrobin was not suited. so leastconn
+
 
 应用层上跑的是协议
 
@@ -847,6 +858,8 @@ backend  指定后端
 
 stats uri /admin 访问健康检查的路径
 
+注意：如果是调度mysql或者是别的那么 mode要改成tcp!!
+
 ---->
 lvs haproxy nginx
 
@@ -906,8 +919,9 @@ ssh $1 192.168.4.xx
 $1的位置要传参数-o Stxxxx(不询问yes/no)以便防止问yes/no，然而直接./a.sh -o Stxxx 这样是不行的。所以要用-x '-o Stxxxxx'
 
 
-数据库day1
+数据库 dba day1
 ///////////////////////////////////////////////////////////////////////
+mysql> system bash    !!!!!
 卸载包的时候不要用yum卸载，因为这样会把依赖包都卸载了，所以要：
 rpm -e --nodeps xxx   这样只卸载当前包
 
@@ -933,6 +947,9 @@ mysql> alter user root@"localhost" identified by '123qqq...A'; 改密码。
 mysql> show variables like "%password%"; 查看变量，%通配符，包含password的变量。
 mysql> set global validate_password_policy=0;   设置成不检查复杂度
 mysql> set global validate_password_length=6;   设置密码长度
+
+[root@50 ~]# mysql -hlocalhost -uroot -p123qqq...A -e 'select * from mysql.user'
+这样直接在外面执行sql命令。
 
 [root@50 ~]# vim /etc/my.cnf  可以把配置永久保存在配置文件中。
 validate_password_policy=0
@@ -970,7 +987,7 @@ persondb库里创建bogperson表储存前任信息。
 
 
 
-day02
+dba day02
 ///////////////////////////////////////////////////////////////////////
 key 键值
 按照一定的算法的索引
@@ -1098,6 +1115,8 @@ mysql.columns_priv 记录用户对字段的访问
 
 mysql> grant all on *.* to mydba@"%" identified by "123456" with grant option;
 
+mysql> help create user  可以看帮助
+
 为什么要给mydba授权-可以给他人授权的权限?
 
 information_schema库实在内存中的，假库，储存服务的一些参数
@@ -1146,6 +1165,8 @@ mysqlbinlog -uroot -p123456 --flush-logs db5 > /root/db5.sql
 
 rpm -ql percona-xtrabackup-24 这样查
 man innobackupex
+
+innobackup 备份，有一个xxxbin_xxx 这里面记录的是备份的最后一条备份时，备份库的节点?所以说mha，用innobackup恢复还是比较靠谱!
 
 备哪一行，锁哪一行
 
@@ -1295,8 +1316,11 @@ mha使用perl(一个脚本语言)写的
 
 echo $PATH
 
+mha 是要有一个虚拟ip的!
+
 master_ip_failover 只负责切换，不负责初始部署。所以给51绑一个vip。
 ifconfig eth0:1 192.168.4.100/24
+ifconfig eth0:1 down 这样可以删除
 
 记得51-55上也要装mhaxxxxnote。
 
@@ -1309,7 +1333,7 @@ remove_dead_master_conf的意思是，51作为master坏了，就把51从app1.cnf
 
 是根据binlog日志生成的时间来判断谁与master最接近。所以再把51添加回来后，停掉52，这时候51会变成master，就算对53flush logs也不行，这是为啥？
 
-要至少三台同时做集群，才给切换master。如果51停了，再挺52就不给切到53了。
+要至少三台同时做集群，才给切换master。如果51停了，再挺52就不给切到53了。what?? it is changed whatever!?
 
 人肉读写分离，还有别的办法么？
 
@@ -1359,6 +1383,30 @@ mycat解压后，conf目录中的是各种配置文件，rule.xml是分库分表
 wrapperlog里的是日志。
 
 mycat分片要加上mamcache缓存服务器，不然查询慢。
+
+1.要有<schema>
+2.schema里面要定义表模板
+3.dataNode里的库db1要在mysql上真实的建出来。但是到mycat中就是逻辑库TESTDB。
+
+mycat 前端假装自己是个mysql,所以前端要有库，用户名和密码。
+server.xml 读写的用户 只读的用户
+
+dataNode是虚拟服务器。
+
+后端将请求转发给mysql,后端有负载均衡加健康检测
+健康检测用：<heartbeat>select user()</heartbeat>
+swictype 自动切换？
+
+读写分离和数据分片不用配到一起，生产环境分业务，写多的业务用数据分片，读多的用读写分离。
+1.6-release可以配置多组主从
+
+mysql数据拆分，x,y,z三个方向：
+x 水平扩展---读写分离
+y 按业务 
+
+
+有一个mydb.sql库，怎么把其导入？
+mysql> source mydb.sql
 
 
 nosql day01
@@ -1611,6 +1659,9 @@ ftp ip    匿名用户ftp  无密码登陆。
 配置文件/etc/vsftpd/vsftpd.conf中，解开注释，允许匿名上传：
  29 anon_upload_enable=YES
  30 #
+默认监听ipv6
+/etc/vsftpd/vsftpd.conf 中listen yes   listen ipv6 no
+
 
 就算服务即配置对了，selinux的策略对了，如果sebool值关着，那也访问不了。
 
@@ -2012,6 +2063,7 @@ openstack 用命令管理，就要多看help，初始化source ~/keystonerc_admi
 
 出售公有云管理员配好外网
 
+dns: pc: room9pc1: resend dns server
 装openstack前，指定dns服务器，/etc/resolv.conf的第一行一定要是：
 nameserver 192.168.1.254
 如果没有这么做，就装好了openstack，当创建好云主机后，打不开，是1006错误。
@@ -2628,20 +2680,151 @@ architecture day07
 
 zookeeper如果4台机器1个obersver,那么3台至少启2台。
 
+项目2
+//////////////////////////////////////////////////////////
+从华为云上下载的私钥是xxx.pem，将其复制到~/.ssh/下面后，要mvm成id_rsa，然后改权限。
+
+卸载
+postfix
+ntpd (看/etc/ntp.conf中的时间服务器的地址)
+
+/etc/sshd_conf 打开port 22 listen 0.0.0.0 就可以只监听ipv4
+
+/etc/sysconfig/chronyd  中 ""  加上-4，就是只监听ipv4了。
+
+华为云--支持与服务--后面的放大镜 可以搜索一些方法。
 
 
+lvs net模式：网关需要指向lvs，但是云主机的网关是默认指定的>。
+lvs dr模式：web主机是没法上网的，那么包怎么转发出去？
+
+lvs full-net模式：就用这个，免费买
+
+[root@room9pc01 myfiles]# for i in {1..60}; do curl -s 119.3.7.240; done | sort | uniq -c
+
+云主机做lvs dr 负载均衡要点：
+浮动公网ip与申请不要钱的虚拟ip绑定，再绑到lvs-web1-web2上。
 
 
+locat -i xxx 可以找到包含xxx字的文件。
+mv xxx /dev/shm 相当于删除..
+[root@mycat1 mycat]# find . -type d -exec chmod 755 {} \;
+[root@mycat1 mycat]# find . -type f -exec chmod 644 {} \;
+find后接命令。
+
+ss -ant   a--all   n--port number   t---tcp
+the_one ---> mysql -urw -prw -hhaproxy1 ---> system bash ---> ssh haproxy1 ---> ss -ant
+
+tcp 3 connect   4 disconnect  10 status
+ESTAB is the 3 connect status
+TiME-WAIT is 4 disconnect status
+
+mysql> show databases;
++----------+
+| DATABASE |
++----------+
+| mycatdb  |
++----------+
+1 row in set (0.00 sec)
+
+mysql> system bash
+[root@the-one ~]# ssh haproxy1
+[root@haproxy1 ~]# ss -ant
+State      Recv-Q Send-Q  Local Address:Port                 Peer Address:Port              
+LISTEN     0      128                 *:3306                            *:*                  
+LISTEN     0      128                 *:22                              *:*                  
+LISTEN     0      100         127.0.0.1:25                              *:*                  
+ESTAB      0      0       192.168.1.129:39738               192.168.1.211:8066               
+ESTAB      0      0       192.168.1.101:3306                 119.3.84.227:36270              
+ESTAB      0      0       192.168.1.129:22                    192.168.1.2:50812              
+LISTEN     0      100               ::1:25                             :::*                  
+CLOSE-WAIT 1      0        ::ffff:192.168.1.129:39126                ::ffff:100.125.32.34:80                 
+[root@haproxy1 ~]# ss -ant
+State      Recv-Q Send-Q  Local Address:Port                 Peer Address:Port              
+LISTEN     0      128                 *:3306                            *:*                  
+LISTEN     0      128                 *:22                              *:*                  
+LISTEN     0      100         127.0.0.1:25                              *:*                  
+ESTAB      0      0       192.168.1.129:22                    192.168.1.2:50812              
+LISTEN     0      100               ::1:25                             :::*                  
+CLOSE-WAIT 1      0        ::ffff:192.168.1.129:39126                ::ffff:100.125.32.34:80 
+
+[root@haproxy1 ~]# exit
+登出
+Connection to haproxy1 closed.
+[root@the-one ~]# exit
+exit
+mysql> show databases;
+ERROR 2013 (HY000): Lost connection to MySQL server during query
+mysql> show databases;
+ERROR 2006 (HY000): MySQL server has gone away
+No connection. Trying to reconnect...
+Connection id:    4
+Current database: *** NONE ***
+
++----------+
+| DATABASE |
++----------+
+| mycatdb  |
++----------+
+1 row in set (0.01 sec)
+
+mysql> 
+
+again   diffirent  dest  !!
+
+[root@haproxy1 ~]# watch -n 1 'ss -ant'
+try it many times !!
 
 
+keepalived:
+1.base conf
+2.relate keepalived with haproxy
+  write a xx.sh ckeck the haproxy status
+  (add:)
+    track_script {
+       chk_haproxy weight=0    # +2 if process is present
+    }
+  when chk_haproxy failed then set the weight to 0, which means do not keep the ip (weight=0, but keepalived will still runing).
+  (add: before vrrp_instance)
+    vrrp_script chk_haproxy {
+      script "killall -0 haproxy"     # cheaper than pidof       #here inside "" can be the path of xx.sh, or just the script like above. If the $? of the xx.sh if 0 the check is ok or is fail. If wanna use a xx.sh, we can check the pid, cause every process has a pid file, if the file exist, then return 0, or return 1.:"
+      # #!/bin/bash
+      # PID=$(< /var/run/haproxy.pid)
+      # if [ -d /proc/${PID:-0000} ];then
+      #     exit 0
+      # else
+      #     exit 1
+      # fi "
+      # In fact, it should not be such troublsome,  "kill"  can send a signal to pid of a progress. the signals content 64 system signals and 4 not real signals. progress recive the signal then deal with it. "[root@haproxy1 ~]# kill -l"  look look. If only send 0 to a pid of a progress, if it exist, then it just recive it and return 0, and do nothing.like:
+      # [root@haproxy1 ~]# cat /var/run/haproxy.pid 
+      # 1272
+      # [root@haproxy1 ~]# kill -0 1272
+      # [root@haproxy1 ~]# echo $?
+      # 0
+      # [root@haproxy1 ~]# kill -0 1273
+      # -bash: kill: (1273) - 没有那个进程
+      # [root@haproxy1 ~]# echo $?
+      # 1
+      # if the pid was not known , we can killall -0 haproxy 
+      interval 2                      # check every 2 seconds
+    }
 
 
+3.double work mode
+  1: eth0:1 rub,  eth0;2 no rub
+  2: eth0:1 no rub,  eth0:2 rub
 
+both keepalived service should be set as BACKUP, or the master will always rub the virtual_ip
 
+priority 200   ----  nopreempt       no rub
+priority 100   ----  ! nopreempt     rub cause of the low priority
 
+4.DNS A record  !!  roundrobin
+  then visit one domain name, can visit the two haproxy roundbin
 
-
-
+51job 前程无忧
+智联招聘
+中华英才
 
 
 

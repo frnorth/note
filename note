@@ -2836,6 +2836,8 @@ github
    git commit -m 'haha'
    git push origin master
 
+5/5. git pull 因为别人也在更新，所以如果5报错，那么先git pull
+
 
 
 

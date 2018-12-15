@@ -2829,7 +2829,7 @@ priority 100   ----  ! nopreempt     rub cause of the low priority
 github
 1. 先去官网按照说明创建一个repositroy
 2. ssh-
-
+3. git pull
 
 
 

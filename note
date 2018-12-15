@@ -2827,6 +2827,7 @@ priority 100   ----  ! nopreempt     rub cause of the low priority
 中华英才
 
 github
+///////////////////////////////////////////////////////////////////////
 1. 先去官网按照说明创建一个repositroy
 2. ssh-keygen -t rsa -C 'frnorth@github.com', 然后把id_rsa.pub的内容复制，在github的头像下面的settings里面添加一个ssh公钥，粘贴过去。
 3. ssh -T git@github.com 能连接了

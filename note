@@ -2839,8 +2839,13 @@ github
 
 6/1. git pull 因为别人也在更新，所以如果5报错，那么先git pull
 
+git -h
+git add -h
+不会了就看帮助
 
 
+[root@mini ~]# vim /etc/vimrc 添加，缩进4
+set tabstop=4
 
 
 

@@ -409,6 +409,8 @@ Completed 1600 requests
 apr_socket_recv: Connection reset by peer (104)
 Total of 1610 requests completed
 这是什么意思？
+
+nginx 编译安装的时候不一定必须指定用户？安装完，直接su - nginx -c /usr/local/nginx/sbin/nginx 这样启动呢？
 ==================================================================================================
 
 

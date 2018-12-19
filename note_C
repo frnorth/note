@@ -9,3 +9,11 @@
 
 3.
 Makefile真几把难写
+
+4.
+    FILE *f1=fopen("/root/rand.txt","w");
+    for(i=0;i<100000;i++){
+        fprintf(f1,"%d\n",rand()%10000);
+    }
+    fclose(f1);
+

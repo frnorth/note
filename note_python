@@ -1,0 +1,20 @@
+1.
+>>> str(c1)
+'2'
+>>> c1.__str__()
+'2'
+这两个是等效的?
+c1.__eq__(c2) 与c1==c2 是一样的?
+
+2.
+>>> dir(object)
+['__class__', '__delattr__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
+为什么没有看到__eq__方法?
+
+3.
+dir(str)  list tuple set dict
+help(str)  list tuple set dict
+
+4.
+tensorflow
+django

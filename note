@@ -2684,15 +2684,36 @@ zookeeper如果4台机器1个obersver,那么3台至少启2台。
 
 项目2
 //////////////////////////////////////////////////////////
-从华为云上下载的私钥是xxx.pem，将其复制到~/.ssh/下面后，要mvm成id_rsa，然后改权限。
+从华为云上下载的私钥是xxx.pem，将其复制到~/.ssh/下面后，要mv成id_rsa，然后改权限。
 
-卸载
-postfix
+制作华为云后端盘：
+1.yum:
+华为云上搜索yum，按照第一个curl上yum源。
+curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.myhuaweicloud.com/repo/CentOS-Base-7.repo
+yum clean all 一定要做
+yum makecache
+
+2.卸载
+netstat -nutpl
+yum -y remove postfix
+
+3.时间同步：
 ntpd (看/etc/ntp.conf中的时间服务器的地址)
+server ntp.myhuaweicloud.com iburst
+贴到/etc/chrony.conf  注释掉#server 3(1-3).centos.pool.ntp.org iburst等
+chronyc sources -v
 
-/etc/sshd_conf 打开port 22 listen 0.0.0.0 就可以只监听ipv4
-
+4.
+/etc/ssh/sshd_conf 打开port 22 listen 0.0.0.0 就可以只监听ipv4
 /etc/sysconfig/chronyd  中 ""  加上-4，就是只监听ipv4了。
+
+5.这个要不又要做呢?华为云上的与真实的有没有什么区别?
+systemctl stop NetworkManager   (disable)
+删了ifcfg-eth1-4
+ifdown eth0                很重要
+systemctl start network
+
+
 
 华为云--支持与服务--后面的放大镜 可以搜索一些方法。
 

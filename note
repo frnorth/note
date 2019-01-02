@@ -2871,6 +2871,8 @@ git add -h
 set tabstop=4
 
 
+jenkins:
+https://jenkins.io/  java -jar jenkins.war --httpPort=8080
 
 
 

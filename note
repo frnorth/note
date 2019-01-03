@@ -2874,7 +2874,20 @@ set tabstop=4
 jenkins:
 https://jenkins.io/  java -jar jenkins.war --httpPort=8080
 
+maven打包:
+安装java和maven
+1. ---> 注意别忘了装java
+git clone  注意分支，不同的分支代码不一样
+2. ---> 注意哪个分支能打包成功
+mvn clean package -xxxxxxxx(如果有跳过什么就在这加上)
+3. --->
+前人在jenkins上写了发布的过程和脚本，那么按照上面的配置
 
 
+Linux下制作u盘启动盘：
+df -h
+umount /dev/sdb
+mkfs.fat /dev/sdb -I
+dd if=ubuntu-16.0.3-desktop-amd64.iso of=/dev/sdb 注意是sdb不是sdb4?
 
 

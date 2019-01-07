@@ -164,6 +164,23 @@ nginx也可以配置虚拟主机 server, 存放在conf.d/下面，include conf.d
 pcre支持正则表达式，-devel的意思是依赖包
 
 
+问题：
+413 远程服务器返回错误，Request Entity Too Large
+  原因：通过post上传文件过大
+  解决：扩大流量
+        server{ 
+          ...
+	      client_max_body_size 20m;
+          client_body_buffer_size 128k; (??)
+          ...
+        }
+
+
+http://ecg-java.landmind.cn/front/index.html
+直接访问ecg-java.landmind.cn就跳转到/front/index.html怎么设置？
+
+
+
 network没有启动成功，还有可能是因为BOOTPROTO=dhcp，但是没有dhcp服务器,eth0没有使用，但是ifcfg-eth0中写着BOOTPROTO=dhcp，所以不行，要把dhcp改成none
 总结一下复制添加ifcfg-ethx：
 1.复制
@@ -858,6 +875,7 @@ kill -9 xxx（pid号)
 但是这个程序会保证总有一个进程相应系统，所以杀光进程后，会再起，
 所以还是要systemctl stop
 
+
 haproxy 配置文件中
 listen   是一种模式
 frontend 比listen能配置更多的需求
@@ -1270,6 +1288,10 @@ select @@hostname看主机名。
 停掉mysqld_multi，也可以用kill -9 ...
 kill -9 跟的是进程pid号
 pkill -9 跟的是进程名
+
+lsof 是将进程打开的文件都列出来
+lsof -i:22 看22端口的
+
 
 读写分离的时候 要server1,'空格'server2 ？
 
@@ -2876,8 +2898,41 @@ git add -h
 set tabstop=4
 
 
+jenkins:
+https://jenkins.io/  java -jar jenkins.war --httpPort=8080
+
+maven打包:
+1. 安装java和maven
+---> 注意别忘了装java
+2. git clone  注意分支，不同的分支代码不一样
+---> 注意哪个分支能打包成功
+3. mvn clean package -Dmaven.test.skip
+---> 前人在jenkins上写了发布的过程和脚本，那么按照上面的配置
+  clean: 清楚当前目录包含的所有的target
+  -Dmaven.test.skip 跳过测试
+  package命令完成了项目编译、单元测试、打包功能，但没有把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库和远程maven私服仓库
+  install命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库，但没有布署到远程maven私服仓库
+  deploy命令完成了项目编译、单元测试、打包功能，同时把打好的可执行jar包（war包或其它形式的包）布署到本地maven仓库和远程maven私服仓库
 
 
+Linux下制作u盘启动盘：
+df -h
+umount /dev/sdb
+mkfs.fat /dev/sdb -I
+dd if=ubuntu-16.0.3-desktop-amd64.iso of=/dev/sdb 注意是sdb不是sdb4?
+
+
+xargs:
+---> 将标准输入的内容转化成参数
+  echo "--help" | cat
+  echo "--help" | xargs cat
+---> 加-i, 用{}代替xargs传来的参数, -I来指定替代符号
+  find . -type f -name "split*" | xargs -i cp {} .
+  find . -type f -name "split*" | xargs -I R cp R .
+
+nohup:
+nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户时该进程还不会结束，那么可以使用nohup命令。该命令可以在你退出帐户/关闭终端之后继续运行相应的进程。
+  nohup java -jar xx.jar &
 
 
 

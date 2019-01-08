@@ -61,6 +61,9 @@ A: echo "Hi" > /dev/pts/1
 B就可以接受到Hi
 A: wall "Hello" 是对所有链接到这台机器的pts说Hello
 
+vim -O2 file file2
+Ctrl+w l 	切换到右屏（Normal模式下）
+Ctrl+w h 	切换到左屏
 
 /dev/null黑洞设备
 
@@ -155,6 +158,8 @@ www.baidu.com/index.py就不行了
 
 nginx官网有歌各种模块的说明
 
+nginx也可以配置虚拟主机 server, 存放在conf.d/下面，include conf.d/*
+结构耐人寻味!
 
 pcre支持正则表达式，-devel的意思是依赖包
 

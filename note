@@ -2930,4 +2930,5 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
   nohup java -jar xx.jar &
 
 
+2019.1.9 ******** nginx(安装在/usr/local/nginx中)升级可以按照anli里的来做，但是make upgrade的时候，如果是在/usr/bin/下建立了一个链接，然后nginx启动的，会报错。而/usr/local/nginx/sbin/nginx这样启动，在升级的时候就不会报错。nginx -V 可以查看加载了那些模块。			抓包：打开网页-->F12-->network-->点一个。
 

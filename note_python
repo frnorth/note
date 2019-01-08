@@ -26,3 +26,20 @@ split\_merge\_sort.py 中
 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?)
 不然的话，最底层两个数字分不开
 
+6.
+>>> from array import array
+>>> a=array("c")
+>>> a.append("h")
+>>> a.append("s")
+>>> a
+array('c', 'hs')
+>>> a.append("ss")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: array item must be char
+>>> b=array('i')
+>>> b.append(3)
+>>> b.append(2)
+>>> b
+array('i', [3, 2])
+

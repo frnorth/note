@@ -43,3 +43,4 @@ TypeError: array item must be char
 >>> b
 array('i', [3, 2])
 
+2019.1.9 ** 链表中，head=Node(data,None)与head=Node(data,next) head.next=None 一样嘛? C一样，python不一样?

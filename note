@@ -2958,3 +2958,5 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
 2019.1.10 ** postgresql 9.6 中，copy操作，文件格式问题，tab分隔，权限问题，postgres用户能读取到的文件。
 
 2019.1.10 ** postgresql 中，官方文档中的9.6文档2.1节，$ cd ..../src/tutorial $ make 这是在源码包中，要安装了源码包才能在tutorial中make, 但是安装完源码包后怎么启动...?
+
+2019.1.11 ** docker有很多版本，有的版本太低很多操作做不了，安装docker-ce可以用官方文档的步骤，在bookmarks.html中有记载。

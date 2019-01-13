@@ -44,3 +44,7 @@ TypeError: array item must be char
 array('i', [3, 2])
 
 2019.1.9 ** 链表中，head=Node(data,None)与head=Node(data,next) head.next=None 一样嘛? C一样，python不一样?
+
+2019.1.13 ** 退出虚拟环境：deactivate
+
+2019.1.13 ** django 启动时报错，没有sqlite.., 要安装yum install -y sqlite-devel, 启动时候默认只能本机访问，修改settings.py 中的 ALLOWED_HOSTS = ['*'], 并且启动的时候 python manage.py runserver 0.0.0.0:8000

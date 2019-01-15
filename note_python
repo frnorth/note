@@ -47,4 +47,8 @@ array('i', [3, 2])
 
 2019.1.13 ** print(a1._items[0]),print(a1[0]) 当class中没有定义index的时候，后者会报错。
 
+2019.1.13 ** 退出虚拟环境：deactivate
+
+2019.1.13 ** django 启动时报错，没有sqlite.., 要安装yum install -y sqlite-devel, 启动时候默认只能本机访问，修改settings.py 中的 ALLOWED_HOSTS = ['*'], 并且启动的时候 python manage.py runserver 0.0.0.0:8000
+
 2019.1.15 ** mypython中的yield_next.py有些问题，而根本问题还是什么是yield? 什么是next?

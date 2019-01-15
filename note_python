@@ -44,3 +44,7 @@ TypeError: array item must be char
 array('i', [3, 2])
 
 2019.1.9 ** 链表中，head=Node(data,None)与head=Node(data,next) head.next=None 一样嘛? C一样，python不一样?
+
+2019.1.13 ** print(a1._items[0]),print(a1[0]) 当class中没有定义index的时候，后者会报错。
+
+2019.1.15 ** mypython中的yield_next.py有些问题，而根本问题还是什么是yield? 什么是next?

@@ -17,3 +17,5 @@ Makefile真几把难写
     }
     fclose(f1);
 
+2019.1.11 ** ./src/mysga.c:31:7: warning: assignment makes pointer from integer without a cast [enabled by default]   path=get_current_dir_name(); 当出现这种报错的时候，因为#include<unistd.h>, 但没有声明get_current_dir_name()函数，声明：char *get_current_dir_name(void);
+

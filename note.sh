@@ -2966,3 +2966,12 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
 2019.1.16 ** kubenetes权威指南中的坑: (1)kubectl describe rc mysql {No API token found for service account "default"...} ---> []\# openssl genrsa -out /etc/kubernetes/serviceaccount.key 2048 ---> []\# vim /etc/kubernetes/apiserver (KUBE_API_ARGS="--service_account_key_file=/etc/kubernetes/serviceaccount.key") ---> []\# vim /etc/kubernetes/controller-manager (KUBE_CONTROLLER_MANAGER_ARGS="--service_account_private_key_file=/etc/kubernetes/serviceaccount.key") ---> 重启k8s ---> delete 然后create
 
 2019.1.16 ** kubenetes权威指南中的坑: (2) kubectl describe pods mysql-9nmx0 {details: (open /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt: no such file or directory)} ---> []\# wget http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm ---> []\# root rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem ---> delete 然后 create
+
+2019.1.17 ** 
+```
+ #include<stdio.h>
+ int main() {
+	 printf("Hello World!");
+     return 0;
+ }
+```

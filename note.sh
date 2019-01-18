@@ -2610,7 +2610,7 @@ authpriv.*    @@192.168.1.118:514
 [root@httpd ~]# logger -p local0.notice -t nsd1807 'Hello World!'
 重启，或者写日志，logstash哪里都会有记录。
 
-最后的\""之间不能有空隔!!
+最后的'\""'之间不能有空隔!!
 match => { "message" => "(?<client_ip>[0-9.]+).*\[(?<time>.*) .*\] \"(?<method>[A-Z]+) \/ (?<proto>[A-Z]+)\/(?<version>[0-9.]+)\" [0-9]+ [0-9]+ \"\-\" \"(?<browser>[a-z]+\/.*)\"" }  自己写的
 
 [root@httpd ~]# grep -Pv "^\s*($|#)" /etc/filebeat/filebeat.yml
@@ -2966,6 +2966,14 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
 2019.1.16 ** kubenetes权威指南中的坑: (1)kubectl describe rc mysql {No API token found for service account "default"...} ---> []\# openssl genrsa -out /etc/kubernetes/serviceaccount.key 2048 ---> []\# vim /etc/kubernetes/apiserver (KUBE_API_ARGS="--service_account_key_file=/etc/kubernetes/serviceaccount.key") ---> []\# vim /etc/kubernetes/controller-manager (KUBE_CONTROLLER_MANAGER_ARGS="--service_account_private_key_file=/etc/kubernetes/serviceaccount.key") ---> 重启k8s ---> delete 然后create
 
 2019.1.16 ** kubenetes权威指南中的坑: (2) kubectl describe pods mysql-9nmx0 {details: (open /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt: no such file or directory)} ---> []\# wget http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm ---> []\# root rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem ---> delete 然后 create
+
+2019.1.17 ** jumpserver https://github.com/jumpserver/jumpserver
+
+2019.1.17 ** redis https://github.com/antirez/redis
+
+2019.1.17 ** maven 打包的时候因为需要很多依赖包，所以要用本地的repositroy ---> .m2/repository/
+
+2019.1.17 ** 让nginx对外可见目录结构: 在location / 中添加i: autoindex on; autoindex_exact_size off; autoindex_localtime on;
 
 2019.1.17 ** 
 ```

@@ -2975,3 +2975,11 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
 
 2019.1.17 ** 让nginx对外可见目录结构: 在location / 中添加i: autoindex on; autoindex_exact_size off; autoindex_localtime on;
 
+2019.1.17 ** 
+```
+ #include<stdio.h>
+ int main() {
+	 printf("Hello World!");
+     return 0;
+ }
+```

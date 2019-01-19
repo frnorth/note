@@ -1,13 +1,23 @@
 # 数据结构
 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
 
-## arraybag.py
+&ensp ## arraybag.py
 
-> if not item in arraybag1:    
-> not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
+&ensp&ensp if not item in arraybag1:    
+&ensp&ensp not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
 
-> for i in self: 而不是 for i in self._items: 是因为 __iter__ 方法, 直接__iter__(self), 就可以返回self._item._data
-
+&ensp&ensp for i in self: 而不是 for i in self._items: 是因为 __iter__ 方法, 直接__iter__(self), 就可以返回self._item._data
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 1.
 >>> str(c1)
 '2'

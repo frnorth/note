@@ -6,17 +6,17 @@
 &ensp;&ensp;&ensp;&ensp; not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
 
 &ensp;&ensp;&ensp;&ensp; for i in self: 而不是 for i in self._items: 是因为 __iter__ 方法, 直接__iter__(self), 就可以返回self._item._data
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
+1  
 1.
 >>> str(c1)
 '2'

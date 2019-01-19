@@ -14,3 +14,4 @@ vim /etc/gitlab/gitlab.rb https://github.com/frnorth/note/blob/master/gitlab.rb
 gitlab-ctl reconfigure 重新加载配置  
 gitlab-ctl tail 看日志  
 貌似要是starttls_auto true 那么gitlab-tls 也得是ture
+貌似要加上那个git_user_email

@@ -1,3 +1,7 @@
+# 数据结构
+隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。
+
+
 1.
 >>> str(c1)
 '2'
@@ -52,3 +56,5 @@ array('i', [3, 2])
 2019.1.13 ** django 启动时报错，没有sqlite.., 要安装yum install -y sqlite-devel, 启动时候默认只能本机访问，修改settings.py 中的 ALLOWED_HOSTS = ['*'], 并且启动的时候 python manage.py runserver 0.0.0.0:8000
 
 2019.1.15 ** mypython中的yield_next.py有些问题，而根本问题还是什么是yield? 什么是next? 有一个博客写的不错，yield返回之后函数相当于挂起，下次接着返回，return就直接退了
+
+

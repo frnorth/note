@@ -1,7 +1,11 @@
 # 数据结构
 1\) 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
 2\) pyunit 单元测试工具?  
-## &ensp;arraybag.py
+
+## &ensp;split\_merge\_sort.py
+> 1\) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
+
+## &ensp;arraybag.py 或 linkbag.py
 > 1\) if not item in arraybag1:  
 > 2\) not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?  
 > 3\) for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data  
@@ -22,6 +26,13 @@ Expect {}: Traceback (most recent call last):
     yield prob._data
 ```
 > 可以看出, print(b1)自动调用了b1的__str__方法, 而map中的str自动调用了self, 即b1的__iter__方法  
+> 7\)  
+```
+	def clear(self):
+		self._size=0
+		self=LinkBag()
+```
+> 如上或者: self.\_items=None, 千万不要self.\_item=linkBag(), 不然会出现很重的错误  
 1  
 1  
 1  

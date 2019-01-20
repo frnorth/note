@@ -1,11 +1,35 @@
 # 数据结构
-隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
-pyunit 单元测试工具?
+- 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
+- pyunit 单元测试工具?
 
 ## &ensp;arraybag.py
-* if not item in arraybag1:    
-* not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
-* for i in self: 而不是 for i in self._items: 是因为 __iter__ 方法, 直接__iter__(self), 就可以返回self._item._data
+- if not item in arraybag1:    
+- not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
+- for i in self: 而不是 for i in self._items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data
+- in 即__contain__方法, 是要基于__iter__的?  
+- __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?
+- 
+```
+[root@mini mypython]# python3 testbag.py 
+The list of items added is: [2013, 61, 1973]
+Expect 3: 3
+Exoect the bag's string: {1973,61,2013}
+Expect True: True
+Expect False: False
+Expect the items on separate lines:
+1973
+61
+2013
+Expect {}: Traceback (most recent call last):
+  File "testbag.py", line 33, in <module>
+    test(LinkBag)
+  File "testbag.py", line 17, in test
+    print("Expect {}:",b1)
+  File "/root/mypython/linkbag.py", line 56, in __str__
+    return "{"+",".join(map(str,self))+"}"
+  File "/root/mypython/linkbag.py", line 14, in __iter__
+    yield prob._data
+```
 1  
 1  
 1  

@@ -4,8 +4,8 @@
 
 ## &ensp;arraybag.py
 -- if not item in arraybag1:    
-     not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
--- for i in self: 而不是 for i in self._items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data
+-- not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
+-- for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data
 -- in 即__contain__方法, 是要基于__iter__的?  
 -- __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?
 -- 

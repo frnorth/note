@@ -1,13 +1,13 @@
 # 数据结构
-隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
-pyunit 单元测试工具?  
+1) 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
+2) pyunit 单元测试工具?  
 ## &ensp;arraybag.py
-> 1  if not item in arraybag1:  
-> 2  not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?  
-> 3  for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data  
-> 4  in 即__contain__方法, 是要基于__iter__的?  
-> 5  __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?  
-> 6  
+> 1) if not item in arraybag1:  
+> 2) not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?  
+> 3) for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data  
+> 4) in 即__contain__方法, 是要基于__iter__的?  
+> 5) __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?  
+> 6)  
 ```
 [root@mini mypython]# python3 testbag.py 
 ...

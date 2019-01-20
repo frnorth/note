@@ -3,23 +3,14 @@
 - pyunit 单元测试工具?
 
 ## &ensp;arraybag.py
-- if not item in arraybag1:    
-- not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
-- for i in self: 而不是 for i in self._items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data
+ - if not item in arraybag1:    
+-- not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
+- - for i in self: 而不是 for i in self._items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data
 - in 即__contain__方法, 是要基于__iter__的?  
 - __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?
-- 
-```
+- ```
 [root@mini mypython]# python3 testbag.py 
-The list of items added is: [2013, 61, 1973]
-Expect 3: 3
-Exoect the bag's string: {1973,61,2013}
-Expect True: True
-Expect False: False
-Expect the items on separate lines:
-1973
-61
-2013
+...
 Expect {}: Traceback (most recent call last):
   File "testbag.py", line 33, in <module>
     test(LinkBag)
@@ -30,6 +21,7 @@ Expect {}: Traceback (most recent call last):
   File "/root/mypython/linkbag.py", line 14, in __iter__
     yield prob._data
 ```
+可以看出, print(b1)自动调用了b1的__str__方法, 而map中的str自动调用了self, 即b1的__iter__方法
 1  
 1  
 1  

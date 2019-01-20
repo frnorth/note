@@ -2,11 +2,11 @@
 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
 pyunit 单元测试工具?  
 ## &ensp;arraybag.py
-> 1  if not item in arraybag1:    
-> 2  not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?
-> 3  for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data
+> 1  if not item in arraybag1:  
+> 2  not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?  
+> 3  for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data  
 > 4  in 即__contain__方法, 是要基于__iter__的?  
-> 5  __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?
+> 5  __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?  
 > 6  
 ```
 [root@mini mypython]# python3 testbag.py 
@@ -21,7 +21,7 @@ Expect {}: Traceback (most recent call last):
   File "/root/mypython/linkbag.py", line 14, in __iter__
     yield prob._data
 ```
-> 可以看出, print(b1)自动调用了b1的__str__方法, 而map中的str自动调用了self, 即b1的__iter__方法
+> 可以看出, print(b1)自动调用了b1的__str__方法, 而map中的str自动调用了self, 即b1的__iter__方法  
 1  
 1  
 1  

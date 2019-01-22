@@ -2967,17 +2967,6 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
 
 2019.1.16 ** kubenetes权威指南中的坑: (2) kubectl describe pods mysql-9nmx0 {details: (open /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt: no such file or directory)} ---> []\# wget http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm ---> []\# root rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem ---> delete 然后 create
 
-
-
-
-
-
-
-
-
-
-
-
 2019.1.17 ** ubuntu upan安装系统: 
 
 2019.1.17 ** gitlab添加帐号用户: 扳手图标, 添加用户, 选择组, 将用户添加到组。
@@ -2985,3 +2974,20 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
 2019.1.17 ** :51,105s, \{8\},    ,g  匹配，每8个空格变成4个
 
 2019.1.17 ** landmind ftp ftp:192.168.1.7  lanjingftp cdlanjing
+
+2019.1.17 ** jumpserver https://github.com/jumpserver/jumpserver
+
+2019.1.17 ** redis https://github.com/antirez/redis
+
+2019.1.17 ** maven 打包的时候因为需要很多依赖包，所以要用本地的repositroy ---> .m2/repository/
+
+2019.1.17 ** 让nginx对外可见目录结构: 在location / 中添加i: autoindex on; autoindex_exact_size off; autoindex_localtime on;
+
+2019.1.17 ** 
+```
+ #include<stdio.h>
+ int main() {
+	 printf("Hello World!");
+     return 0;
+ }
+```

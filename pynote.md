@@ -15,17 +15,17 @@
 ```
 [root@mini mypython]# python3 testbag.py 
 ...
-Expect {}: Traceback (most recent call last):
-  File "testbag.py", line 33, in <module>
-    test(LinkBag)
-  File "testbag.py", line 17, in test
-    print("Expect {}:",b1)
-  File "/root/mypython/linkbag.py", line 56, in __str__
-    return "{"+",".join(map(str,self))+"}"
-  File "/root/mypython/linkbag.py", line 14, in __iter__
-    yield prob._data
+  Expect {}: Traceback (most recent call last):
+    File "testbag.py", line 33, in <module>
+      test(LinkBag)
+    File "testbag.py", line 17, in test
+      print("Expect {}:",b1)
+    File "/root/mypython/linkbag.py", line 56, in __str__
+      return "{"+",".join(map(str,self))+"}"
+    File "/root/mypython/linkbag.py", line 14, in __iter__
+      yield prob._data
 ```
-> 可以看出, print(b1)自动调用了b1的__str__方法, 而map中的str自动调用了self, 即b1的__iter__方法  
+> 可以看出, print(b1)自动调用了b1的__str__方法(所以不用print(str(b1))), 而map中的str自动调用了self, 即b1的__iter__方法  
 > 7\)  
 ```
 	def clear(self):
@@ -33,6 +33,18 @@ Expect {}: Traceback (most recent call last):
 		self=LinkBag()
 ```
 > 如上或者: self.\_items=None, 千万不要self.\_item=linkBag(), 不然会出现很重的错误  
+
+## &ensp;arraySortedBag
+> 1)
+```
+  def __init__(self,sourceCollection=None):
+      ArrayBag.__init__(self,sourceCollection)
+```
+> 显式调用父类ArrayBag的__init__函数, 而且加上(self,..)! 因为一旦调用了ArrayBag的__init__, __init_(self, s..n)_就会调用self的add函数(ArrayBag中用add来添加sourceCollection), 如果在子类ArraySortedBag的ArrayBag.__init__中不显式的写出(self,..), 那么就会调用父类ArrayBag的add函数, 即普通添加。然而, ArraySortedBag要求__init__的时候要有顺序的添加, 所以要调用自己的add函数(有序添加), 所以要显式的写出self, 以免调用父类的
+> ArrayBag.add(self,item), 其实父类的方法调用, 加上self, 就跟普通方法一样用
+
+
+
 1  
 1  
 1  

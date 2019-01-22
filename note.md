@@ -14,7 +14,7 @@ vim /etc/gitlab/gitlab.rb https://github.com/frnorth/note/blob/master/gitlab.rb
 gitlab-ctl reconfigure 重新加载配置  
 gitlab-ctl tail 看日志  
 貌似要是starttls_auto true 那么gitlab-tls 也得是ture
-```貌似要加上那个git_user_email
+貌似要加上那个git_user_email
 
 # ubuntu 14.04
 > 1) E: 有未能满足的依赖关系。请尝试不指明软件包的名字来运行“apt-get -f install”(也可以指定一个解决办法):  

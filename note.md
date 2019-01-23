@@ -40,3 +40,9 @@ sudo apt-get --fix-broken install
 sudo apt-get install openssh-server
 ps -e | grep ssh    ps auz | grep ssh
 sudo /etc/init.d/ssh start
+
+## docker
+1) mirrors.aliyun.com ---> docker-ce ---> Related links --> curl脚本安装就直接安装了  
+2) 但是上面的可能不是最新版本, 于是去docker官网, https://docs.docker.com/ ---> Get Docker ---> 左边列 ---> Linux ---> 一步一步做, 答案的删, ok
+3) nvidia-docker: https://github.com/NVIDIA/nvidia-docker 照做
+

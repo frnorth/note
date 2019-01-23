@@ -26,9 +26,9 @@ dd if=ubuntu-14.04.5-desktop-amd64.iso of=/dev/sdb
 ```
 > 2) 然而dd命令只能用来制作linux启动盘, 制作win10启动盘可以用woeusb:  
 > ```
-sudo add-apt-repository ppa:nilarimogard/webupd8
-sudo apt update
-sudo apt install woeusb 
+> sudo add-apt-repository ppa:nilarimogard/webupd8
+> sudo apt update
+> sudo apt install woeusb 
 > ```
 > 如果报错:"E: 有未能满足的依赖关系。请尝试不指明软件包的名字来运行“apt-get -f install”(也可以指定一个解决办法):"  
 > ```

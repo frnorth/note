@@ -1943,7 +1943,8 @@ ip a 可以看ip...
 
 
 做一个后端盘：
-[root@room9pc01 images]# qemu-img create -f qcow2 v0.qcow2 2G  这样创建一个空磁盘2G够了，作为后端盘，前端盘再扩容。做完后端盘后，virsh undefine xxx.xml 这样删了虚拟机，但是后端盘还在，这样就不能virsh start 这个虚拟机了，安全性提高。但是还是可以guestmount来修改。
+[root@room9pc01 images]# qemu-img create -f qcow2 v0.qcow2 2Gi
+这样创建一个空磁盘2G够了，作为后端盘，前端盘再扩容。做完后端盘后，virsh undefine xxx.xml 这样删了虚拟机，但是后端盘还在，这样就不能virsh start 这个虚拟机了，安全性提高。但是还是可以guestmount来修改。
 
 [root@room9pc01 nsd1807]# sed 's,node,v0,' node.xml > /etc/libvirt/qemu/v0.xml
 
@@ -2966,6 +2967,14 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
 2019.1.16 ** kubenetes权威指南中的坑: (1)kubectl describe rc mysql {No API token found for service account "default"...} ---> []\# openssl genrsa -out /etc/kubernetes/serviceaccount.key 2048 ---> []\# vim /etc/kubernetes/apiserver (KUBE_API_ARGS="--service_account_key_file=/etc/kubernetes/serviceaccount.key") ---> []\# vim /etc/kubernetes/controller-manager (KUBE_CONTROLLER_MANAGER_ARGS="--service_account_private_key_file=/etc/kubernetes/serviceaccount.key") ---> 重启k8s ---> delete 然后create
 
 2019.1.16 ** kubenetes权威指南中的坑: (2) kubectl describe pods mysql-9nmx0 {details: (open /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt: no such file or directory)} ---> []\# wget http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm ---> []\# root rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem ---> delete 然后 create
+
+2019.1.17 ** ubuntu upan安装系统: 
+
+2019.1.17 ** gitlab添加帐号用户: 扳手图标, 添加用户, 选择组, 将用户添加到组。
+
+2019.1.17 ** :51,105s, \{8\},    ,g  匹配，每8个空格变成4个
+
+2019.1.17 ** landmind ftp ftp:192.168.1.7  lanjingftp cdlanjing
 
 2019.1.17 ** jumpserver https://github.com/jumpserver/jumpserver
 

@@ -15,3 +15,34 @@ gitlab-ctl reconfigure 重新加载配置
 gitlab-ctl tail 看日志  
 貌似要是starttls_auto true 那么gitlab-tls 也得是ture
 貌似要加上那个git_user_email
+
+# ubuntu 14.04
+1) dd命令制作u盘启动盘:  
+```
+df -h  (fdisk -l)
+umount /dev/sdb4
+mkfs.vfat /dev/sdb -I
+dd if=ubuntu-14.04.5-desktop-amd64.iso of=/dev/sdb
+```
+2) 然而dd命令只能用来制作linux启动盘, 制作win10启动盘可以用woeusb:  
+```
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt update
+sudo apt install woeusb 
+```
+如果报错:"E: 有未能满足的依赖关系。请尝试不指明软件包的名字来运行“apt-get -f install”(也可以指定一个解决办法):"  
+```
+sudo apt-get --fix-broken install
+```
+然后打开woeusb软件
+
+# sshd 服务
+sudo apt-get install openssh-server
+ps -e | grep ssh    ps auz | grep ssh
+sudo /etc/init.d/ssh start
+
+## docker
+1) mirrors.aliyun.com ---> docker-ce ---> Related links --> curl脚本安装就直接安装了  
+2) 但是上面的可能不是最新版本, 于是去docker官网, https://docs.docker.com/ ---> Get Docker ---> 左边列 ---> Linux ---> 一步一步做, 答案的删, ok
+3) nvidia-docker: https://github.com/NVIDIA/nvidia-docker 照做
+

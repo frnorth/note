@@ -17,23 +17,24 @@ gitlab-ctl tail 看日志
 貌似要加上那个git_user_email
 
 # ubuntu 14.04
-\ 1) dd命令制作u盘启动盘:  
-\ ```
-\ df -h  (fdisk -l)
-\ umount /dev/sdb4
-\ mkfs.vfat /dev/sdb -I
-\ dd if=ubuntu-14.04.5-desktop-amd64.iso of=/dev/sdb
-\ ```
-> 2) 然而dd命令只能用来制作linux启动盘, 制作win10启动盘可以用woeusb:  
-> ```
-> sudo add-apt-repository ppa:nilarimogard/webupd8
-> sudo apt update
-> sudo apt install woeusb 
-> ```
-> 如果报错:"E: 有未能满足的依赖关系。请尝试不指明软件包的名字来运行“apt-get -f install”(也可以指定一个解决办法):"  
-> ```
-  sudo apt-get --fix-broken install
-> ```
+1) dd命令制作u盘启动盘:  
+```
+df -h  (fdisk -l)
+umount /dev/sdb4
+mkfs.vfat /dev/sdb -I
+dd if=ubuntu-14.04.5-desktop-amd64.iso of=/dev/sdb
+```
+2) 然而dd命令只能用来制作linux启动盘, 制作win10启动盘可以用woeusb:  
+```
+sudo add-apt-repository ppa:nilarimogard/webupd8
+sudo apt update
+sudo apt install woeusb 
+```
+如果报错:"E: 有未能满足的依赖关系。请尝试不指明软件包的名字来运行“apt-get -f install”(也可以指定一个解决办法):"  
+```
+sudo apt-get --fix-broken install
+```
+然后打开woeusb软件
 
 # sshd 服务
 sudo apt-get install openssh-server

@@ -17,13 +17,13 @@ gitlab-ctl tail 看日志
 貌似要加上那个git_user_email
 
 # ubuntu 14.04
-> 1) dd命令制作u盘启动盘:  
-```
-df -h  (fdisk -l)
-umount /dev/sdb4
-mkfs.vfat /dev/sdb -I
-dd if=ubuntu-14.04.5-desktop-amd64.iso of=/dev/sdb
-```
+\ 1) dd命令制作u盘启动盘:  
+\ ```
+\ df -h  (fdisk -l)
+\ umount /dev/sdb4
+\ mkfs.vfat /dev/sdb -I
+\ dd if=ubuntu-14.04.5-desktop-amd64.iso of=/dev/sdb
+\ ```
 > 2) 然而dd命令只能用来制作linux启动盘, 制作win10启动盘可以用woeusb:  
 > ```
 > sudo add-apt-repository ppa:nilarimogard/webupd8

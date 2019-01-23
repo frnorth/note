@@ -1943,7 +1943,8 @@ ip a 可以看ip...
 
 
 做一个后端盘：
-[root@room9pc01 images]# qemu-img create -f qcow2 v0.qcow2 2G  这样创建一个空磁盘2G够了，作为后端盘，前端盘再扩容。做完后端盘后，virsh undefine xxx.xml 这样删了虚拟机，但是后端盘还在，这样就不能virsh start 这个虚拟机了，安全性提高。但是还是可以guestmount来修改。
+[root@room9pc01 images]# qemu-img create -f qcow2 v0.qcow2 2Gi
+这样创建一个空磁盘2G够了，作为后端盘，前端盘再扩容。做完后端盘后，virsh undefine xxx.xml 这样删了虚拟机，但是后端盘还在，这样就不能virsh start 这个虚拟机了，安全性提高。但是还是可以guestmount来修改。
 
 [root@room9pc01 nsd1807]# sed 's,node,v0,' node.xml > /etc/libvirt/qemu/v0.xml
 

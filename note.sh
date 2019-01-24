@@ -2982,7 +2982,7 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
 
 2019.1.17 ** maven 打包的时候因为需要很多依赖包，所以要用本地的repositroy ---> .m2/repository/
 
-2019.1.17 ** 让nginx对外可见目录结构: 在location / 中添加i: autoindex on; autoindex_exact_size off; autoindex_localtime on;
+2019.1.17 ** 让nginx对外可见目录结构: 在location / 中添加i: autoindex on; autoindex_exact_size off; autoindex_localtime on; alias 后面的目录最后要有"/"...
 
 2019.1.17 ** 
 ```

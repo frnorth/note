@@ -1,3 +1,8 @@
+# 常用命令:
+ctrl+shift+c ---> ctrl+shift+v linux复制粘贴  
+alt+tab 选择  
+vim中: 17+G ---> 跳转到第17行, shift+G ---> 跳转到最后一行
+
 # mypyhton  
 arraybag.py中, 如果没有 __iter__ 方法, 那么下面的 __str__ 方法就不能用了, 因为ArrayBag就不支持迭代了  
   
@@ -42,7 +47,42 @@ ps -e | grep ssh    ps auz | grep ssh
 sudo /etc/init.d/ssh start
 
 ## docker
-1) mirrors.aliyun.com ---> docker-ce ---> Related links --> curl脚本安装就直接安装了  
-2) 但是上面的可能不是最新版本, 于是去docker官网, https://docs.docker.com/ ---> Get Docker ---> 左边列 ---> Linux ---> 一步一步做, 答案的删, ok
-3) nvidia-docker: https://github.com/NVIDIA/nvidia-docker 照做
+1) nvidia-docker: https://github.com/NVIDIA/nvidia-docker 里面的蓝字各种点, 各种链接非常有用。 
+2) https://hub.docker.com/r/nvidia/cuda/ 这里有各种镜像的dockerfile, 在nvidia的gitlab里...
+3) mirrors.aliyun.com ---> docker-ce ---> Related links --> curl脚本安装就直接安装了  
+4) 但是上面的可能不是最新版本, 于是去docker官网, https://docs.docker.com/ ---> Get Docker ---> 左边列 ---> Linux ---> 一步一步做, 答案的删, ok
+5) 常用命令:  
+```
+sudo pkill -SIGHUP dockerd
+sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
+sudo nvidia-container-cli --load-kmods info #要根据本机的版本来选择镜像
+```
+6) laning-ecg-cloud-test目录(服务的包),pyenv都可以映射到docker中,就不用拷贝到里面了, pyenv最好是装到docker里面..?
+
+
+[wangjie@PC_wyw:tmp]$ cd lanjing-ecg-cloud-test/
+[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ ll
+总用量 244
+drwxr-xr-x 12 wangjie wangjie   4096  1月 23 10:56 ./
+drwxrwxrwt  9 root    root      4096  1月 23 17:56 ../
+drwxrwxr-x  3 wangjie wangjie   4096  1月 23 10:56 business/
+-rw-rw-r--  1 wangjie wangjie   1746  1月 23 10:56 config.py
+drwxrwxr-x  7 wangjie wangjie   4096  1月 23 10:56 data/
+-rw-rw-r--  1 wangjie wangjie 163653  1月 23 10:56 demo.pdf
+drwxrwxr-x  3 wangjie wangjie   4096  1月 23 10:56 ecg_report_server/
+-rw-rw-r--  1 wangjie wangjie      0  1月 23 10:56 ecg_report.sql
+-rw-rw-r--  1 wangjie wangjie  12756  1月 23 10:56 grpc_client.py
+drwxrwxr-x  5 wangjie wangjie   4096  1月 23 10:56 hrv/
+drwxrwxr-x  4 wangjie wangjie   4096  1月 23 10:56 label_system/
+drwxrwxr-x  2 wangjie wangjie   4096  1月 23 10:56 libs/
+-rw-rw-r--  1 wangjie wangjie    549  1月 23 10:56 manage.py
+drwxrwxr-x 15 wangjie wangjie   4096  1月 23 10:56 model-service/
+drwxrwxr-x  5 wangjie wangjie   4096  1月 23 10:56 pdf/
+drwxrwxr-x  3 wangjie wangjie   4096  1月 23 10:56 persistence/
+drwxrwxr-x  2 wangjie wangjie   4096  1月 23 10:56 __pycache__/
+-rw-rw-r--  1 wangjie wangjie    924  1月 23 10:56 README.md
+-rw-rw-r--  1 wangjie wangjie    520  1月 23 10:56 README.MD
+-rw-rw-r--  1 wangjie wangjie   1058  1月 23 10:56 requirements.txt
+[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyec^C
+[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyenv-->python3.6-->pip install -r requirements.tx^C
 

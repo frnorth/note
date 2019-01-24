@@ -41,6 +41,21 @@
       ArrayBag.__init__(self,sourceCollection)
 ```
 > 显式调用父类ArrayBag的__init__函数, 而且加上(self,..)! 因为一旦调用了ArrayBag的__init__, __init_(self, s..n)_就会调用self的add函数(ArrayBag中用add来添加sourceCollection), 如果在子类ArraySortedBag的ArrayBag.__init__中不显式的写出(self,..), 那么就会调用父类ArrayBag的add函数, 即普通添加。然而, ArraySortedBag要求__init__的时候要有顺序的添加, 所以要调用自己的add函数(有序添加), 所以要显式的写出self, 以免调用父类的
+> 然而虽然上面说的有理, 但是说的好像可以不加,  但是如果不加self, 就会去调用list的_items, 就报错, 所以self还是必须加的..
+```
+[root@mini learn]# python3 testbag.py 
+The items of lyst is: [2013, 61, 1973, 999, 456, 78, 932, 399, 21, 146, 2000, 1983]
+Traceback (most recent call last):
+  File "testbag.py", line 37, in <module>
+    test(ArraySortedBag)
+  File "testbag.py", line 9, in test
+    b1=bagType(lyst)
+  File "/root/mypython/learn/arraysortedbag.py", line 7, in __init__
+    ArrayBag.__init__(sourceCollection)
+  File "/root/mypython/learn/arraybag.py", line 9, in __init__
+    self._items=Array(ArrayBag.DEFAULT_CAPACITY)
+AttributeError: 'list' object has no attribute '_items'
+```
 > ArrayBag.add(self,item), 其实父类的方法调用, 加上self, 就跟普通方法一样用
 ```
 [root@mini learn]# python3 testbag.py 

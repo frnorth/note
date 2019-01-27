@@ -75,6 +75,8 @@ UnboundLocalError: local variable 'targetIndex' referenced before assignment
 
 ```
 然而还是有点与之前想的不同, ArraySortedBag中__init__中, 到达ArrayBag.__init__, 然后还是要回溯到了arraybag.py中的ArrayBag, 然后找到是要用self.add(item)方法, 然后回到ArraySortedBag中, 调用自己的add方法。
+如果显示的用迭代器, s1=ArraySortedBag(), s1Iter=iter(ArraySortedBag), s1Iter是s1的地址, next(s1Iter)是s1的第一个值。  
+
 
 
 1  

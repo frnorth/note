@@ -105,7 +105,8 @@ chmod 700 .ssh
 
 # pyenv 与 conda
 两者再 github 上都有文档  
+pyenv 中有 pyenv-virtualenv 的链接
 git clone 下来 pyenv ---> git clone 下来 pyenv-virtualenv  
-要想使用 conda, 先安装 anaconda, 或者 miniconda (包少)  
-pyenv 可以管理 conda  
-
+要想使用 conda, 先安装 anaconda, 或者 miniconda (包少), github上搜conda ---> 跳到conda官网 ---> getting started with conda ---> 有一句话: before you start you should have already installed Anaconda  
+pyenv 可以管理 conda, 但是怎么样像pyenv的github上的方法去管理conda的虚拟环境呢?  
+[root@mini ~]# cat .bash_profile | tail -1 | awk '{print $2,$3}' 哈哈, 牛逼了

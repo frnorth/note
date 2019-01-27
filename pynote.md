@@ -1,17 +1,18 @@
 # 数据结构
+<span id="split_merge_sort.py"> ## &ensp;split\_merge\_sort.py<span>
 1\) 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
 2\) pyunit 单元测试工具?  
 
 ## &ensp;split\_merge\_sort.py
-> 1\) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
+ 1\) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
 
 ## &ensp;arraybag.py 或 linkbag.py
-> 1\) if not item in arraybag1:  
-> 2\) not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?  
-> 3\) for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data  
-> 4\) in 即__contain__方法, 是要基于__iter__的?  
-> 5\) __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?  
-> 6\)  
+ 1\) if not item in arraybag1:  
+ 2\) not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?  
+ 3\) for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data  
+ 4\) in 即__contain__方法, 是要基于__iter__的?  
+ 5\) __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?  
+ 6\)  
 ```
 [root@mini mypython]# python3 testbag.py 
 ...
@@ -25,23 +26,23 @@
     File "/root/mypython/linkbag.py", line 14, in __iter__
       yield prob._data
 ```
-> 可以看出, print(b1)自动调用了b1的__str__方法(所以不用print(str(b1))), 而map中的str自动调用了self, 即b1的__iter__方法  
-> 7\)  
+ 可以看出, print(b1)自动调用了b1的__str__方法(所以不用print(str(b1))), 而map中的str自动调用了self, 即b1的__iter__方法  
+ 7\)  
 ```
 	def clear(self):
 		self._size=0
 		self=LinkBag()
 ```
-> 如上或者: self.\_items=None, 千万不要self.\_item=linkBag(), 不然会出现很重的错误  
+ 如上或者: self.\_items=None, 千万不要self.\_item=linkBag(), 不然会出现很重的错误  
 
 ## &ensp;arraySortedBag
-> 1)
+ 1)
 ```
   def __init__(self,sourceCollection=None):
       ArrayBag.__init__(self,sourceCollection)
 ```
-> 显式调用父类ArrayBag的__init__函数, 而且加上(self,..)! 因为一旦调用了ArrayBag的__init__, __init_(self, s..n)_就会调用self的add函数(ArrayBag中用add来添加sourceCollection), 如果在子类ArraySortedBag的ArrayBag.__init__中不显式的写出(self,..), 那么就会调用父类ArrayBag的add函数, 即普通添加。然而, ArraySortedBag要求__init__的时候要有顺序的添加, 所以要调用自己的add函数(有序添加), 所以要显式的写出self, 以免调用父类的
-> 然而虽然上面说的有理, 但是说的好像可以不加,  但是如果不加self, 就会去调用list的_items, 就报错, 所以self还是必须加的..
+ 显式调用父类ArrayBag的__init__函数, 而且加上(self,..)! 因为一旦调用了ArrayBag的__init__, __init_(self, s..n)_就会调用self的add函数(ArrayBag中用add来添加sourceCollection), 如果在子类ArraySortedBag的ArrayBag.__init__中不显式的写出(self,..), 那么就会调用父类ArrayBag的add函数, 即普通添加。然而, ArraySortedBag要求__init__的时候要有顺序的添加, 所以要调用自己的add函数(有序添加), 所以要显式的写出self, 以免调用父类的
+ 然而虽然上面说的有理, 但是说的好像可以不加,  但是如果不加self, 就会去调用list的_items, 就报错, 所以self还是必须加的..
 ```
 [root@mini learn]# python3 testbag.py 
 The items of lyst is: [2013, 61, 1973, 999, 456, 78, 932, 399, 21, 146, 2000, 1983]
@@ -56,7 +57,7 @@ Traceback (most recent call last):
     self._items=Array(ArrayBag.DEFAULT_CAPACITY)
 AttributeError: 'list' object has no attribute '_items'
 ```
-> ArrayBag.add(self,item), 其实父类的方法调用, 加上self, 就跟普通方法一样用
+ ArrayBag.add(self,item), 其实父类的方法调用, 加上self, 就跟普通方法一样用
 ```
 [root@mini learn]# python3 testbag.py 
 The list of items added is: [2013, 61, 1973]
@@ -74,7 +75,7 @@ Traceback (most recent call last):
 UnboundLocalError: local variable 'targetIndex' referenced before assignment
 
 ```
-然而还是有点与之前想的不同, ArraySortedBag中__init__中, 到达ArrayBag.__init__, 然后还是要回溯到了arraybag.py中的ArrayBag, 然后找到是要用self.add(item)方法, 然后回到ArraySortedBag中, 调用自己的add方法。
+然而还是有点与之前想的不同, ArraySortedBag中__init__中, 到达ArrayBag.__init__, 然后还是要回溯到了arraybag.py中的ArrayBag, 然后找到是要用self.add(item)方法, 然后回到ArraySortedBag中, 调用自己的add方法。  
 如果显示的用迭代器, s1=ArraySortedBag(), s1Iter=iter(ArraySortedBag), s1Iter是s1的地址, next(s1Iter)是s1的第一个值。  
 
 
@@ -91,15 +92,15 @@ UnboundLocalError: local variable 'targetIndex' referenced before assignment
 1  
 1  
 1.
->>> str(c1)
+ str(c1)
 '2'
->>> c1.__str__()
+ c1.__str__()
 '2'
 这两个是等效的?
 c1.__eq__(c2) 与c1==c2 是一样的?
 
 2.
->>> dir(object)
+ dir(object)
 ['__class__', '__delattr__', '__doc__', '__format__', '__getattribute__', '__hash__', '__init__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__']
 为什么没有看到__eq__方法?
 
@@ -119,20 +120,20 @@ split\_merge\_sort.py 中
 不然的话，最底层两个数字分不开
 
 6.
->>> from array import array
->>> a=array("c")
->>> a.append("h")
->>> a.append("s")
->>> a
+ from array import array
+ a=array("c")
+ a.append("h")
+ a.append("s")
+ a
 array('c', 'hs')
->>> a.append("ss")
+ a.append("ss")
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 TypeError: array item must be char
->>> b=array('i')
->>> b.append(3)
->>> b.append(2)
->>> b
+ b=array('i')
+ b.append(3)
+ b.append(2)
+ b
 array('i', [3, 2])
 
 2019.1.9 ** 链表中，head=Node(data,None)与head=Node(data,next) head.next=None 一样嘛? C一样，python不一样?

@@ -2,6 +2,8 @@
 ctrl+shift+c ---> ctrl+shift+v linux复制粘贴  
 alt+tab 选择  
 vim中: 17+G ---> 跳转到第17行, shift+G ---> 跳转到最后一行
+tab不出来? ---> yum list | grep bash ---> 有completion的,装了, 还不行? yum -y install *-completion   
+http://www.gnu.org/software/bash/manual/bashref.html 牛逼了!  
 
 # mypyhton  
 arraybag.py中, 如果没有 __iter__ 方法, 那么下面的 __str__ 方法就不能用了, 因为ArrayBag就不支持迭代了  
@@ -39,7 +41,11 @@ sudo apt install woeusb
 ```
 sudo apt-get --fix-broken install
 ```
-然后打开woeusb软件
+然后打开woeusb软件  
+
+# windows
+笔记本外接显示器后, 在显示中可以设置主显示器, 这样禁用笔记本的自带显示器。  
+接上外接显示器后没有声音, 可以在声音的设置中, 选择声音的输出设备。  
 
 # sshd 服务
 sudo apt-get install openssh-server
@@ -70,6 +76,7 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
+7) docker attach 进去之后, ]# ps, 发现bash的pid是1, bash就是这个docker的上帝进程, 退出就是退出上帝进程, 然后docker就关了。而一般系统的上帝进程是system。
 
 [wangjie@PC_wyw:tmp]$ cd lanjing-ecg-cloud-test/
 [wangjie@PC_wyw:lanjing-ecg-cloud-test]$ ll
@@ -78,6 +85,10 @@ sudo systemctl restart docker
 -rw-rw-r--  1 wangjie wangjie   1058  1月 23 10:56 requirements.txt
 [wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyec^C
 [wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyenv-->python3.6-->pip install -r requirements.tx^C
+8) Dockerfile建了个httpd的docker, 端口映射的话, 要放到前面:
+```
+[root@mini dockerfile1]# docker run -d -p 8000:80 -v /var/ftp/anli/admin/1:/var/www/html -it mycentos:http
+```
 
 # 用户空间与权限
 1) 我是服务器的管理员, 我要给其他人添加账号到服务器上, 并把他的公钥拷到电脑, 让他能ssh登陆:  
@@ -91,3 +102,10 @@ chmod 600 authorized_keys
 cd ..
 chmod 700 .ssh
 ```
+
+# pyenv 与 conda
+两者再 github 上都有文档  
+git clone 下来 pyenv ---> git clone 下来 pyenv-virtualenv  
+要想使用 conda, 先安装 anaconda, 或者 miniconda (包少)  
+pyenv 可以管理 conda  
+

@@ -107,15 +107,21 @@ PATH 命令搜索路径
 export PATH=/usr/local/nginx/bin:$PATH
 重启终端生效，或 source ~/.bashrc生效。
 永久有效
-仅对当前用户有效。
+仅对当前用户有效
 
-3.vim /etc/profile
+3.~/.bash_profile 与 ~/.bashrc 的区别是:
+bash_profile 是登陆shell生效, 所以要想立即生效要: exec $SHELL, $SHELL 一般是/bin/bash
+exec的意思是, 退出当前的shell然后再重启一个。
+http://www.gnu.org/software/bash/manual/bashref.html 这里竟然!
+是这样嘛???
+
+4.vim /etc/profile
 echo  "export  PATH=/usr/local/mysql/bin:$PATH" >> /etc/profile
 source /etc/profile 或 重启系统生效
 永久有效
 不限用户。
 
-4.vim /etc/environment
+5.vim /etc/environment
 PATH="/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 重启系统生效
 永久有效

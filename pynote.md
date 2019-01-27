@@ -3,7 +3,7 @@
 1\) 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
 2\) pyunit 单元测试工具?  
 
-<span id="split_merge_sort"> ## &ensp;split\_merge\_sort.py<span>  
+<span id="split_merge_sort">split\_merge\_sort.py<span>  
  1\) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
 
 ## &ensp;arraybag.py 或 linkbag.py

@@ -3,7 +3,7 @@
 1\) 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
 2\) pyunit 单元测试工具?  
 
-<span id="split_merge_sort">split\_merge\_sort.py<span>  
+## <span id="split_merge_sort">split\_merge\_sort.py<span>  
  1\) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
 
 ## &ensp;arraybag.py 或 linkbag.py
@@ -42,7 +42,8 @@
       ArrayBag.__init__(self,sourceCollection)
 ```
  显式调用父类ArrayBag的__init__函数, 而且加上(self,..)! 因为一旦调用了ArrayBag的__init__, __init_(self, s..n)_就会调用self的add函数(ArrayBag中用add来添加sourceCollection), 如果在子类ArraySortedBag的ArrayBag.__init__中不显式的写出(self,..), 那么就会调用父类ArrayBag的add函数, 即普通添加。然而, ArraySortedBag要求__init__的时候要有顺序的添加, 所以要调用自己的add函数(有序添加), 所以要显式的写出self, 以免调用父类的
- 然而虽然上面说的有理, 但是说的好像可以不加,  但是如果不加self, 就会去调用list的_items, 就报错, 所以self还是必须加的..
+2) 然而虽然上面说的有理, 但是说的好像可以不加,  但是如果不加self, 就会去调用list的_items, 就报错, 所以self还是必须加的..
+3)
 ```
 [root@mini learn]# python3 testbag.py 
 The items of lyst is: [2013, 61, 1973, 999, 456, 78, 932, 399, 21, 146, 2000, 1983]
@@ -58,6 +59,7 @@ Traceback (most recent call last):
 AttributeError: 'list' object has no attribute '_items'
 ```
  ArrayBag.add(self,item), 其实父类的方法调用, 加上self, 就跟普通方法一样用
+4)
 ```
 [root@mini learn]# python3 testbag.py 
 The list of items added is: [2013, 61, 1973]
@@ -76,7 +78,13 @@ UnboundLocalError: local variable 'targetIndex' referenced before assignment
 
 ```
 然而还是有点与之前想的不同, ArraySortedBag中__init__中, 到达ArrayBag.__init__, 然后还是要回溯到了arraybag.py中的ArrayBag, 然后找到是要用self.add(item)方法, 然后回到ArraySortedBag中, 调用自己的add方法。  
-如果显示的用迭代器, s1=ArraySortedBag(), s1Iter=iter(ArraySortedBag), s1Iter是s1的地址, next(s1Iter)是s1的第一个值。  
+5)
+除了for item in self: 这样, 还可以显示的用迭代器
+```
+s1=ArraySortedBag()
+s1Iter=iter(ArraySortedBag)
+```
+s1Iter是s1的地址, next(s1Iter)是s1的第一个值。  
 
 
 

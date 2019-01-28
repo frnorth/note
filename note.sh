@@ -107,15 +107,21 @@ PATH 命令搜索路径
 export PATH=/usr/local/nginx/bin:$PATH
 重启终端生效，或 source ~/.bashrc生效。
 永久有效
-仅对当前用户有效。
+仅对当前用户有效
 
-3.vim /etc/profile
+3.~/.bash_profile 与 ~/.bashrc 的区别是:
+bash_profile 是登陆shell生效, 所以要想立即生效要: exec $SHELL, $SHELL 一般是/bin/bash
+exec的意思是, 退出当前的shell然后再重启一个。
+http://www.gnu.org/software/bash/manual/bashref.html 这里竟然!
+是这样嘛???
+
+4.vim /etc/profile
 echo  "export  PATH=/usr/local/mysql/bin:$PATH" >> /etc/profile
 source /etc/profile 或 重启系统生效
 永久有效
 不限用户。
 
-4.vim /etc/environment
+5.vim /etc/environment
 PATH="/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 重启系统生效
 永久有效
@@ -1943,7 +1949,8 @@ ip a 可以看ip...
 
 
 做一个后端盘：
-[root@room9pc01 images]# qemu-img create -f qcow2 v0.qcow2 2G  这样创建一个空磁盘2G够了，作为后端盘，前端盘再扩容。做完后端盘后，virsh undefine xxx.xml 这样删了虚拟机，但是后端盘还在，这样就不能virsh start 这个虚拟机了，安全性提高。但是还是可以guestmount来修改。
+[root@room9pc01 images]# qemu-img create -f qcow2 v0.qcow2 2Gi
+这样创建一个空磁盘2G够了，作为后端盘，前端盘再扩容。做完后端盘后，virsh undefine xxx.xml 这样删了虚拟机，但是后端盘还在，这样就不能virsh start 这个虚拟机了，安全性提高。但是还是可以guestmount来修改。
 
 [root@room9pc01 nsd1807]# sed 's,node,v0,' node.xml > /etc/libvirt/qemu/v0.xml
 
@@ -2967,13 +2974,21 @@ nohup命令：如果你正在运行一个进程，而且你觉得在退出帐户
 
 2019.1.16 ** kubenetes权威指南中的坑: (2) kubectl describe pods mysql-9nmx0 {details: (open /etc/docker/certs.d/registry.access.redhat.com/redhat-ca.crt: no such file or directory)} ---> []\# wget http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm ---> []\# root rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem ---> delete 然后 create
 
+2019.1.17 ** ubuntu upan安装系统: 
+
+2019.1.17 ** gitlab添加帐号用户: 扳手图标, 添加用户, 选择组, 将用户添加到组。
+
+2019.1.17 ** :51,105s, \{8\},    ,g  匹配，每8个空格变成4个
+
+2019.1.17 ** landmind ftp ftp:192.168.1.7  lanjingftp cdlanjing
+
 2019.1.17 ** jumpserver https://github.com/jumpserver/jumpserver
 
 2019.1.17 ** redis https://github.com/antirez/redis
 
 2019.1.17 ** maven 打包的时候因为需要很多依赖包，所以要用本地的repositroy ---> .m2/repository/
 
-2019.1.17 ** 让nginx对外可见目录结构: 在location / 中添加i: autoindex on; autoindex_exact_size off; autoindex_localtime on;
+2019.1.17 ** 让nginx对外可见目录结构: 在location / 中添加i: autoindex on; autoindex_exact_size off; autoindex_localtime on; alias 后面的目录最后要有"/"...
 
 2019.1.17 ** 
 ```

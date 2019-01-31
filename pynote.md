@@ -1,15 +1,27 @@
 # 数据结构
-[split_merge_sort](#split_merge_sort)  
-[split_merge_sort](#arraybag.py and linkbag.py)  
+[split_merge_sort](#split_merge_sort.py)  
+[split_merge_sort](#arraybag.pyANDlinkbag.py)  
   
 1\) 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
 2\) pyunit 单元测试工具?  
-
+3) 
+```
+b1=ArrayBag()
+for i in range(6) b1.add(i)
+b1Iter=iter(b1)    #显示调用了迭代器
+print(b1Iter)    #是一串地址
+value1=next(b1Iter)    #value1是1, int型
+value2=next(b1Iter)    #value2是2, int型
+print(b1Iter)    #还是那个地址
+```
+next不会改变b1Iter的地址, 但是用一次, 往下走一次。注意返回的是迭代器做指的数据, 类型也是这个数据的类型  
+那么怎样定位b1Iter到b1的第一个数字(元素)的位置呢?
+  
 ## <span id="split_merge_sort">split\_merge\_sort.py<span>  
  1\) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
 
 ## arraybag.py and linkbag.py
-## <span id="arraybag.py and linkbag.py">arraybag.py and linkbag.py<span>  
+## <span id="arraybag.pyANDlinkbag.py">arraybag.pANDlinkbag.py<span>  
  1\) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
  1\) if not item in arraybag1:  
  2\) not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?  

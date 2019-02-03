@@ -1,11 +1,15 @@
 # 常用命令:
 ctrl+shift+c ---> ctrl+shift+v linux复制粘贴  
 alt+tab 选择  
-vim中: 17+G ---> 跳转到第17行, shift+G ---> 跳转到最后一行
+vim中: 17+G ---> 跳转到第17行, shift+G ---> 跳转到最后一行  
 tab不出来? ---> yum list | grep bash ---> 有completion的,装了, 还不行? yum -y install *-completion   
 http://www.gnu.org/software/bash/manual/bashref.html 牛逼了!  
-xshell的会话选项卡: 查看--->会话选项卡  
-xshell ctrl+鼠标左键, 可以定位光标!
+xshell的会话选项卡: 查看--->会话选项卡    
+xshell ctrl+鼠标左键, 可以定位光标!  
+echo -e 'haha\n' -e 处理特殊字符  
+sed -i '/haha/i yeah' xxx.txt 这样在含有haha字的上一行插入yeah  
+ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &
+unrar x xxx.rar 解压 绝对路径
 
 # mypyhton  
 arraybag.py中, 如果没有 __iter__ 方法, 那么下面的 __str__ 方法就不能用了, 因为ArrayBag就不支持迭代了  
@@ -61,39 +65,6 @@ sudo apt-get install openssh-server
 ps -e | grep ssh    ps auz | grep ssh
 sudo /etc/init.d/ssh start
 
-# docker
-1) nvidia-docker: https://github.com/NVIDIA/nvidia-docker 里面的蓝字各种点, 各种链接非常有用。如果要装docker2, 要docker 18.09.1~0-3...  
-1.5) nvidia-docker(github) ---> 点 blog post ---> 点 repository ---> 就到了hub.docker.com/r/nvidia/cuda/  
-2) https://hub.docker.com/r/nvidia/cuda/ 这里有各种镜像的dockerfile, 在nvidia的gitlab里...  
-3) mirrors.aliyun.com ---> docker-ce ---> Related links --> curl脚本安装就直接安装了  
-4) 但是上面的可能不是最新版本, 于是去docker官网, https://docs.docker.com/ ---> Get Docker ---> 左边列 ---> Linux ---> 一步一步做, 答案的删, ok  
-5) 常用命令:
-```
-sudo pkill -SIGHUP dockerd
-sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
-sudo nvidia-container-cli --load-kmods info #要根据本机的版本来选择镜像
-```
-注意run的时候要加上--runtime  
-6) laning-ecg-cloud-test目录(服务的包),pyenv都可以映射到docker中,就不用拷贝到里面了, pyenv最好是装到docker里面..?  
-7) docker search xxx 这样搜索基本镜像还是有价值, 如果是直接在官网pull 镜像, 那慢得一匹, 所以可以用阿里的镜像加速器..?, 修改/etc/docker/daemon.json:  
-可以参考阿里云的说明: 在阿里云管理控制台-->产品与服务-->弹性计算-->容器镜像服务
-```
-sudo mkdir -p /etc/docker
-sudo tee /etc/docker/daemon.json <<-'EOF'
-{
-  "registry-mirrors": ["https://nv2ni2pp.mirror.aliyuncs.com"]
-}
-EOF
-sudo systemctl daemon-reload
-sudo systemctl restart docker
-```
-8) docker attach 进去之后, ]# ps, 发现bash的pid是1, bash就是这个docker的上帝进程, 退出就是退出上帝进程, 然后docker就关了。而一般系统的上帝进程是system。 
-9) Dockerfile建了个httpd的docker, 端口映射的话, 要放到前面:
-```
-[root@mini dockerfile1]# docker run -d -p 8000:80 -v /var/ftp/anli/admin/1:/var/www/html -it mycentos:http
-```
-10) Dockerfile 引用官网一句话: "The docker build command builds an image from a Dockerfile and a context. The build’s context is the set of files at a specified location PATH or URL. The PATH is a directory on your local filesystem. The URL is a Git repository location." context是这意思?
-
 # 用户空间与权限
 1) 我是服务器的管理员, 我要给其他人添加账号到服务器上, 并把他的公钥拷到电脑, 让他能ssh登陆:  
 ```
@@ -112,15 +83,6 @@ chmod 700 .ssh
 2) 
 -------------------------------------------------------
 
-# pyenv 与 conda
-1) 两者再 github 上都有文档  
-2) pyenv 中有 pyenv-virtualenv 的链接  
-3) git clone 下来 pyenv ---> git clone 下来 pyenv-virtualenv  
-4) 要想使用 conda, 先安装 anaconda, 或者 miniconda (包少), github上搜conda ---> 跳到conda官网 ---> getting started with conda ---> 有一句话: before you start you should have already installed Anaconda  
-5) pyenv 可以管理 conda, 但是怎么样像pyenv的github上的方法去管理conda的虚拟环境呢?  
-6) [root@mini ~]# cat .bash_profile | tail -1 | awk '{print $2,$3}' 哈哈, 牛逼了  
-7) pip show 包名
-8) 可以按照ppt上的方式配置pip源, pip --help 可以看各种命令, pip config list看配置
 
 [wangjie@PC_wyw:tmp]$ cd lanjing-ecg-cloud-test/
 [wangjie@PC_wyw:lanjing-ecg-cloud-test]$ ll

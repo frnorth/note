@@ -1,9 +1,11 @@
 # 数据结构
 [split_merge_sort](#split_merge_sort.py)  
-[split_merge_sort](#arraybag.pyANDlinkbag.py)  
+[arraybag.pyANDlinkbag.py](#arraybag.pyANDlinkbag.py)  
+[linkstack](#linkstack.py)  
+[grid](#grid.py)  
   
-1\) 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
-2\) pyunit 单元测试工具?  
+1) 隐藏数据结构, 通用结构不直接看到数据结构, 有些方法直接访问底层数据, 而有些则可以避免直接访问底层数据的方法中, 这样就增加了通用性。  
+2) pyunit 单元测试工具?  
 3) 
 ```
 b1=ArrayBag()
@@ -16,19 +18,19 @@ print(b1Iter)    #还是那个地址
 ```
 next不会改变b1Iter的地址, 但是用一次, 往下走一次。注意返回的是迭代器做指的数据, 类型也是这个数据的类型  
 那么怎样定位b1Iter到b1的第一个数字(元素)的位置呢?
+4) pip install xxx 后, pip list 可以看那些包安装了, pip show xxx 可以看xxx的详细信息, 包括安装的位置。
   
 ## <span id="split_merge_sort">split\_merge\_sort.py<span>  
- 1\) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
+1) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
 
-## arraybag.py and linkbag.py
 ## <span id="arraybag.pyANDlinkbag.py">arraybag.pANDlinkbag.py<span>  
- 1\) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
- 1\) if not item in arraybag1:  
- 2\) not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?  
- 3\) for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data  
- 4\) in 即__contain__方法, 是要基于__iter__的?  
- 5\) __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?  
- 6\)  
+1) 分割的时候，(left, middle) (middle+1, right), 不要(left, middle-1)  (middle, right), 合并的时候，第一个判断要：if left>middle 不要 left>middle-1 (left>=middle?), 不然的话，最底层两个数字分不开
+1) if not item in arraybag1:  
+2) not ... in 就是遍历了arraybag1, 是由__contain__方法实现的?  
+3) for i in self: 而不是 for i in self.\_items: 是因为__iter__方法, 直接__iter__(self), 就可以返回self._item._data  
+4) in 即__contain__方法, 是要基于__iter__的?  
+5) __str__方法中的map(str,self), map里的str方法也是要使用self的__iter__方法?  
+6)  
 ```
 [root@mini mypython]# python3 testbag.py 
 ...
@@ -43,16 +45,17 @@ next不会改变b1Iter的地址, 但是用一次, 往下走一次。注意返回
       yield prob._data
 ```
  可以看出, print(b1)自动调用了b1的__str__方法(所以不用print(str(b1))), 而map中的str自动调用了self, 即b1的__iter__方法  
- 7\)  
+7)  
 ```
 	def clear(self):
 		self._size=0
 		self=LinkBag()
 ```
  如上或者: self.\_items=None, 千万不要self.\_item=linkBag(), 不然会出现很重的错误  
+8) 如果是扩容或者减容的话, 有重新定义了一个实例变量self._memsize, 而不用DEFAULT_CAPACITY来扩容, 是应为DEFAULT_CAPACITY如果变了, 那么紧接着建立的实例的默认总量就会跟着变化。  
 
 ## arraySortedBag
- 1)
+1)
 ```
   def __init__(self,sourceCollection=None):
       ArrayBag.__init__(self,sourceCollection)
@@ -102,4 +105,19 @@ s1Iter=iter(ArraySortedBag)
 ```
 s1Iter是s1的地址, next(s1Iter)是s1的第一个值。  
 
+## <span id="linkstack">linkstack.py.py<span>  
+1.  
+```
+	def __iter__(self):
+		def visitNode(node):
+			if not node is None:
+				visitNode(node._after)
+				tmpList.append(node._data)
+		tmpList=list()
+		visitNode(self._items)
+		return iter(tmpList)
+```
+那么问题来了, 最后的return iter, iter里有个yield? 那么return一个yield, 会保留yield属性, 挂起来? 而且,递归是个好东西啊。
 
+## <span id="grid">grid.py<span>
+grid.py中的__getItem__只有两个参数,self和indexRow,而不是self, indexRow, indexCollum, 应为g1[x]这是grid.py里的__getItem__, g1[x][y], 后面的y是Arrays里的__getItem.

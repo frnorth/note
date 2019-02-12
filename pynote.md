@@ -1,3 +1,7 @@
+# 操作
+1) pip --help ---> pip config --help ---> pip config list
+2) If this fails your Python may not be configured for Tk 如果出现了这样的报错, 那因该是没有为python正确的配置环境, 安装了python3-tk实在安装python3之后进行的, 所以重新安装python3.6.5
+
 # 数据结构
 [split_merge_sort](#split_merge_sort.py)  
 [arraybag.pyANDlinkbag.py](#arraybag.pyANDlinkbag.py)  

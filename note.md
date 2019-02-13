@@ -10,6 +10,7 @@ echo -e 'haha\n' -e 处理特殊字符
 sed -i '/haha/i yeah' xxx.txt 这样在含有haha字的上一行插入yeah  
 ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &
 unrar x xxx.rar 解压 绝对路径
+yum list installed | grep ^tk 看安装了的包  
 
 # mypyhton  
 arraybag.py中, 如果没有 __iter__ 方法, 那么下面的 __str__ 方法就不能用了, 因为ArrayBag就不支持迭代了  
@@ -83,35 +84,35 @@ chmod 700 .ssh
 2) 
 -------------------------------------------------------
 
-
-[wangjie@PC_wyw:tmp]$ cd lanjing-ecg-cloud-test/
-[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ ll
-总用量 244
--rw-rw-r--  1 wangjie wangjie    520  1月 23 10:56 README.MD
--rw-rw-r--  1 wangjie wangjie   1058  1月 23 10:56 requirements.txt
-[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyec^C
-[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyenv-->python3.6-->pip install -r requirements.tx^C
-grpc需要安装的包:
-  194  pip install grpcio
-  203  pip install protobuf
-  204  pip install grpcio-tools
-还需要的依赖包:
-  225  pip install torch
-  231  pip install sklearn
-  237  pip install biosppy
-  240  pip install --upgrade numpy
-
-lanjing-ecg-cloud 服务:
-1. pip install:
---requirement.txt
---grpc:
-    1) grpcio         1.15
-    2) protobuf       没有硬性
-    3) grpcio-tools   1.15
---torch           0.4.1
---sklearn         0.19.1
---biosppy         0.5.1
-2. 安装C库:
-model-service/natives_filters ---> bash install.sh (删掉CMakelist.txt中的DESCRIPATION "...")
-3. bash run_server.sh
-4. cat server.log
+# lanjing-ecg-cloud docker
+[wangjie@PC_wyw:tmp]$ cd lanjing-ecg-cloud-test/  
+[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ ll  
+总用量 244  
+-rw-rw-r--  1 wangjie wangjie    520  1月 23 10:56 README.MD  
+-rw-rw-r--  1 wangjie wangjie   1058  1月 23 10:56 requirements.txt  
+[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyec^C  
+[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyenv-->python3.6-->pip install -r requirements.tx^C  
+grpc需要安装的包:  
+  194  pip install grpcio  
+  203  pip install protobuf  
+  204  pip install grpcio-tools  
+还需要的依赖包:  
+  225  pip install torch  
+  231  pip install sklearn  
+  237  pip install biosppy  
+  240  pip install --upgrade numpy  
+  
+lanjing-ecg-cloud 服务:  
+1. pip install:  
+--requirement.txt  
+--grpc:  
+    1) grpcio         1.15  
+    2) protobuf       没有硬性  
+    3) grpcio-tools   1.15  
+--torch           0.4.1  
+--sklearn         0.19.1  
+--biosppy         0.5.1  
+2. 安装C库:  
+model-service/natives_filters ---> bash install.sh (删掉CMakelist.txt中的DESCRIPATION "...")  
+3. bash run_server.sh  
+4. cat server.log  

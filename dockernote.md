@@ -11,7 +11,7 @@ sudo pkill -SIGHUP dockerd
 sudo docker run --runtime=nvidia --rm nvidia/cuda:9.0-base nvidia-smi
 sudo nvidia-container-cli --load-kmods info #要根据本机的版本来选择镜像
 ```
-注意run的时候要加上--runtime  
+注意run的时候要加上--runtime !  
 6) laning-ecg-cloud-test目录(服务的包),pyenv都可以映射到docker中,就不用拷贝到里面了, pyenv最好是装到docker里面..?  
 7) docker search xxx 这样搜索基本镜像还是有价值, 如果是直接在官网pull 镜像, 那慢得一匹, 所以可以用阿里的镜像加速器..?, 修改/etc/docker/daemon.json:  
 可以参考阿里云的说明: 在阿里云管理控制台-->产品与服务-->弹性计算-->容器镜像服务
@@ -36,3 +36,4 @@ sudo systemctl restart docker
 13) 如果是环境变量的话, 用ENV稳妥点, 但是怎么用~/.bashrc呢?
 14) Dockerfile 的$HOME, 即~/是 WORKDIR
 15) Dockerfile 可以 Using cache 怎么控制?
+

@@ -1,2 +1,0 @@
-# abstractbag or abstractarray
-数据结构python实现里面是将abstackbag作为更抽象的类, 下面再是array和link的具体实现, 但是后面的栈的底层还是用array和link, 那么为什么不直接写个abstractarray类呢?

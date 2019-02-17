@@ -1,3 +1,6 @@
+# the note
+1. 人的记忆其实是4维空间的事物
+
 # vultr上的云主机可以ping通过, 但是ssh不上
 1. 用高质量嵌入式编程里的那个socket, tcp_net_server放到那边的云主机上, 开启server  
 tcp_net_client放到国内的, 然后发消息  

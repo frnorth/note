@@ -8,9 +8,10 @@ xshell的会话选项卡: 查看--->会话选项卡
 xshell ctrl+鼠标左键, 可以定位光标!  
 echo -e 'haha\n' -e 处理特殊字符  
 sed -i '/haha/i yeah' xxx.txt 这样在含有haha字的上一行插入yeah  
-ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &
-unrar x xxx.rar 解压 绝对路径
+ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &  
+unrar x xxx.rar 解压 绝对路径  
 yum list installed | grep ^tk 看安装了的包  
+vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
 
 # mypyhton  
 arraybag.py中, 如果没有 __iter__ 方法, 那么下面的 __str__ 方法就不能用了, 因为ArrayBag就不支持迭代了  
@@ -75,13 +76,33 @@ cd /home/u1
 mkdir .ssh     (可能u1的加目录下并没有ssh)
 vim authorized_keys   (把公钥复制到这个文件中)
 chmod 600 authorized_keys
-cd ..
-chmod 700 .ssh
+cd .. && chmod 700 .ssh
+passwd u1	(改密码)
+vim /etc/sudoers 在root下面填上: u1 ALL=(ALL:ALL) ALL 添加sudo权限
 ```
 
 # postgresql
 1) psql -d mydb -f xxx.sql 通过sql导入数据库
-2) 
+
+# nagios
+1) 安装nagios, 需要一个干净的机器
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -------------------------------------------------------
 
 # lanjing-ecg-cloud docker

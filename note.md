@@ -4,14 +4,30 @@ alt+tab 选择
 vim中: 17+G ---> 跳转到第17行, shift+G ---> 跳转到最后一行  
 tab不出来? ---> yum list | grep bash ---> 有completion的,装了, 还不行? yum -y install *-completion   
 http://www.gnu.org/software/bash/manual/bashref.html 牛逼了!  
-xshell的会话选项卡: 查看--->会话选项卡    
+xshell的会话选项卡: 查看--->会话选项卡  
 xshell ctrl+鼠标左键, 可以定位光标!  
 echo -e 'haha\n' -e 处理特殊字符  
 sed -i '/haha/i yeah' xxx.txt 这样在含有haha字的上一行插入yeah  
 ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &  
 unrar x xxx.rar 解压 绝对路径  
 yum list installed | grep ^tk 看安装了的包  
-vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
+一般来说, 使用smtp是通过phpmailer实现的, vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
+
+
+# nagios
+邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的
+```
+Admin --> System Config --> Manage Email Settings:
+Send Mail From: 15208104078@163.com	
+Mail Method: SMTP
+Debug Log: yes	
+Host: smtp.163.com
+Port: 465
+Username: 15208104078
+Password: (密码)
+Security: SSL
+--> send a test email --> (如果有必要)change your email address: 只把邮件改成763211690@qq.com就可以了
+```
 
 # mypyhton  
 arraybag.py中, 如果没有 __iter__ 方法, 那么下面的 __str__ 方法就不能用了, 因为ArrayBag就不支持迭代了  

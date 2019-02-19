@@ -19,3 +19,14 @@ Makefile真几把难写
 
 2019.1.11 ** ./src/mysga.c:31:7: warning: assignment makes pointer from integer without a cast [enabled by default]   path=get_current_dir_name(); 当出现这种报错的时候，因为#include<unistd.h>, 但没有声明get_current_dir_name()函数，声明：char *get_current_dir_name(void);
 
+# C programming language 英文版 第2版
+1. 26页, main is a function like any other, it may return a value to its caller, which is in effect the environment in which the program was executed.  
+2. characterarrays-1-9-1.c中, 这里, 当到达998的时候会出现几种情况? 和书后面说的, By testing the length and the last character returned, main can determine whether the line was too long, and then cope as it wishes. 怎么对应上???
+```
+    for (i = 0; i < lim -1 && (c = getchar()) != EOF && c != '\n'; ++i)
+        s[i] = c;
+    if (c == '\n') {
+        s[i] = c;
+        ++i;
+    }
+```

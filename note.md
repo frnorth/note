@@ -12,6 +12,7 @@ ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &
 unrar x xxx.rar 解压 绝对路径  
 yum list installed | grep ^tk 看安装了的包  
 一般来说, 使用smtp是通过phpmailer实现的, vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
+cat /proc/cpuinfo 等等
 
 
 # nagios
@@ -109,6 +110,22 @@ vim /etc/sudoers 在root下面填上: u1 ALL=(ALL:ALL) ALL 添加sudo权限
 
 # nagios
 1) 安装nagios, 需要一个干净的机器
+
+# swap
+nagios 经常报swap没有
+```
+cat /proc/swaps		看虚拟内存
+swapon -s		看虚拟内存
+cat /proc/sys/vm/swappiness	看系统对虚拟内存的依赖程度, 0是完全依赖物理内存
+free			看内存
+dd if=/dev/zero of=/var/swap bs=1024 count=6144000	设置虚拟内存
+ls /var/swap 		有了
+mkswap /var/swap	设置虚拟内存, 或者mkswap -f /var/swap	
+swapon /var/swap	设置
+free			有了
+cat /proc/swaps		有了
+echo "/var/swapfile   swap  swap  defaults  0  0" >> /etc/fstab		添加永久
+```
 
 
 

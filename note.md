@@ -4,14 +4,31 @@ alt+tab 选择
 vim中: 17+G ---> 跳转到第17行, shift+G ---> 跳转到最后一行  
 tab不出来? ---> yum list | grep bash ---> 有completion的,装了, 还不行? yum -y install *-completion   
 http://www.gnu.org/software/bash/manual/bashref.html 牛逼了!  
-xshell的会话选项卡: 查看--->会话选项卡    
+xshell的会话选项卡: 查看--->会话选项卡  
 xshell ctrl+鼠标左键, 可以定位光标!  
 echo -e 'haha\n' -e 处理特殊字符  
 sed -i '/haha/i yeah' xxx.txt 这样在含有haha字的上一行插入yeah  
 ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &  
 unrar x xxx.rar 解压 绝对路径  
 yum list installed | grep ^tk 看安装了的包  
-vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
+一般来说, 使用smtp是通过phpmailer实现的, vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
+cat /proc/cpuinfo 等等
+
+
+# nagios
+邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的
+```
+Admin --> System Config --> Manage Email Settings:
+Send Mail From: 15208104078@163.com	
+Mail Method: SMTP
+Debug Log: yes	
+Host: smtp.163.com
+Port: 465
+Username: 15208104078
+Password: (密码)
+Security: SSL
+--> send a test email --> (如果有必要)change your email address: 只把邮件改成763211690@qq.com就可以了
+```
 
 # mypyhton  
 arraybag.py中, 如果没有 __iter__ 方法, 那么下面的 __str__ 方法就不能用了, 因为ArrayBag就不支持迭代了  
@@ -28,6 +45,13 @@ ssh -p2222 admin@192.168.244.144
 sftp -P2222 admin@192.168.244.144
 密码: admin
 ```
+4)有人想通过跳板机连接跳板机管理的资产, 那么要:
+> 1. 用户管理 --> 添加用户 (发送邮件貌似没啥用) --> 这个是跳板机125.64.9.115上的用户, 别人通过ssh连接, 把公钥考到.ssh/authorized_keys中。
+> 2. 资产管理 --> 添加系统用户 (自动生成密钥, jumpserver自动将公钥放到资产的.ssh/authorized_keys中, 私钥自己保存) --> 这个是要被
+推送到资产上的用户, 在资产的家目录.ssh/authorized_keys中的公钥与跳板机上的一般不同。
+> 3. 权限管理 --> 创建新的授权规则 --> 目的是将(用户、资产、资产上的用户)关联起来!
+> 旧版在第1步创建完用户后, 会直接在跳板机上找到这个中户, id user1, 而新版的就不会在跳板机上建立用户了, 只能直接连接jumpserver:ssh -p2222 user1@xxx.xxx.xxx.xxx 然后操作
+
   
 # gitlab  
 配置smtp, 新建用户发送邮件:  
@@ -86,6 +110,22 @@ vim /etc/sudoers 在root下面填上: u1 ALL=(ALL:ALL) ALL 添加sudo权限
 
 # nagios
 1) 安装nagios, 需要一个干净的机器
+
+# swap
+nagios 经常报swap没有
+```
+cat /proc/swaps		看虚拟内存
+swapon -s		看虚拟内存
+cat /proc/sys/vm/swappiness	看系统对虚拟内存的依赖程度, 0是完全依赖物理内存
+free			看内存
+dd if=/dev/zero of=/var/swap bs=1024 count=6144000	设置虚拟内存
+ls /var/swap 		有了
+mkswap /var/swap	设置虚拟内存, 或者mkswap -f /var/swap	
+swapon /var/swap	设置
+free			有了
+cat /proc/swaps		有了
+echo "/var/swapfile   swap  swap  defaults  0  0" >> /etc/fstab		添加永久
+```
 
 
 

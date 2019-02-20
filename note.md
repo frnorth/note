@@ -12,7 +12,8 @@ ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &
 unrar x xxx.rar 解压 绝对路径  
 yum list installed | grep ^tk 看安装了的包  
 一般来说, 使用smtp是通过phpmailer实现的, vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
-cat /proc/cpuinfo 等等
+cat /proc/cpuinfo 等等  
+当前有10个目录d1-d10, 每个目录下面有一个目录d1/d11, d2/d21..., d11, d21下有很多数据。如果想看d11, d21... 和d11, d21...下面的第一个数据: for i in `ls`; do echo "$i"; ls $i/`ls $i` | head -1; echo '';done  
 
 
 # nagios
@@ -124,9 +125,15 @@ mkswap /var/swap	设置虚拟内存, 或者mkswap -f /var/swap
 swapon /var/swap	设置
 free			有了
 cat /proc/swaps		有了
-echo "/var/swapfile   swap  swap  defaults  0  0" >> /etc/fstab		添加永久
+echo "/var/swap   swap  swap  defaults  0  0" >> /etc/fstab		添加永久
 ```
 
+# hbase
+1) 连到机器上
+```
+hbase shell
+get 'block','xxxxxx-xxxxxxxx' 这个rowkeys(xxxxxx-xxxxxxxx)是不同的业务不同的id.
+```
 
 
 

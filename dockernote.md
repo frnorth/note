@@ -1,4 +1,3 @@
-
 # docker
 1) nvidia-docker: https://github.com/NVIDIA/nvidia-docker 里面的蓝字各种点, 各种链接非常有用。如果要装docker2, 要docker 18.09.1~0-3...  
 1.5) nvidia-docker(github) ---> 点 blog post ---> 点 repository ---> 就到了hub.docker.com/r/nvidia/cuda/  
@@ -36,4 +35,4 @@ sudo systemctl restart docker
 13) 如果是环境变量的话, 用ENV稳妥点, 但是怎么用~/.bashrc呢?
 14) Dockerfile 的$HOME, 即~/是 WORKDIR
 15) Dockerfile 可以 Using cache 怎么控制?
-
+16) Docker Registry(Repository): docs.docker.com --> 搜索repository, 点registry --> ctrl+f 找local, 点前面的连接 --> 可以找到镜像仓库的文档, 是怎么样构建本地仓库的文档?

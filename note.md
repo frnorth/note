@@ -14,7 +14,8 @@ yum list installed | grep ^tk 看安装了的包
 一般来说, 使用smtp是通过phpmailer实现的, vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
 cat /proc/cpuinfo 等等  
 当前有10个目录d1-d10, 每个目录下面有一个目录d1/d11, d2/d21..., d11, d21下有很多数据。如果想看d11, d21... 和d11, d21...下面的第一个数据: for i in `ls`; do echo "$i"; ls $i/`ls $i` | head -1; echo '';done  
-
+git 的工作目录下误删了文件1.txt --> git checkout 1.txt, 这样就恢复到了最新版本.  
+application.yml 下面可以定义日志文件的拆分.  
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的
@@ -135,6 +136,10 @@ hbase shell
 get 'block','xxxxxx-xxxxxxxx' 这个rowkeys(xxxxxx-xxxxxxxx)是不同的业务不同的id.
 ```
 
+# jenkins
+系统管理 --> 用户管理 可以添加用户  
+系统管理 --> 全局安全配置 将新建的用户添加进来, 并选上Read, 这个用户才有全局视图, 然后这个用户登陆才不会出现 "Access Denied 没有Overall/Read权限"  
+项目 --> 把用户添加进来, 然后可以赋予权限.  
 
 
 
@@ -142,45 +147,3 @@ get 'block','xxxxxx-xxxxxxxx' 这个rowkeys(xxxxxx-xxxxxxxx)是不同的业务�
 
 
 
-
-
-
-
-
-
-
-
--------------------------------------------------------
-
-# lanjing-ecg-cloud docker
-[wangjie@PC_wyw:tmp]$ cd lanjing-ecg-cloud-test/  
-[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ ll  
-总用量 244  
--rw-rw-r--  1 wangjie wangjie    520  1月 23 10:56 README.MD  
--rw-rw-r--  1 wangjie wangjie   1058  1月 23 10:56 requirements.txt  
-[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyec^C  
-[wangjie@PC_wyw:lanjing-ecg-cloud-test]$ pyenv-->python3.6-->pip install -r requirements.tx^C  
-grpc需要安装的包:  
-  194  pip install grpcio  
-  203  pip install protobuf  
-  204  pip install grpcio-tools  
-还需要的依赖包:  
-  225  pip install torch  
-  231  pip install sklearn  
-  237  pip install biosppy  
-  240  pip install --upgrade numpy  
-  
-lanjing-ecg-cloud 服务:  
-1. pip install:  
---requirement.txt  
---grpc:  
-    1) grpcio         1.15  
-    2) protobuf       没有硬性  
-    3) grpcio-tools   1.15  
---torch           0.4.1  
---sklearn         0.19.1  
---biosppy         0.5.1  
-2. 安装C库:  
-model-service/natives_filters ---> bash install.sh (删掉CMakelist.txt中的DESCRIPATION "...")  
-3. bash run_server.sh  
-4. cat server.log  

@@ -31,4 +31,10 @@ Makefile真几把难写
     }
 ```
 3. Exercise 1-16 ~ 1-19 还有一些坑, 回头看看  
-
+4. 当输入了一串sfsbgsfsdfs, 按ctrl+d, 这个时候只是停止本次输入, 而不是getchar()一个ctrl+d, 所以getputchar.c运行后, 输入sfsdfsdf, ctrl+d, 不换行, 直接输出了输入的!, 好像有点明白, 为什么getchar()要这么设计了, 因为如果是
+```
+while((c = getchar()) != EOF) {
+	putchar()
+}
+```
+这个循环再输入asasafds后紧接着一个ctrl+d, getchar()会保证循环中的putchar()能够执行, 即能够输出asasafds, 而如果直接getchar()一个ctrl+d, 那么这次循环判断也就结束了, 就不会有输出了!  

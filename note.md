@@ -17,6 +17,7 @@ cat /proc/cpuinfo 等等
 git 的工作目录下误删了文件1.txt --> git checkout 1.txt, 这样就恢复到了最新版本.  
 application.yml 下面可以定义日志文件的拆分.  
 vim中 /docker\c 这样可以忽略大小写查找  
+ubuntu --> dpkg -l | grep xx --> dpkg -L xxx  
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

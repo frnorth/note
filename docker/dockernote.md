@@ -24,16 +24,17 @@ EOF
 sudo systemctl daemon-reload
 sudo systemctl restart docker
 ```
-8) docker attach 进去之后, ]# ps, 发现bash的pid是1, bash就是这个docker的上帝进程, 退出就是退出上帝进程, 然后docker就关了。而一般系统的上帝进程是system。 
-9) Dockerfile建了个httpd的docker, 端口映射的话, 要放到前面:
+8) docker attach 进去之后, ]# ps, 发现bash的pid是1, bash就是这个docker的上帝进程, 退出就是退出上帝进程, 然后docker就关了。而一般系统的上帝进程是system。  
+9) Dockerfile建了个httpd的docker, 端口映射的话, 要放到前面:  
 ```
 [root@mini dockerfile1]# docker run -d -p 8000:80 -v /var/ftp/anli/admin/1:/var/www/html -it mycentos:http
 ```
-10) Dockerfile 引用官网一句话: "The docker build command builds an image from a Dockerfile and a context. The build’s context is the set of files at a specified location PATH or URL. The PATH is a directory on your local filesystem. The URL is a Git repository location." context是这意思?
-11) Dockerfile ADD 是不保留连接的!
-12) Dockerfile 的默认解释器是/bin/sh, 怎样设置成/bin/bash?
-13) 如果是环境变量的话, 用ENV稳妥点, 但是怎么用~/.bashrc呢?
-14) Dockerfile 的$HOME, 即~/是 WORKDIR
-15) Dockerfile 可以 Using cache 怎么控制?
-16) Docker Registry(Repository): docs.docker.com --> 搜索repository, 点registry --> ctrl+f 找local, 点前面的连接 --> 可以找到镜像仓库的文档, 是怎么样构建本地仓库的文档?
-17) Docker registry 的文档: https://github.com/docker/docker-registry  
+10) Dockerfile 引用官网一句话: "The docker build command builds an image from a Dockerfile and a context. The build’s context is the set of files at a specified location PATH or URL. The PATH is a directory on your local filesystem. The URL is a Git repository location." context是这意思?  
+11) Dockerfile ADD 是不保留连接的!  
+12) Dockerfile 的默认解释器是/bin/sh, 怎样设置成/bin/bash?  
+13) 如果是环境变量的话, 用ENV稳妥点, 但是怎么用~/.bashrc呢?  
+14) Dockerfile 的$HOME, 即~/是 WORKDIR  
+15) Dockerfile 可以 Using cache 怎么控制?  
+16) Docker Registry(Repository): docs.docker.com --> 搜索repository, 点registry --> ctrl+f 找local, 点前面的连接 --> 可以找到镜像仓库的文档, 是怎么样构建本地仓库的文档?  
+17) docs.docker.com --> glossary --> registry --> Deploy a registry server  
+18) Docker registry 的文档: https://github.com/docker/docker-registry  

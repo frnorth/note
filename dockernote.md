@@ -36,3 +36,4 @@ sudo systemctl restart docker
 14) Dockerfile 的$HOME, 即~/是 WORKDIR
 15) Dockerfile 可以 Using cache 怎么控制?
 16) Docker Registry(Repository): docs.docker.com --> 搜索repository, 点registry --> ctrl+f 找local, 点前面的连接 --> 可以找到镜像仓库的文档, 是怎么样构建本地仓库的文档?
+17) Docker registry 的文档: https://github.com/docker/docker-registry  

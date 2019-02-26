@@ -16,6 +16,7 @@ cat /proc/cpuinfo 等等
 当前有10个目录d1-d10, 每个目录下面有一个目录d1/d11, d2/d21..., d11, d21下有很多数据。如果想看d11, d21... 和d11, d21...下面的第一个数据: for i in `ls`; do echo "$i"; ls $i/`ls $i` | head -1; echo '';done  
 git 的工作目录下误删了文件1.txt --> git checkout 1.txt, 这样就恢复到了最新版本.  
 application.yml 下面可以定义日志文件的拆分.  
+ubuntu --> dpkg -l | grep xx --> dpkg -L xxx
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

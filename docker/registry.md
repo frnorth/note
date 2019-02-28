@@ -4,9 +4,9 @@
   - 也可以到github上下载安装 --> 连接Compose repository release page on GitHub --> https://github.com/docker/compose/releases 最下面有直接的包下载?  
 
 ## CentOS
-1) 用openssl生成证书前, 要先修改/etc/pki/tls/openssl.cnf, [v3_ca]下面添加IP, 不然会报错 "...IP SANs...", 而且貌似只能写一个IP, 如果写两个, 就以第2个为准, 而且这个会写道证书里, 如果如与登陆的不一样, 会报不一致的错误。  
+1) 用openssl生成证书前, 要先修改/etc/pki/tls/openssl.cnf, [v3_ca]下面添加IP, 不然会报错 "...IP SANs...", 而且貌似只能写一个IP, 如果写两个, 就以第2个为准, 而且这个会写到证书里, 如果如与登陆的不一样, 会报不一致的错误。  
 2) /etc/docker/certs.d/下面还是要建个192.168.1.127目录, 然后把domain.crt放到里面, 不然docker login后会报错Error response from daemon: Get https://192.168.1.127/v1/users/: x509: certificate signed by unknown authority。  
-3) domain.crt 要放到/etc/pki/ca-trust/source/anchors/ 下面, 不然curl会报一段错。  
+3) domain.crt 要放到/etc/pki/ca-trust/source/anchors/ 下面, 不然curl会报一段错。Trust the certificate at the OS level.  
 4) 2)和3)在别的客户端也要做。  
 5) docker-compose.yml中, REGISTRY_HTTP_ADDR: 0.0.0.0:443 # 没有这个会报错: 拒绝连接 (容器内没有监听地址), 而配置文件任意内容写错, 都会导致容器启动不对, 哪怕本地有443端口开启。  
 ```
@@ -50,3 +50,7 @@
 curl -u admin:123456 https://192.168.1.127/v2/
 docker login https://192.168.1.127
 ```
+
+## Ubuntu
+1) openssl.cnf 在/etc/ssl/openssl.cnf  
+2) 系统级别的(让curl不会报错), domain.crt要放在在/usr/local/share/ca-certificates/下, trust the certificate at the OS level --> update-ca-certificates  

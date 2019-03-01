@@ -54,3 +54,15 @@ docker login https://192.168.1.127
 ## Ubuntu
 1) openssl.cnf 在/etc/ssl/openssl.cnf  
 2) 系统级别的(让curl不会报错), domain.crt要放在在/usr/local/share/ca-certificates/下, trust the certificate at the OS level --> update-ca-certificates  
+
+## addition
+1) 这个有啥用?
+```
+]# vim /etc/docker/daemon.json
+    {
+      "allow-nondistributable-artifacts": ["192.168.1.127:443"]
+    }
+```
+2) config.yml 有啥用?  
+3) 官方文档上, Deploy a registry server, 既然搭https, 为啥还要开5000? 不开443?  
+4) 貌似正规点的做法是nginx(https)+registry:5000(http)  

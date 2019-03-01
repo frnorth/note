@@ -117,6 +117,7 @@ mkdir .ssh     (可能u1的加目录下并没有ssh)
 vim authorized_keys   (把公钥复制到这个文件中)
 chmod 600 authorized_keys
 cd .. && chmod 700 .ssh
+chown -R u1:u1 .ssh (要把属主和属组改成u1)
 passwd u1	(改密码)
 vim /etc/sudoers 在root下面填上: u1 ALL=(ALL:ALL) ALL 添加sudo权限
 ```

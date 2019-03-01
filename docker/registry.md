@@ -8,7 +8,7 @@
 2) /etc/docker/certs.d/下面还是要建个192.168.1.127目录, 然后把domain.crt放到里面, 不然docker login后会报错Error response from daemon: Get https://192.168.1.127/v1/users/: x509: certificate signed by unknown authority。  
 3) domain.crt 要放到/etc/pki/ca-trust/source/anchors/ 下面, 不然curl会报一段错。Trust the certificate at the OS level.  
 4) 2)和3)在别的客户端也要做。  
-5) docker-compose.yml中, REGISTRY_HTTP_ADDR: 0.0.0.0:443 # 没有这个会报错: 拒绝连接 (容器内没有监听地址), 而配置文件任意内容写错, 都会导致容器启动不对, 哪怕本地有443端口开启。  
+5) docker-compose.yml中, REGISTRY_HTTP_ADDR: 0.0.0.0:443 # 没有这个会报错: 拒绝连接 (容器内没有监听地址), 而配置文件任意内容写错, 都会导致容器启动不对, 哪怕本地有443端口开启。哈哈, 是这样, 如果在/etc/docker/daemon.json中加了insecure--registries ...:1234, 那么当用http访问1234端口是可以的, 访问别的端口就还是https, 没有证书就是不可以的。
 ```
 ]# docker pull registry:2  
 ]# mkdir /root/docker

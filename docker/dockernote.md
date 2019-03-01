@@ -39,3 +39,4 @@ sudo systemctl restart docker
 16) Docker Registry(Repository): docs.docker.com --> 搜索repository, 点registry --> ctrl+f 找local, 点前面的连接 --> 可以找到镜像仓库的文档, 是怎么样构建本地仓库的文档?  
 17) docs.docker.com --> glossary --> registry --> Deploy a registry server  
 18) Docker registry 的文档: https://github.com/docker/docker-registry  
+19) docker logs a1(container id) -f 跟tailf一个套路  

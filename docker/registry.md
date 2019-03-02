@@ -66,3 +66,16 @@ docker login https://192.168.1.127
 2) config.yml 有啥用?  
 3) 官方文档上, Deploy a registry server, 既然搭https, 为啥还要开5000? 不开443?  
 4) 貌似正规点的做法是nginx(https)+registry:5000(http)  
+5) DTR 跟 registry比怎么样?官网 --> Product Manuals --> Docker Enterprise Edition --> Docker Trusted Registry    
+6) 用阿里的"registry-mirrors": ["https://nv2ni2pp.mirror.aliyuncs.com"] 作为proxy貌似不用用户名和密码,,, registry-1.docker.io是要用的, 密码输错会报错。
+7) 然而做了缓存后(proxy), 好像pull, push的请求都是通过proxy发往registry-1.dockr.io的, 怎么让push发到本地? 而且pull完, 本地有了之后, 别的机器从本地的registry pull那个下载好的镜像, 好像还是会被转发到registry-1.docker.io!? curl 看_catalog的请求也被转发到远端了, 根本没有去看本地的_catalog..?  
+```
+实验1: 用442端口上传buxybox:1111111 --> 用curl在443端口上看不到这个1111111
+实验2: 接着实验1, 把网掐了 --> 用curl在443端口上看, 能看到111111了...!
+实验3: 联网, 从443端口上, dockers pull 11111111 能pull下来, 应该是先找了一圈registry-1.docker.io, 然后发现没有这个tag, 然后又从本地找了。(话说)怎么知道是从哪里pull下来的?
+experiment 4: pull image not cached in the registry from a another node, read the docker logs, first and second time, something interesting happend
+
+```
+给人的感觉是反了, 优先级反了, 难道是优先级的问题?  
+8) docs.docker.com --> product manuals --> 左边open-source projects --> docker registry --> configuring a registry 搜proxy: The proxy structure allows a registry to be configured as a pull-through cache to Docker Hub. See mirror for more information. Pushing to a registry configured as a pull-through cache is unsupported.!!   
+9) docker logs show: "Adding new scheduler entry for" for the first pull a library/busybox through 192.168.1.127, with http.response.duration=4.186213634s. And there are no "Adding .." for a second pull, with duration=2.542149ms, is that means second pull is thrugh the cache?  

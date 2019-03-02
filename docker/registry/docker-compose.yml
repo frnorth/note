@@ -5,7 +5,7 @@ nginx:
   # Ref. https://github.com/nginxinc/docker-nginx/issues/29
   image: "nginx:alpine"
   ports:
-    - 81:443
+    - 443:443
   links:
     - registry:registry
   volumes:

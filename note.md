@@ -18,6 +18,8 @@ git 的工作目录下误删了文件1.txt --> git checkout 1.txt, 这样就恢�
 application.yml 下面可以定义日志文件的拆分.  
 vim中 /docker\c 这样可以忽略大小写查找  
 ubuntu --> dpkg -l | grep xx --> dpkg -L xxx  
+export LANG=zh_CN.UTF-8 export LANG=en_US  
+vim ~/.bashrc --> 加上  alias cc='LANG=C cc' alias gcc='LANG=C gcc'
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

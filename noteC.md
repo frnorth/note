@@ -41,3 +41,20 @@ while((c = getchar()) != EOF) {
 }
 ```
 这个循环再输入asasafds后紧接着一个ctrl+d, getchar()会保证循环中的putchar()能够执行, 即能够输出asasafds, 而如果直接getchar()一个ctrl+d, 那么这次循环判断也就结束了, 就不会有输出了!  
+5. "Expressions connected by && or || are evaluated left to right, and evaluation stops as soon as the truth or falsehood of the result is known."  
+6. "A char is just a small integer"  
+7. Seems like need not inclouding the <ctype.h> when use tolower() or isdigit() function?  
+8. Wanna judge wheather uc*2 > uc, if not, print uc, thus can see the bounder of uc somehow. But the uc*2 will be turned into char or longer implicitly, so explictly chenge uc*2 back to unsigned char is needed.
+```
+        if (!((unsigned char)(uc*2) >= uc)) {
+            printf("uc %d\n", uc);
+            uc = 0;
+        }
+```
+The float and double will be inf when so large, so need this:
+```
+        if (!((double)(d*4) > (double)(d*2)) && countd == 0) {
+            printf("%f\n", d);
+            countd = 1;
+        }
+```

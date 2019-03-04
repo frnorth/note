@@ -1,4 +1,5 @@
 # A
+as if 犹如
 alphabet 字母表
 attempted 企图
 
@@ -6,6 +7,7 @@ attempted 企图
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C
+cast 投 投射
 coerc
 contiguous 连续的
 considerable 重要的 相当大的
@@ -39,6 +41,7 @@ generalize 概括 推广
 # H
 
 # I
+inadvertently 无意的
 implementation 实现
 implementation-defined 现实定义
 internal 内部的
@@ -60,9 +63,12 @@ naive 天真的
 negation 否定
 
 # O
+optional 可选择的
 operand 操作数
 
 # P
+pseudo 假冒的
+portable 手提的
 prototype 原型
 promote 提升
 precedence 优先
@@ -72,6 +78,7 @@ periodically 定期的
 # Q
 
 # R
+redundant 多余的
 rounded 圆形的 丰满的
 reverse 反转
 remainder 余数

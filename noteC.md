@@ -58,3 +58,13 @@ The float and double will be inf when so large, so need this:
             countd = 1;
         }
 ```
+9. If the definition of an external variable occurs in the source file before its use in a particular function, then there is no need for an extern declaration in the function. The usual practice is to collect extern declarations of variables and functions in a separate file, historically called header, that is included by #include at the front of each source file.  
+10. Why can this program can produce rand number?  
+```
+/* rand: return pseudo-random integer on 0..32767 */
+int rand(void) {
+    next = next * 1103515245 + 12345;
+    printf("%d\t", next);
+    return (unsigned int)(next/65536) % 32768;
+}
+```

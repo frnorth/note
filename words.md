@@ -1,4 +1,5 @@
 # A
+adapter 适配器
 as if 犹如
 alphabet 字母表
 attempted 企图
@@ -7,6 +8,7 @@ attempted 企图
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C
+convention 惯例
 cast 投 投射
 coerc
 contiguous 连续的
@@ -56,6 +58,8 @@ incorporate 包含 合并
 literal 文字的
 
 # M
+marco 巨大的
+micro 极小的
 modulus 模运算
 
 # N
@@ -86,6 +90,7 @@ representation 表示
 recipe 配方
 
 # S
+session 会话
 suffice 足够
 specify 指定
 subtle 微妙的

@@ -43,6 +43,7 @@ generalize 概括 推广
 # H
 
 # I
+integral 积分的 完整的
 inadvertently 无意的
 implementation 实现
 implementation-defined 现实定义
@@ -58,6 +59,7 @@ incorporate 包含 合并
 literal 文字的
 
 # M
+manipulation 操作
 marco 巨大的
 micro 极小的
 modulus 模运算
@@ -71,6 +73,8 @@ optional 可选择的
 operand 操作数
 
 # P
+prefix 前缀
+postfix 后缀
 pseudo 假冒的
 portable 手提的
 prototype 原型

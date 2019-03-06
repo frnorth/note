@@ -1,25 +1,24 @@
 # 常用命令:
-ctrl+shift+c ---> ctrl+shift+v linux复制粘贴  
-alt+tab 选择  
-vim中: 17+G ---> 跳转到第17行, shift+G ---> 跳转到最后一行  
-tab不出来? ---> yum list | grep bash ---> 有completion的,装了, 还不行? yum -y install *-completion   
-http://www.gnu.org/software/bash/manual/bashref.html 牛逼了!  
-xshell的会话选项卡: 查看--->会话选项卡  
-xshell ctrl+鼠标左键, 可以定位光标!  
-echo -e 'haha\n' -e 处理特殊字符  
-sed -i '/haha/i yeah' xxx.txt 这样在含有haha字的上一行插入yeah  
-ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &  
-unrar x xxx.rar 解压 绝对路径  
-yum list installed | grep ^tk 看安装了的包  
-一般来说, 使用smtp是通过phpmailer实现的, vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
-cat /proc/cpuinfo 等等  
-当前有10个目录d1-d10, 每个目录下面有一个目录d1/d11, d2/d21..., d11, d21下有很多数据。如果想看d11, d21... 和d11, d21...下面的第一个数据: for i in `ls`; do echo "$i"; ls $i/`ls $i` | head -1; echo '';done  
-git 的工作目录下误删了文件1.txt --> git checkout 1.txt, 这样就恢复到了最新版本.  
-application.yml 下面可以定义日志文件的拆分.  
-vim中 /docker\c 这样可以忽略大小写查找  
-ubuntu --> dpkg -l | grep xx --> dpkg -L xxx  
-export LANG=zh_CN.UTF-8 export LANG=en_US  
-vim ~/.bashrc --> 加上  alias cc='LANG=C cc' alias gcc='LANG=C gcc'
+1. ctrl+shift+c ---> ctrl+shift+v linux复制粘贴  
+2. alt+tab 选择  
+3. vim中: 17+G ---> 跳转到第17行, shift+G ---> 跳转到最后一行  
+4. tab不出来? ---> yum list | grep bash ---> 有completion的,装了, 还不行? yum -y install *-completion   
+5. http://www.gnu.org/software/bash/manual/bashref.html 牛逼了!  
+6. xshell的会话选项卡: 查看--->会话选项卡  xshell ctrl+鼠标左键, 可以定位光标!  
+7. echo -e 'haha\n' -e 处理特殊字符  
+8. sed -i '/haha/i yeah' xxx.txt 这样在含有haha字的上一行插入yeah  
+9. ctrl+z 放到后台并挂起, bg+%+n 运行后台挂起的, jobs, fg, xxxx &  
+10. unrar x xxx.rar 解压 绝对路径  
+11. yum list installed | grep ^tk 看安装了的包  
+12. 一般来说, 使用smtp是通过phpmailer实现的, vim 1.php --> <?php echo (extension_loaded('openssl')?'SSL loaded':'SSL not loaded')."\n"; ?> --> php 1.php 看openssl有没有加载到php中  
+13. cat /proc/cpuinfo 等等  
+14. 当前有10个目录d1-d10, 每个目录下面有一个目录d1/d11, d2/d21..., d11, d21下有很多数据。如果想看d11, d21... 和d11, d21...下面的第一个数据: for i in `ls`; do echo "$i"; ls $i/`ls $i` | head -1; echo '';done  
+15. git 的工作目录下误删了文件1.txt --> git checkout 1.txt, 这样就恢复到了最新版本.  
+16. application.yml 下面可以定义日志文件的拆分.  
+17. vim中 /docker\c 这样可以忽略大小写查找  
+18. ubuntu --> dpkg -l | grep xx --> dpkg -L xxx  
+19. export LANG=zh_CN.UTF-8 export LANG=en_US, vim ~/.bashrc --> 加上  alias cc='LANG=C cc' alias gcc='LANG=C gcc'
+20. 添加路由: route add -net 192.168.1.92 netmask 255.255.255.255 gateway 192.168.1.1  
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

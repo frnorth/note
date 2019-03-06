@@ -1,5 +1,6 @@
 # haha
-ex1-24 ex2-1
+Remember do not replace '=' with '==', in the cases you need '='!  
+ex1-24 ex2-1 2-8.c(getline3)
 
 1.
 ./mysga .

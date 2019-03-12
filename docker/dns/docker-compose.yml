@@ -1,0 +1,10 @@
+dns:
+  restart: always
+  image: "centos:latest"
+  ports:
+    - 53:53
+  volumes:
+    - ./auth:/etc/nginx/conf.d
+    - ./auth/nginx.conf:/etc/nginx/nginx.conf:ro
+
+

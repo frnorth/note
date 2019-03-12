@@ -1,0 +1,5 @@
+zone "my.com" IN {
+	type master;
+	file "/var/named/my.com.zone";
+};
+

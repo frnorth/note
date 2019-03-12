@@ -5,9 +5,11 @@ alphabet 字母表
 attempted 企图
 
 # B
+bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
-# C
+# C 
+complement 补足
 convention 惯例
 cast 投 投射
 coerc
@@ -28,6 +30,7 @@ duplicate 重复
 delimited 划定界限的 
 
 # E
+exclusive 独有的
 excess 超过
 exemplify 例证
 enumeration 列举
@@ -43,6 +46,7 @@ generalize 概括 推广
 # H
 
 # I
+inclusive 包括的
 integral 积分的 完整的
 inadvertently 无意的
 implementation 实现
@@ -59,6 +63,7 @@ incorporate 包含 合并
 literal 文字的
 
 # M
+multiplication 乘法 增加
 manipulation 操作
 marco 巨大的
 micro 极小的
@@ -73,6 +78,7 @@ optional 可选择的
 operand 操作数
 
 # P
+preferable 更好的
 prefix 前缀
 postfix 后缀
 pseudo 假冒的
@@ -114,6 +120,7 @@ unfortunate 不幸的 不成功的
 unary 一元的(操作)
 
 # V
+vacate 空出
 
 # W
 

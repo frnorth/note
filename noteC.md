@@ -1,6 +1,7 @@
 # haha
 Remember do not replace '=' with '==', in the cases you need '='!  
-ex1-24 ex2-1 2-8.c(getline3)
+ex1-24 ex2-1 2-8.c(getline3)  
+ctrl + d 如果不用EOF判断作为结束的话, 会输出 ÿ !  
 
 1.
 ./mysga .

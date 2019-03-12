@@ -1,4 +1,6 @@
 # A
+associativity 结合性
+advisable 可取的
 adapter 适配器
 as if 犹如
 alphabet 字母表
@@ -31,6 +33,7 @@ delimited 划定界限的
 
 # E
 exclusive 独有的
+evalution 评估
 excess 超过
 exemplify 例证
 enumeration 列举
@@ -100,6 +103,7 @@ representation 表示
 recipe 配方
 
 # S
+succinct 简洁的
 session 会话
 suffice 足够
 specify 指定
@@ -112,6 +116,9 @@ scenario 方案
 subsequent 随后的
 
 # T
+tricky 狡猾的
+ternary 三元的
+twos complement 二进制补码
 take place 发生
 truncate 截断
 

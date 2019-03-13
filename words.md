@@ -1,4 +1,5 @@
 # A
+attribute 属性
 associativity 结合性
 advisable 可取的
 adapter 适配器
@@ -11,6 +12,9 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+cryptic 神秘的  
+compound 混合的
+comma 逗号
 complement 补足
 convention 惯例
 cast 投 投射
@@ -25,6 +29,7 @@ concurrent 并发的
 churn 搅动
 
 # D
+discretion 判断力  
 declare 声明
 distinct 独特 有区别
 deprecate 放弃使用
@@ -32,6 +37,7 @@ duplicate 重复
 delimited 划定界限的 
 
 # E
+equivocally 可疑的  
 exclusive 独有的
 evalution 评估
 excess 超过
@@ -39,8 +45,8 @@ exemplify 例证
 enumeration 列举
 
 # F
+formally 正式的  
 flexibility 灵活性
-
 falsehood 虚假
 
 # G
@@ -49,6 +55,11 @@ generalize 概括 推广
 # H
 
 # I
+indentation 缩进排版  
+interpret 解释  
+intentionally 故意的
+imply 意味着
+indirection 间接
 inclusive 包括的
 integral 积分的 完整的
 inadvertently 无意的
@@ -63,9 +74,11 @@ incorporate 包含 合并
 # K
 
 # L
+left to 由..来决定  
 literal 文字的
 
 # M
+moral 精神上  
 multiplication 乘法 增加
 manipulation 操作
 marco 巨大的
@@ -81,6 +94,7 @@ optional 可选择的
 operand 操作数
 
 # P
+pernicious 有害的  
 preferable 更好的
 prefix 前缀
 postfix 后缀
@@ -103,6 +117,8 @@ representation 表示
 recipe 配方
 
 # S
+shortcut 捷径  
+specify 指定
 succinct 简洁的
 session 会话
 suffice 足够
@@ -116,6 +132,8 @@ scenario 方案
 subsequent 随后的
 
 # T
+tempt 冒..风险 诱惑  
+typify 代表  
 tricky 狡猾的
 ternary 三元的
 twos complement 二进制补码

@@ -8,10 +8,13 @@ alphabet 字母表
 attempted 企图
 
 # B
+blessing 祝福  
 bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+comment 批评  
+clause 子句 条款
 cryptic 神秘的  
 compound 混合的
 comma 逗号
@@ -29,6 +32,9 @@ concurrent 并发的
 churn 搅动
 
 # D
+defensive 防守的  
+disintegration 瓦解
+directive 指令  
 discretion 判断力  
 declare 声明
 distinct 独特 有区别
@@ -94,6 +100,7 @@ optional 可选择的
 operand 操作数
 
 # P
+prone 易于..的
 pernicious 有害的  
 preferable 更好的
 prefix 前缀
@@ -109,6 +116,7 @@ periodically 定期的
 # Q
 
 # R
+robust 粗鲁的 健康的  
 redundant 多余的
 rounded 圆形的 丰满的
 reverse 反转
@@ -117,6 +125,7 @@ representation 表示
 recipe 配方
 
 # S
+sparingly 保守的  
 shortcut 捷径  
 specify 指定
 succinct 简洁的

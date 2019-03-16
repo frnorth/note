@@ -1,4 +1,5 @@
 # A
+adjacent 邻近的  
 arithmetic progression 等差数列  
 analog 类似  
 attribute 属性
@@ -15,6 +16,7 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+centralized 集中的  
 comment 批评  
 clause 子句 条款
 cryptic 神秘的  
@@ -45,6 +47,8 @@ duplicate 重复
 delimited 划定界限的 
 
 # E
+eliminate 消除  
+elaborate 精心制作的 
 equivocally 可疑的  
 exclusive 独有的
 evalution 评估
@@ -63,6 +67,8 @@ generalize 概括 推广
 # H
 
 # I
+interval 间隔
+interchange 交换  
 idiom 习惯  
 indentation 缩进排版  
 interpret 解释  

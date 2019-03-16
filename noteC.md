@@ -5,7 +5,12 @@ ctrl + d 如果不用EOF判断作为结束的话, 会输出 ÿ !
 好像 MASK 是一个很重要的词  
 side effect !   
 evlaute the run-time between binsearch and binsearch2 in else_if_3_3.c, it might be intresting.  
-
+0. the functioins in standard library met till now:
+```
+<ctype.h>
+isspace(char c);
+isdigit(char c);
+```
 1.
 ./mysga .
 这样好像不行，不能传“.”进来？
@@ -74,7 +79,7 @@ int rand(void) {
 }
 ```
 
-10. 实验-究极1---
+11. 实验-究极1---
 ```
 C/learn/chapter3/exer3/ex3-2.c 编译运行后输入如下, 多次, 观察printf("%s", xx);的结尾的位置变化...
 sdfsd\tsdf sdsfsd\nsdfsd

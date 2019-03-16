@@ -1,4 +1,6 @@
 # A
+arithmetic progression 等差数列  
+analog 类似  
 attribute 属性
 associativity 结合性
 advisable 可取的
@@ -61,6 +63,7 @@ generalize 概括 推广
 # H
 
 # I
+idiom 习惯  
 indentation 缩进排版  
 interpret 解释  
 intentionally 故意的
@@ -92,6 +95,7 @@ micro 极小的
 modulus 模运算
 
 # N
+nonetheless 尽管如此  
 naive 天真的
 negation 否定
 
@@ -100,6 +104,9 @@ optional 可选择的
 operand 操作数
 
 # P
+perfect 完美  
+process 处理  
+presumably 大概  
 prone 易于..的
 pernicious 有害的  
 preferable 更好的
@@ -116,6 +123,9 @@ periodically 定期的
 # Q
 
 # R
+reserve 保留  
+retain 保持  
+resume 继续  
 robust 粗鲁的 健康的  
 redundant 多余的
 rounded 圆形的 丰满的

@@ -74,3 +74,9 @@ int rand(void) {
 }
 ```
 
+10. 实验-究极1---
+```
+C/learn/chapter3/exer3/ex3-2.c 编译运行后输入如下, 多次, 观察printf("%s", xx);的结尾的位置变化...
+sdfsd\tsdf sdsfsd\nsdfsd
+sgdsfsdfs\t\\dsg\\n + 'ctrl+d'
+```

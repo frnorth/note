@@ -37,6 +37,7 @@ concurrent 并发的
 churn 搅动
 
 # D
+diverse 不同的  
 defensive 防守的  
 disintegration 瓦解
 directive 指令  
@@ -68,6 +69,7 @@ generalize 概括 推广
 # H
 
 # I
+indice 目录 指标  
 interval 间隔
 interchange 交换  
 idiom 习惯  

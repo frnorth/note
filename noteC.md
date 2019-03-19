@@ -11,6 +11,11 @@ evlaute the run-time between binsearch and binsearch2 in else_if_3_3.c, it might
 isspace(char c);
 isdigit(char c);
 ```
+这, 是能输出的!  
+```
+	if(1 > 2, 2 > 1)
+		printf("%d\n", i);
+```
 1.
 ./mysga .
 这样好像不行，不能传“.”进来？

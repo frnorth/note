@@ -1,4 +1,5 @@
 # A
+adapter 适配器
 adjacent 邻近的  
 arithmetic progression 等差数列  
 analog 类似  
@@ -173,6 +174,7 @@ unary 一元的(操作)
 vacate 空出
 
 # W
+wraps 包裹  
 
 # X
 

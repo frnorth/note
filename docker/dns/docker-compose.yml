@@ -1,10 +1,12 @@
-dns:
+dns2:
   restart: always
-  image: "centos:latest"
-  ports:
-    - 53:53
+  image: "mydns:7.0"
+#  ports:
+#    - 127.0.0.1:53:53
+#    - 0.0.0.0:53:53
   volumes:
-    - ./auth:/etc/nginx/conf.d
-    - ./auth/nginx.conf:/etc/nginx/nginx.conf:ro
+    - ./conf/named.conf:/etc/named.conf
+    - ./conf/named.rfc1912.zones:/etc/named.rfc1912.zones
+    - ./conf/my.com.zone:/var/named/my.com.zone
 
 

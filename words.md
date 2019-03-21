@@ -1,4 +1,5 @@
 # A
+archive 归档  
 aid 帮助  
 asynchronous 异步的  
 adapter 适配器
@@ -20,6 +21,8 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+cascade 大量倾斜下来  
+catastrophic 灾难的  
 consistent  一致的  
 centralized 集中的  
 comment 批评  
@@ -158,6 +161,7 @@ representation 表示
 recipe 配方
 
 # S
+slot 狭缝  
 statement-based 基于语句的
 synchronous 同步的  
 shipping ship的ing  

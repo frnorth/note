@@ -1,4 +1,6 @@
 # A
+aid 帮助  
+asynchronous 异步的  
 adapter 适配器
 adjacent 邻近的  
 arithmetic progression 等差数列  
@@ -12,11 +14,13 @@ alphabet 字母表
 attempted 企图
 
 # B
+batch 一批 分批处理  
 blessing 祝福  
 bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+consistent  一致的  
 centralized 集中的  
 comment 批评  
 clause 子句 条款
@@ -37,6 +41,7 @@ concurrent 并发的
 churn 搅动
 
 # D
+deterministic 稳定的  
 diverse 不同的  
 defensive 防守的  
 disintegration 瓦解
@@ -49,6 +54,7 @@ duplicate 重复
 delimited 划定界限的 
 
 # E
+excessive 过多的  
 eliminate 消除  
 elaborate 精心制作的 
 equivocally 可疑的  
@@ -64,11 +70,14 @@ flexibility 灵活性
 falsehood 虚假
 
 # G
+granularity 粒度  
 generalize 概括 推广
 
 # H
+heavy write activity 大负载写行为
 
 # I
+intercept 拦截  
 indice 目录 指标  
 interval 间隔
 interchange 交换  
@@ -96,6 +105,7 @@ left to 由..来决定
 literal 文字的
 
 # M
+middleware 中间件  
 moral 精神上  
 multiplication 乘法 增加
 manipulation 操作
@@ -113,6 +123,9 @@ optional 可选择的
 operand 操作数
 
 # P
+partition 分开  
+propagate 传送  
+per-table granularity 表粒度  
 perfect 完美  
 process 处理  
 presumably 大概  
@@ -130,6 +143,7 @@ purge 净化
 periodically 定期的
 
 # Q
+query 查询  
 
 # R
 reserve 保留  
@@ -144,6 +158,9 @@ representation 表示
 recipe 配方
 
 # S
+statement-based 基于语句的
+synchronous 同步的  
+shipping ship的ing  
 sparingly 保守的  
 shortcut 捷径  
 specify 指定
@@ -160,6 +177,8 @@ scenario 方案
 subsequent 随后的
 
 # T
+trigger 触发  
+transaction 事务  
 tempt 冒..风险 诱惑  
 typify 代表  
 tricky 狡猾的
@@ -176,6 +195,8 @@ unary 一元的(操作)
 vacate 空出
 
 # W
+workload 工作量  
+warehouse 仓库  
 wraps 包裹  
 
 # X

@@ -4,8 +4,8 @@
   - 也可以到github上下载安装 --> 连接Compose repository release page on GitHub --> https://github.com/docker/compose/releases 最下面有直接的包下载?  
 
 ## CentOS
-1) 用openssl生成证书前, 要先修改/etc/pki/tls/openssl.cnf, [v3_ca]下面添加IP, 不然会报错 "...IP SANs...", 而且貌似只能写一个IP, 如果写两个, 就以第2个为准, 而且这个会写到证书里, 如果如与登陆的不一样, 会报不一致的错误。  
-2) /etc/docker/certs.d/下面还是要建个192.168.1.127目录, 然后把domain.crt放到里面, 不然docker login后会报错Error response from daemon: Get https://192.168.1.127/v1/users/: x509: certificate signed by unknown authority。  
+1) 用openssl生成证书前, 要先修改/etc/pki/tls/openssl.cnf, [v3_ca]下面添加IP, 不然会报错 "...IP SANs...", 而且貌似只能写一个IP, 如果写两个, 就以第2个为准, 而且这个会写到证书里, 如果如与登陆的不一样, 会报不一致的错误。如果是生成域名的证书, 就在[ v3_req ]下面加上subjectAltName = @alt_names, 然后在最下面加上[ alt_names ] 回车 DNS = docker.my.com, 在用openssl生成的时候, Common Name (eg, your name or your servers hostname) []:docker.my.com, 要输入想要的域名.  
+2) /etc/docker/certs.d/下面还是要建个192.168.1.127目录(好像也不用建目录), 然后把domain.crt放到里面, 不然docker login后会报错Error response from daemon: Get https://192.168.1.127/v1/users/: x509: certificate signed by unknown authority。  
 3) domain.crt 要放到/etc/pki/ca-trust/source/anchors/ 下面, 不然curl会报一段错。Trust the certificate at the OS level.  
 4) 2)和3)在别的客户端也要做。  
 5) docker-compose.yml中, REGISTRY_HTTP_ADDR: 0.0.0.0:443 # 没有这个会报错: 拒绝连接 (容器内没有监听地址), 而配置文件任意内容写错, 都会导致容器启动不对, 哪怕本地有443端口开启。哈哈, 是这样, 如果在/etc/docker/daemon.json中加了insecure--registries ...:1234, 那么当用http访问1234端口是可以的, 访问别的端口就还是https, 没有证书就是不可以的。
@@ -17,8 +17,17 @@
     [ v3_ca ]
     # Extensions for a typical CA
     subjectAltName = IP:192.168.1.127
+或
+    [ v3_req ]
+    subjectAltName = @alt_names
+    ...
+    [ alt_names ]
+    DNS = docker.my.com
 ]# mkdir certs  
 ]# openssl req -newkey rsa:4096 -nodes -sha256 -keyout certs/domain.key -x509 -days 365 -out certs/domain.crt  
+    ...
+    Common Name (eg, your name or your servers hostname) []:docker.my.com
+    ...
 ]# mkdir auth
 ]# docker run --entrypoint htpasswd registry:2 -Bbn admin 123456 > auth/htpasswd
 ]# mkdir data

@@ -41,3 +41,4 @@ sudo systemctl restart docker
 18) Docker registry 的文档: https://github.com/docker/docker-registry, 貌似已经不用了  
 19) docker logs a1(container id) -f 跟tailf一个套路  
 20) DTR 跟 registry比怎么样?官网 --> Product Manuals --> Docker Enterprise Edition --> Docker Trusted Registry    
+21) docs.docker.com --> 搜postgres --> 可以搜到俩例子  

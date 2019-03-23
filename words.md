@@ -68,6 +68,7 @@ exemplify 例证
 enumeration 列举
 
 # F
+from time to time 有时  
 formally 正式的  
 flexibility 灵活性
 falsehood 虚假
@@ -161,6 +162,7 @@ representation 表示
 recipe 配方
 
 # S
+sense 感觉 功能  
 slot 狭缝  
 statement-based 基于语句的
 synchronous 同步的  

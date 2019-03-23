@@ -34,3 +34,6 @@ select xxxxx;
 copy "user" to '/tmp/userdata.txt'; 那么会复制到docker里的/tmp/userdata.txt!  
 copy "user" from '/tmp/userdata.txt';
 ```
+
+9. deb http://apt.postgresql.org/pub/repos/apt/ YOUR_UBUNTU_VERSION_HERE-pgdg main, 上面一句话, Create the file /etc/apt/sources.list.d/pgdg.list and add a line for the repository. 要自己建一个文件. 安装完启动服务, 可以/etc/init.d/postgresql start 这样启动!  
+

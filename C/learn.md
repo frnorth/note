@@ -75,3 +75,14 @@ isdigit(char c);
 	if(1 > 2, 2 > 1)
 		printf("%d\n", i);
 ```
+
+14. int 型在边界的变化:
+```
+-1 * INT_MIN: INT_MIN !!!?
+INT_MIN + 1: -2147483647
+INT_MIN: -2147483648
+INT_MIN - 1: 2147483647
+INT_MIN - 2: 2147483646
+
+```
+

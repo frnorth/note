@@ -127,6 +127,7 @@ optional 可选择的
 operand 操作数
 
 # P
+pad 填补  
 partition 分开  
 propagate 传送  
 per-table granularity 表粒度  

@@ -42,3 +42,5 @@ sudo systemctl restart docker
 19) docker logs a1(container id) -f 跟tailf一个套路  
 20) DTR 跟 registry比怎么样?官网 --> Product Manuals --> Docker Enterprise Edition --> Docker Trusted Registry    
 21) docs.docker.com --> 搜postgres --> 可以搜到俩例子  
+22) docs.docker.com --> 左边opensource --> contribuite to documentation !
+23) docs.docker.com --> reference --> 左边File formats --> Dockerfile reference 可以搜到entrypoint

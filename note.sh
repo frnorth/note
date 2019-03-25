@@ -2042,6 +2042,9 @@ GATEWAY=\"192.168.1.254\"
 /usr/bin/growpart /dev/vda 1
 /usr/sbin/xfs_growfs /
 
+growpart /dev/sda 1
+resize2fs /dev/sda1 
+
 
 修改了后端盘，那么所有的前端盘都要重新做。
 

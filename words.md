@@ -68,6 +68,7 @@ exemplify 例证
 enumeration 列举
 
 # F
+fragment 碎片  
 from time to time 有时  
 formally 正式的  
 flexibility 灵活性
@@ -81,6 +82,7 @@ generalize 概括 推广
 heavy write activity 大负载写行为
 
 # I
+instantaneous 即时的  
 intercept 拦截  
 indice 目录 指标  
 interval 间隔
@@ -184,6 +186,7 @@ scenario 方案
 subsequent 随后的
 
 # T
+trailing 后面的  
 trigger 触发  
 transaction 事务  
 tempt 冒..风险 诱惑  

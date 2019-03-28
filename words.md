@@ -1,4 +1,5 @@
 # A
+abusable 可滥用的  
 archive 归档  
 aid 帮助  
 asynchronous 异步的  
@@ -21,6 +22,9 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+conspire 共谋  
+conditional 有条件的
+cite 引用
 cascade 大量倾斜下来  
 catastrophic 灾难的  
 consistent  一致的  
@@ -33,7 +37,7 @@ comma 逗号
 complement 补足
 convention 惯例
 cast 投 投射
-coerc
+coercion 强制
 contiguous 连续的
 considerable 重要的 相当大的
 construction 建设
@@ -44,6 +48,7 @@ concurrent 并发的
 churn 搅动
 
 # D
+dogmatic 教条的
 deterministic 稳定的  
 diverse 不同的  
 defensive 防守的  
@@ -68,6 +73,8 @@ exemplify 例证
 enumeration 列举
 
 # F
+fate 命运  
+facility 灵巧 天才  
 fragment 碎片  
 from time to time 有时  
 formally 正式的  
@@ -75,6 +82,7 @@ flexibility 灵活性
 falsehood 虚假
 
 # G
+grasp 抓住  
 granularity 粒度  
 generalize 概括 推广
 
@@ -82,6 +90,10 @@ generalize 概括 推广
 heavy write activity 大负载写行为
 
 # I
+instructive 教育性的  
+interaction 交互  
+irrelevant 不相关的
+infinitely 无限的  
 instantaneous 即时的  
 intercept 拦截  
 indice 目录 指标  
@@ -111,6 +123,8 @@ left to 由..来决定
 literal 文字的
 
 # M
+marco argument  宏参数  
+marco expansion 宏展开  
 middleware 中间件  
 moral 精神上  
 multiplication 乘法 增加
@@ -129,6 +143,7 @@ optional 可选择的
 operand 操作数
 
 # P
+preprocessor 预处理器  
 pad 填补  
 partition 分开  
 propagate 传送  
@@ -153,6 +168,8 @@ periodically 定期的
 query 查询  
 
 # R
+remould 改造  
+reside 居住  
 reserve 保留  
 retain 保持  
 resume 继续  
@@ -165,6 +182,11 @@ representation 表示
 recipe 配方
 
 # S
+sophisticate 复杂的  
+shatter 粉碎  
+scheme 计划  
+scope 范围  
+start from scratch 白手起家  
 sense 感觉 功能  
 slot 狭缝  
 statement-based 基于语句的
@@ -186,6 +208,7 @@ scenario 方案
 subsequent 随后的
 
 # T
+trivial 琐碎的  
 trailing 后面的  
 trigger 触发  
 transaction 事务  

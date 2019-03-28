@@ -19,7 +19,6 @@
 18. ubuntu --> dpkg -l | grep xx --> dpkg -L xxx  
 19. export LANG=zh_CN.UTF-8 export LANG=en_US, vim ~/.bashrc --> 加上  alias cc='LANG=C cc' alias gcc='LANG=C gcc'
 20. 添加路由: route add -net 192.168.1.92 netmask 255.255.255.255 gateway 192.168.1.1  
-
 21. 
 ```
 netstat -nutpl | grep 12345
@@ -27,6 +26,7 @@ tcp6       0      0 :::12345                :::*                    LISTEN      
 lsof -i:12345
 ```
 这样可以看到所有占用此端口的进程.  
+22. watch -n 0.2 nvidia-smi 0.2s一看  
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

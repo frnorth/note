@@ -1,4 +1,5 @@
 # A
+adequate 足够的
 abusable 可滥用的  
 archive 归档  
 aid 帮助  
@@ -16,12 +17,14 @@ alphabet 字母表
 attempted 企图
 
 # B
+barely adequate 勉强足够  
 batch 一批 分批处理  
 blessing 祝福  
 bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+check-book 支票簿
 conspire 共谋  
 conditional 有条件的
 cite 引用
@@ -48,6 +51,7 @@ concurrent 并发的
 churn 搅动
 
 # D
+dummy 虚拟的  
 dogmatic 教条的
 deterministic 稳定的  
 diverse 不同的  
@@ -62,6 +66,7 @@ duplicate 重复
 delimited 划定界限的 
 
 # E
+exponent 指数的  
 excessive 过多的  
 eliminate 消除  
 elaborate 精心制作的 
@@ -143,6 +148,8 @@ optional 可选择的
 operand 操作数
 
 # P
+primitive 原始的  
+precede 在..之前
 preprocessor 预处理器  
 pad 填补  
 partition 分开  

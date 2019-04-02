@@ -1,4 +1,6 @@
 # A
+analogous 类似  
+adjective 形容词  
 adequate 足够的
 abusable 可滥用的  
 archive 归档  
@@ -24,6 +26,7 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+contrast 对比  
 check-book 支票簿
 conspire 共谋  
 conditional 有条件的
@@ -95,6 +98,8 @@ generalize 概括 推广
 heavy write activity 大负载写行为
 
 # I
+infix 中缀  
+invocation to 到下一个  
 instructive 教育性的  
 interaction 交互  
 irrelevant 不相关的
@@ -175,6 +180,7 @@ periodically 定期的
 query 查询  
 
 # R
+representation 代表  
 remould 改造  
 reside 居住  
 reserve 保留  

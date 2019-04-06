@@ -19,6 +19,7 @@ alphabet 字母表
 attempted 企图
 
 # B
+buffer 缓冲区  
 barely adequate 勉强足够  
 batch 一批 分批处理  
 blessing 祝福  
@@ -54,6 +55,7 @@ concurrent 并发的
 churn 搅动
 
 # D
+decimal 十进制的  
 dummy 虚拟的  
 dogmatic 教条的
 deterministic 稳定的  
@@ -65,7 +67,7 @@ discretion 判断力
 declare 声明
 distinct 独特 有区别
 deprecate 放弃使用
-duplicate 重复
+duplicate 重复 复制  
 delimited 划定界限的 
 
 # E
@@ -98,6 +100,7 @@ generalize 概括 推广
 heavy write activity 大负载写行为
 
 # I
+instance 实例  
 infix 中缀  
 invocation to 到下一个  
 instructive 教育性的  
@@ -153,6 +156,7 @@ optional 可选择的
 operand 操作数
 
 # P
+provision 提供  
 primitive 原始的  
 precede 在..之前
 preprocessor 预处理器  
@@ -195,6 +199,7 @@ representation 表示
 recipe 配方
 
 # S
+swap 交换  
 sophisticate 复杂的  
 shatter 粉碎  
 scheme 计划  

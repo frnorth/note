@@ -29,6 +29,11 @@ lsof -i:12345
 22. watch -n 0.2 nvidia-smi 0.2s一看  
 23. vim中, ctrl + v 可以选择块(列, 行当然也行), y复制, p粘贴, x删除, 一样的.  
 24. vim中, 在某个单词的位置按*(shift + 8), 可以找出文本中所有这个单词, 按n切换. 
+25. NAME=bak-`date +%m-%d`
+26. find命令找./, 会把'./'带上, 所以要过滤掉
+```
+find ./backup/ -maxdepth 1 -mtime 30 | grep -v '^./backup/$' | xargs -i rm {} -rf
+```
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

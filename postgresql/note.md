@@ -29,3 +29,4 @@ copy "user" from '/tmp/userdata.txt';
 ```
 9. deb http://apt.postgresql.org/pub/repos/apt/ YOUR_UBUNTU_VERSION_HERE-pgdg main, 上面一句话, Create the file /etc/apt/sources.list.d/pgdg.list and add a line for the repository. 要自己建一个文件. 安装完启动服务, 可以/etc/init.d/postgresql start 这样启动!  
 10. 如果是自己启了一个ubuntu, 装了一个postgresql, 启动后, listen_addresses要设为*, pg_hba.conf最后要加上 host all all all trust, 不然从别的主机上访问不了!
+11. select pg_current_xlog_location(); 显示当前xlog的位置  

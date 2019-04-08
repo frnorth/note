@@ -10,3 +10,8 @@ exists yeah-2	看一个key有没有
 echo 'KEYS metadata-10*' | redis-cli -h 192.168.1.151 -p 7379 | awk '{print $1}' > 1.txt`
 for i in `cat 1.txt` ; do echo "get $i" | redis-cli -h 192.168.1.151 -p 7379; done
 ```
+3. 
+```
+redis-cli MONITOR > /tmp/redis_monitor.log
+tailf /tmp/redis_monitor.log
+```

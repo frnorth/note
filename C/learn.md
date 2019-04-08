@@ -79,7 +79,7 @@ while (sp > 0)
 	val[--sp] = 0;
 ```
 17. What is ex4-4 is about?  
-18. 如果包含了<math.h>, 那么变异的时候要 cc xx.c xxx.c -lm  
+18. 如果包含了<math.h>, 那么编译的时候要 cc xx.c xxx.c -lm  
 19. 3.1415926 * 2 == 360度
 20. isdigit(s[++i] = c = getch()) 顺序是, 先c = getch(), 再s[++i] = c  
 21. getop.c前面是s[0]=c=getch()了, 所以, 第一个digit已经有了, 而且, 要++i  

@@ -136,6 +136,7 @@ left to 由..来决定
 literal 文字的
 
 # M
+moderate 适度的  
 marco argument  宏参数  
 marco expansion 宏展开  
 middleware 中间件  
@@ -184,6 +185,8 @@ periodically 定期的
 query 查询  
 
 # R
+realistic 现实存在的  
+revise 修正  
 representation 代表  
 remould 改造  
 reside 居住  
@@ -199,6 +202,7 @@ representation 表示
 recipe 配方
 
 # S
+substantially 充分地  
 swap 交换  
 sophisticate 复杂的  
 shatter 粉碎  
@@ -226,6 +230,7 @@ scenario 方案
 subsequent 随后的
 
 # T
+tradeoff 权衡
 trivial 琐碎的  
 trailing 后面的  
 trigger 触发  

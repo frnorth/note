@@ -34,6 +34,7 @@ lsof -i:12345
 ```
 find ./backup/ -maxdepth 1 -mtime 30 | grep -v '^./backup/$' | xargs -i rm {} -rf
 ```
+27. 往~/.bash_profile中写写写, 然后 ". ~/.bash_profile" 就可以了  
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

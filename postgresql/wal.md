@@ -15,3 +15,4 @@ checkpoint; ?
 select pg_switch_xlog(); ?
 select pg_xlogfile_name(pg_switch_xlog()); ?
 ```
+> select pg_current_xlog_location();

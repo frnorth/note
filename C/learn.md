@@ -83,3 +83,4 @@ while (sp > 0)
 19. 3.1415926 * 2 == 360度
 20. isdigit(s[++i] = c = getch()) 顺序是, 先c = getch(), 再s[++i] = c  
 21. getop.c前面是s[0]=c=getch()了, 所以, 第一个digit已经有了, 而且, 要++i  
+22. 编译好的a.out, 也可以这样用: echo "1 2 +" | ./a.out  可以写测试脚本?  

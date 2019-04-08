@@ -8,3 +8,11 @@
 7. linux中的c库, 时已经编译好的, 所以没有.c文件, 都是.o文件? 用的时候直接连接就行了?
 8. chapter4 -- calculator -- getop.c -- while (isdigit(s[++i] = c = getch())) 为啥 ++ 放到 i 前面?  
 9. 段错误, 一般是怎么引起的?  
+10. chapter4 -- calculator -- ./a.out:
+```
+1 k1(ctrl + d)1	32 	32 
+1	491	491
+	k: 1
+
+```
+这里, 在k: 1后面下一行, 要输入两次 ctrl + d, 才能结束程序, 为什么?  

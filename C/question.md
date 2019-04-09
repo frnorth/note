@@ -16,3 +16,6 @@
 
 ```
 这里, 在k: 1后面下一行, 要输入两次 ctrl + d, 才能结束程序, 为什么?  
+11. 还是C programing languange chapter4 calculater, getch与ungetch定义在与getop不同的文件中, 那么在getop文件中声明getch不应该加上extern?  
+12. Internal static variables?  
+13. C programing languange chapter4-9 ..., now that we have discussed the various storage classes.?  

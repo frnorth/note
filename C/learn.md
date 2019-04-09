@@ -84,3 +84,5 @@ while (sp > 0)
 20. isdigit(s[++i] = c = getch()) 顺序是, 先c = getch(), 再s[++i] = c  
 21. getop.c前面是s[0]=c=getch()了, 所以, 第一个digit已经有了, 而且, 要++i  
 22. 编译好的a.out, 也可以这样用: echo "1 2 +" | ./a.out  可以写测试脚本?  
+23. 4.5节, stack.c并不需要包含 "calc.h" 啊!..?  
+24. 在file1.c中定义一个external变量, 并加上static: static int i;, 在file2.c中是无法通过extern int i来引用file1.c中的i的. 除非摘掉static.  

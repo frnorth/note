@@ -4,3 +4,4 @@
 4. We will see later how to define external variables and functions that are visible only within a single source fle.  
 5. 对与EOF(ctrl + d), 从标准输入, 像C programing language 第4章, 的 calculater 第一次ctrl + d是结束输入, 第二次, 才会读到EOF. 而如果按照书中原本的程序, ./a.out后, 1 -- ctrl + d * 3次才能结束程序, 所以, 第一次是结束输入, 然而1后面没有字符跟进, 所以getop.c while (isdigit(s[++i] = c = getch()));会huang在那里, 然后ctrl + d, 入了一个EOF, 这样结束了while (isdigit(s[++i] = c = getch()));, 然而到了最后, if (c != EOF) ungetch(c), 所以EOF没有压栈, 就这么消失了, 所以到第3个ctrl + d, 才是在getop.c的前面部分返回一个EOF, 然后程序也结束了.  
 6. 如果没有if (c != EOF) ungetch(c), 那么第二个EOF被压栈, 然后, 第三次getop.c会在buf[]中getch()到EOF, 所以第三次ctrl + d不用输入, 就结束了.  
+7. in ex-4.10: C/learn/chapter4/calculator/exec-4.10 -- /* seems like, once "while ((type = getop(line, s)) != EOF)" is done, statement  below "goon" label would be executed, by default. Example: ./a.out -- 1 -- 2 -- ctrl + d -- ctrl + d, then while done(case '\0' was not executed), and "getop over" printed */   

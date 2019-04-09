@@ -1,4 +1,5 @@
 # A
+advise 建议  
 analogous 类似  
 adjective 形容词  
 adequate 足够的
@@ -19,6 +20,7 @@ alphabet 字母表
 attempted 企图
 
 # B
+block-structured 快结构的  
 buffer 缓冲区  
 barely adequate 勉强足够  
 batch 一批 分批处理  
@@ -27,6 +29,8 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+conceal 隐藏  
+compound 复合  
 contrast 对比  
 check-book 支票簿
 conspire 共谋  
@@ -71,6 +75,7 @@ duplicate 重复 复制
 delimited 划定界限的 
 
 # E
+excess 超过 超额   
 exponent 指数的  
 excessive 过多的  
 eliminate 消除  
@@ -83,6 +88,7 @@ exemplify 例证
 enumeration 列举
 
 # F
+formal parameter 形式参数  
 fate 命运  
 facility 灵巧 天才  
 fragment 碎片  
@@ -100,6 +106,8 @@ generalize 概括 推广
 heavy write activity 大负载写行为
 
 # I
+identically 相等的   
+in the sense of 从..意义上说
 instance 实例  
 infix 中缀  
 invocation to 到下一个  
@@ -157,6 +165,7 @@ optional 可选择的
 operand 操作数
 
 # P
+peripherally 次要的  
 provision 提供  
 primitive 原始的  
 precede 在..之前
@@ -185,6 +194,9 @@ periodically 定期的
 query 查询  
 
 # R
+recursion 递归  
+repetition 副本  
+respective 各自的  
 realistic 现实存在的  
 revise 修正  
 representation 代表  
@@ -202,6 +214,7 @@ representation 表示
 recipe 配方
 
 # S
+scalar 标量  
 substantially 充分地  
 swap 交换  
 sophisticate 复杂的  

@@ -110,6 +110,7 @@ identically 相等的
 in the sense of 从..意义上说
 instance 实例  
 infix 中缀  
+invocation 调用  
 invocation to 到下一个  
 instructive 教育性的  
 interaction 交互  
@@ -165,6 +166,7 @@ optional 可选择的
 operand 操作数
 
 # P
+partition 分割  
 peripherally 次要的  
 provision 提供  
 primitive 原始的  

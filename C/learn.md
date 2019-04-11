@@ -86,3 +86,8 @@ while (sp > 0)
 22. 编译好的a.out, 也可以这样用: echo "1 2 +" | ./a.out  可以写测试脚本?  
 23. 4.5节, stack.c并不需要包含 "calc.h" 啊!..?  
 24. 在file1.c中定义一个external变量, 并加上static: static int i;, 在file2.c中是无法通过extern int i来引用file1.c中的i的. 除非摘掉static.  
+25. C/learn/chapter4/printd.c: static i = 0; 这样是初始化(或者不加 = 0), 而递归的时候不会重复初始化. 如果 static i; i = 0;那么每次递归调用都会让 i 重新赋值. 不管怎样, 递归调用都不会重新定义static i;..?  
+26. Preprocesser is so interesting
+```
+C/learn/chapter4/preprocesser/
+```

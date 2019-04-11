@@ -1,4 +1,5 @@
 # A
+arcane 神秘的  
 advise 建议  
 analogous 类似  
 adjective 形容词  
@@ -7,7 +8,7 @@ abusable 可滥用的
 archive 归档  
 aid 帮助  
 asynchronous 异步的  
-adapter 适配器
+adapt 改编  
 adjacent 邻近的  
 arithmetic progression 等差数列  
 analog 类似  
@@ -29,6 +30,8 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+carelessly 粗心的  
+consistently 一致的  
 conceal 隐藏  
 compound 复合  
 contrast 对比  
@@ -59,6 +62,7 @@ concurrent 并发的
 churn 搅动
 
 # D
+discipline 纪律  
 decimal 十进制的  
 dummy 虚拟的  
 dogmatic 教条的
@@ -75,6 +79,8 @@ duplicate 重复 复制
 delimited 划定界限的 
 
 # E
+enforce 实施  
+exploit 开发  
 excess 超过 超额   
 exponent 指数的  
 excessive 过多的  
@@ -98,6 +104,7 @@ flexibility 灵活性
 falsehood 虚假
 
 # G
+generic 一般的  
 grasp 抓住  
 granularity 粒度  
 generalize 概括 推广
@@ -106,6 +113,11 @@ generalize 概括 推广
 heavy write activity 大负载写行为
 
 # I
+in effect 实际上 生效  
+interdependence 相互依赖  
+incredibly 非常的  
+incredibly error prone 非常容易出错的  
+invoke 调用  
 identically 相等的   
 in the sense of 从..意义上说
 instance 实例  
@@ -141,10 +153,13 @@ incorporate 包含 合并
 # K
 
 # L
+lump 混在一起  
 left to 由..来决定  
 literal 文字的
 
 # M
+mandate 命令 委托  
+marvelous 了不起的  
 moderate 适度的  
 marco argument  宏参数  
 marco expansion 宏展开  
@@ -166,6 +181,7 @@ optional 可选择的
 operand 操作数
 
 # P
+pitfalls 陷阱  
 partition 分割  
 peripherally 次要的  
 provision 提供  
@@ -216,6 +232,7 @@ representation 表示
 recipe 配方
 
 # S
+sequence 序列  
 scalar 标量  
 substantially 充分地  
 swap 交换  
@@ -259,6 +276,7 @@ take place 发生
 truncate 截断
 
 # U
+unexpected 意想不到的
 unfortunate 不幸的 不成功的
 unary 一元的(操作)
 

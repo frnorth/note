@@ -19,3 +19,4 @@
 11. 还是C programing languange chapter4 calculater, getch与ungetch定义在与getop不同的文件中, 那么在getop文件中声明getch不应该加上extern?  
 12. Internal static variables?  
 13. C programing languange chapter4-9 ..., now that we have discussed the various storage classes.?  
+14. C programing languange chapter5 introduction ..., in effect mandating what good programmers already practice and good compilers already enforce. ?

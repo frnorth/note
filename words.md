@@ -1,4 +1,5 @@
 # A
+ampersand &
 arcane 神秘的  
 advise 建议  
 analogous 类似  
@@ -12,7 +13,7 @@ adapt 改编
 adjacent 邻近的  
 arithmetic progression 等差数列  
 analog 类似  
-attribute 属性
+attribute 属性 把.. 归于  
 associativity 结合性
 advisable 可取的
 adapter 适配器
@@ -30,6 +31,8 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+contiguous 连续的 
+consecutively 连续的  
 carelessly 粗心的  
 consistently 一致的  
 conceal 隐藏  
@@ -62,6 +65,7 @@ concurrent 并发的
 churn 搅动
 
 # D
+dereferencing 取值 
 discipline 纪律  
 decimal 十进制的  
 dummy 虚拟的  
@@ -113,6 +117,7 @@ generalize 概括 推广
 heavy write activity 大负载写行为
 
 # I
+indirection 间接  
 in effect 实际上 生效  
 interdependence 相互依赖  
 incredibly 非常的  
@@ -232,6 +237,7 @@ representation 表示
 recipe 配方
 
 # S
+star *  
 sequence 序列  
 scalar 标量  
 substantially 充分地  

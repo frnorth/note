@@ -91,3 +91,10 @@ while (sp > 0)
 ```
 C/learn/chapter4/preprocesser/
 ```
+
+## chapter5
+1. C/learn/chapter5/pointer.c, interesting ... int *ip 定义完后, *ip 是 1 ?
+```
+    int *ip;
+    defprint(*ip);
+```

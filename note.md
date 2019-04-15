@@ -39,6 +39,16 @@ find ./backup/ -maxdepth 1 -mtime 30 | grep -v '^./backup/$' | xargs -i rm {} -r
 ```
 for i in `find ./ -type f`; do echo $i; cat $i | grep INT_MIN; done
 ```
+29. 安装deb包  
+```
+sudo dpkg -i ./wkhtmltox_0.12.5-1.xenial_amd64.deb 
+sudo apt-get install -f 
+dpkg -l|grep wkht
+dpkg -l|grep html
+dpkg -l|grep html|grep pdf
+dpkg -l|grep wkhtm
+wkhtmltopdf -h
+```
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

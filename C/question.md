@@ -20,3 +20,4 @@
 12. Internal static variables?  
 13. C programing languange chapter4-9 ..., now that we have discussed the various storage classes.?  
 14. C programing languange chapter5 introduction ..., in effect mandating what good programmers already practice and good compilers already enforce. ?
+15. C/learn/chapter5/pointer.c 中, 打开那个注释再编译, 会报段错误?  

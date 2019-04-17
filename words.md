@@ -1,4 +1,5 @@
 # A
+acquire 获得
 ampersand &
 arcane 神秘的  
 advise 建议  
@@ -31,6 +32,7 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+consequence 重要性 结果
 contiguous 连续的 
 consecutively 连续的  
 carelessly 粗心的  
@@ -98,6 +100,7 @@ exemplify 例证
 enumeration 列举
 
 # F
+facet 方面  
 formal parameter 形式参数  
 fate 命运  
 facility 灵巧 天才  
@@ -114,9 +117,12 @@ granularity 粒度
 generalize 概括 推广
 
 # H
+henceforth 从今以后  
+hand out 分发  
 heavy write activity 大负载写行为
 
 # I
+integration 集合  
 indirection 间接  
 in effect 实际上 生效  
 interdependence 相互依赖  
@@ -136,6 +142,7 @@ infinitely 无限的
 instantaneous 即时的  
 intercept 拦截  
 indice 目录 指标  
+indices index的复数
 interval 间隔
 interchange 交换  
 idiom 习惯  
@@ -163,6 +170,7 @@ left to 由..来决定
 literal 文字的
 
 # M
+mnemonic 助亿的  
 mandate 命令 委托  
 marvelous 了不起的  
 moderate 适度的  
@@ -182,10 +190,13 @@ naive 天真的
 negation 否定
 
 # O
+occupy 占据  
 optional 可选择的
 operand 操作数
 
 # P
+previously 以前的  
+progressive 先进的  
 pitfalls 陷阱  
 partition 分割  
 peripherally 次要的  
@@ -217,6 +228,8 @@ periodically 定期的
 query 查询  
 
 # R
+rudimentary 基本的 发育不全的   
+regular 有规律的  
 recursion 递归  
 repetition 副本  
 respective 各自的  
@@ -237,9 +250,13 @@ representation 表示
 recipe 配方
 
 # S
+sole 仅有的  
+syntactically 语法上的  
+synonym 同义字  
 star *  
 sequence 序列  
 scalar 标量  
+scale 衡量 测量  
 substantially 充分地  
 swap 交换  
 sophisticate 复杂的  
@@ -282,6 +299,7 @@ take place 发生
 truncate 截断
 
 # U
+uninitiated 缺少经验的 外行的
 unexpected 意想不到的
 unfortunate 不幸的 不成功的
 unary 一元的(操作)

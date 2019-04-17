@@ -96,5 +96,22 @@ C/learn/chapter4/preprocesser/
 1. C/learn/chapter5/pointer.c, interesting ... int *ip 定义完后, *ip 是 1 ?
 ```
     int *ip;
-    defprint(*ip);
+    defprint(\*ip);
+```
+2. C/learn/chapter5/getfloat/getfloat.c
+```
+    /* if you want to recognize .12 as 0.12 correctly, an additional statement should be attached */
+    if (!isdigit(c) && c != EOF && c != '+' && c != '-' && c != '.')
+
+```
+3. C programing languange page 99 -- By definition, the value of a variable or expression of type array is the address of element zero of the array. ..?  
+数组类型的变量或表达式的值是首元素的地址...
+4. C/learn/chapter5/alloc/alloc.c -- alloc 中是 '<=', 因为 'n' 是长度, 而数组索引最后一个是 'n - 1'. 而 afree 中是 '<'.  
+5. C programing languange page 102 ..., which is the next free position when the program start. ... the new value of allocp would be at most one beyond the end of allocbuf. ... Zero is the sole exception...
+6. C programing languange page 103 ... <stddef.h> ... ptrdiff_t ...
+7. C/learn/chapter5/pointer.c 
+```c
+    iqc = "abcdefg";
+    /* can not modify the contents ...! */
+    //*(iqc + 1) = 'h';
 ```

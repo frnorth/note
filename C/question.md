@@ -21,3 +21,6 @@
 13. C programing languange chapter4-9 ..., now that we have discussed the various storage classes.?  
 14. C programing languange chapter5 introduction ..., in effect mandating what good programmers already practice and good compilers already enforce. ?
 15. C/learn/chapter5/pointer.c 中, 打开那个注释再编译, 会报段错误?  
+16. C programing languange page 99 -- By definition, the value of a variable or expression of type array is the address of element zero of the array. ..?
+17. C/learn/chapter5/pointer.c array objects can be refered to without bounds??  
+18. C programing languange page 103 ...(There is oneexception: the address of the first element past the end of an array can be used in pointer arithmetic.) ...?  

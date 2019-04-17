@@ -110,7 +110,7 @@ C/learn/chapter4/preprocesser/
 5. C programing languange page 102 ..., which is the next free position when the program start. ... the new value of allocp would be at most one beyond the end of allocbuf. ... Zero is the sole exception...
 6. C programing languange page 103 ... <stddef.h> ... ptrdiff_t ...
 7. C/learn/chapter5/pointer.c 
-```c
+```C
     iqc = "abcdefg";
     /* can not modify the contents ...! */
     //*(iqc + 1) = 'h';

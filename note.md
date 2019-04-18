@@ -56,6 +56,14 @@ url = https://github.com/frnorth/C
 [credential]
     helper = store
 ```
+31. ssh 用私钥jump(id_rsa)和config文件, 远程连接, config:
+```
+Host jump
+  User wangjie
+  Hostname xxx.xxx.xxx.xxx
+  Port xxxx
+  IdentityFile ~/.ssh/jump
+```
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

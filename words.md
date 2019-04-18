@@ -1,4 +1,5 @@
 # A
+at most 至多   
 acquire 获得
 ampersand &
 arcane 神秘的  
@@ -165,11 +166,13 @@ incorporate 包含 合并
 # K
 
 # L
+lexicographical 词典编纂的  
 lump 混在一起  
 left to 由..来决定  
 literal 文字的
 
 # M
+mastered 精通  
 mnemonic 助亿的  
 mandate 命令 委托  
 marvelous 了不起的  
@@ -195,6 +198,7 @@ optional 可选择的
 operand 操作数
 
 # P
+possibility 可能性  
 previously 以前的  
 progressive 先进的  
 pitfalls 陷阱  

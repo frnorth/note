@@ -7,3 +7,9 @@
 7. in ex-4.10: C/learn/chapter4/calculator/exec-4.10 -- /* seems like, once "while ((type = getop(line, s)) != EOF)" is done, statement  below "goon" label would be executed, by default. Example: ./a.out -- 1 -- 2 -- ctrl + d -- ctrl + d, then while done(case '\0' was not executed), and "getop over" printed */   
 8. putchar() 是可以输出的, 不是只能输出getchar到的.
 9. C programing languange page 99 -- By definition, the value of a variable or expression of type array is the address of element zero of the array. -- When an array name is passed to a function, what is passed is the location of the initial element. Within the called function, this argument is a local variable, and so an array name parameter is a pointer, that is, a variable containing an address. 所以说, 函数调用传递的还是量的值. 指针传递的其实是还是地址 ... !?  
+9. C/learn/chapter5/strcpycmp.c -- strcmp 太吊了...
+10. C programing languange page 106 -- .. are the standard idioms for pushing and popping a stack; see Section 4.3. ...
+```
+*p++ = val; /* push val onto stack */
+val = *--p; /* pop top of stck into val */
+```

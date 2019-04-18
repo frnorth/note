@@ -49,6 +49,13 @@ dpkg -l|grep html|grep pdf
 dpkg -l|grep wkhtm
 wkhtmltopdf -h
 ```
+30. github ssh不能用了, 可以改用https, 同时为了不每次都输入密码:
+```
+vim /root/C/.git/config
+url = https://github.com/frnorth/C
+[credential]
+    helper = store
+```
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

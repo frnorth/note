@@ -79,3 +79,20 @@ command[check_smart]=/usr/local/nagios/libexec/check_smart.pl -d $ARG1$ -i $ARG2
 ```
 ./check_nrpe -H 192.168.xxx.xxx -c check_smart -a xxx(ARG1) xxx(ARG2) xxx(ARG3)
 ```
+
+5. 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的
+```
+Admin --> System Config --> Manage Email Settings:
+Send Mail From: 15208104078@163.com	
+Mail Method: SMTP
+Debug Log: yes	
+Host: smtp.163.com
+Port: 465
+Username: 15208104078
+Password: (密码)
+Security: SSL
+--> send a test email --> (如果有必要)change your email address: 只把邮件改成763211690@qq.com就可以了
+```
+
+6. 安装nagiosXI, 需要一个干净的机器
+

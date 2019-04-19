@@ -129,3 +129,5 @@ s1Iter是s1的地址, next(s1Iter)是s1的第一个值。
 
 ## <span id="grid">grid.py<span>
 grid.py中的__getItem__只有两个参数,self和indexRow,而不是self, indexRow, indexCollum, 应为g1[x]这是grid.py里的__getItem__, g1[x][y], 后面的y是Arrays里的__getItem.
+
+arraybag.py中, 如果没有 __iter__ 方法, 那么下面的 __str__ 方法就不能用了, 因为ArrayBag就不支持迭代了  

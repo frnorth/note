@@ -44,3 +44,14 @@ git branch back-test-hahaha 022f98d2993635270b7db00931d5a51d368a3812
 git checkout back-test-hahaha 
 git push origin back-test-hahaha 
 ```
+
+## gitlab  
+配置smtp, 新建用户发送邮件:  
+官网搜索smtp  
+vim /etc/gitlab/gitlab.rb https://github.com/frnorth/note/blob/master/gitlab.rb  
+gitlab-ctl reconfigure 重新加载配置  
+gitlab-ctl tail 看日志  
+貌似要是starttls_auto true 那么gitlab-tls 也得是ture
+貌似要加上那个git_user_email
+
+

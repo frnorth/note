@@ -64,6 +64,7 @@ Host jump
   Port xxxx
   IdentityFile ~/.ssh/jump
 ```
+32. cat /proc/version 可以看系统的版本  
 
 # nagios
 邮件设置的时候ssl用得了, tls用不了.., 下面这个配置是可以用的

@@ -13,3 +13,4 @@
 *p++ = val; /* push val onto stack */
 val = *--p; /* pop top of stck into val */
 ```
+11. Statments like: `*p = "Hello World";` `*p = malloc(xxx); *p++ = 'H';`, p would be alloced in differet places in computer.

@@ -115,3 +115,5 @@ C/learn/chapter4/preprocesser/
     /* can not modify the contents ...! */
     //*(iqc + 1) = 'h';
 ```
+8. C/learn/chapter5/exer5/exer.c /* distance of address in 4 would result in number 1, for int arrays */
+

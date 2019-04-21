@@ -1,6 +1,6 @@
 # haha
 1. Remember do not replace '=' with '==', in the cases you need '='!  
-2. ex1-24 ex2-1 2-8.c(getline3)  
+2. ex1-24 ex2-1 2-8.c(getline3) ex5-6 has not been finished yet 
 3. ctrl + d 如果不用EOF判断作为结束的话, 会输出 ÿ !  
 4. 好像 MASK 是一个很重要的词  
 5. side effect !   
@@ -25,3 +25,4 @@
 17. C/learn/chapter5/pointer.c array objects can be refered to without bounds??  
 18. C programing languange page 103 ...(There is oneexception: the address of the first element past the end of an array can be used in pointer arithmetic.) ...?  
 19. C/learn/chapter5/trcpy.c -- 编译好运行, 每次运行s的地址不变, t的地址会变. ..?
+20. Why some self-defined functions (white behind main() in the xxx.c) can be used without declareation, some would not then can be used?  

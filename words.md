@@ -70,6 +70,8 @@ concurrent 并发的
 churn 搅动
 
 # D
+defer 推迟  
+division 分割  
 dereferencing 取值 
 discipline 纪律  
 decimal 十进制的  
@@ -88,6 +90,7 @@ duplicate 重复 复制
 delimited 划定界限的 
 
 # E
+end to end 首尾相连  
 enforce 实施  
 exploit 开发  
 excess 超过 超额   
@@ -120,6 +123,7 @@ granularity 粒度
 generalize 概括 推广
 
 # H
+high overhead 高开销  
 henceforth 从今以后  
 hand out 分发  
 heavy write activity 大负载写行为
@@ -174,6 +178,7 @@ left to 由..来决定
 literal 文字的
 
 # M
+myriad 无数种  
 mastered 精通  
 mnemonic 助亿的  
 mandate 命令 委托  
@@ -257,6 +262,7 @@ representation 表示
 recipe 配方
 
 # S
+stripped-down 简装的  
 sole 仅有的  
 syntactically 语法上的  
 synonym 同义字  
@@ -312,6 +318,7 @@ unfortunate 不幸的 不成功的
 unary 一元的(操作)
 
 # V
+variable-length 可变长度  
 vacate 空出
 
 # W

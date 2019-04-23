@@ -2052,7 +2052,7 @@ resize2fs /dev/sda1
 
 cloud day02
 //////////////////////////////////////////////////////////
-opensdak
+openstak
 会自己管理网络,会与NetworkManager冲突，所以卸掉了NetworkManager
 会自己管理防火墙，所以些掉了firewalld
 需要一个dns服务器

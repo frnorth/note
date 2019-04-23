@@ -178,6 +178,7 @@ left to 由..来决定
 literal 文字的
 
 # M
+minor 未成年的 较小的  
 myriad 无数种  
 mastered 精通  
 mnemonic 助亿的  
@@ -205,6 +206,7 @@ optional 可选择的
 operand 操作数
 
 # P
+proceed 继续进行  
 premature 比预期早的  
 possibility 可能性  
 previously 以前的  

@@ -33,6 +33,8 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+concurrency 并发性  
+costum 习惯 定制的  
 consequence 重要性 结果
 contiguous 连续的 
 consecutively 连续的  
@@ -198,6 +200,7 @@ optional 可选择的
 operand 操作数
 
 # P
+premature 比预期早的  
 possibility 可能性  
 previously 以前的  
 progressive 先进的  

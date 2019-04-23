@@ -158,3 +158,10 @@ free			有了
 cat /proc/swaps		有了
 echo "/var/swap   swap  swap  defaults  0  0" >> /etc/fstab		添加永久
 ```
+
+39. `https://docs.nginx.com/nginx/admin-guide/load-balancer/http-health-check/` 甚吊  
+
+40. 找含有某个字的文件:
+```
+for i in `find ./ -type f`; do echo $i; cat $i | grep itoa; done
+```

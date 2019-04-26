@@ -23,3 +23,8 @@ pointer and offset 指针和偏移量
 several important facets ...
 strong relationship
 
+# T
+This is an obscurity that catches the unwary ??
+
+# P
+at a premium 非常珍贵  

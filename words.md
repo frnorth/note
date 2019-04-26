@@ -70,6 +70,7 @@ concurrent 并发的
 churn 搅动
 
 # D
+defect 不足之处  
 defer 推迟  
 division 分割  
 dereferencing 取值 
@@ -123,6 +124,7 @@ granularity 粒度
 generalize 概括 推广
 
 # H
+hath have的第三人称单数现在式  
 high overhead 高开销  
 henceforth 从今以后  
 hand out 分发  
@@ -172,6 +174,8 @@ incorporate 包含 合并
 # K
 
 # L
+legitimate 合理的  
+leap year 闰年  
 lexicographical 词典编纂的  
 lump 混在一起  
 left to 由..来决定  
@@ -201,11 +205,15 @@ naive 天真的
 negation 否定
 
 # O
+obscurity 朦胧  
 occupy 占据  
 optional 可选择的
 operand 操作数
 
 # P
+phrase 习语 措辞
+phony 假的  
+premium 额外费用  
 proceed 继续进行  
 premature 比预期早的  
 possibility 可能性  
@@ -242,6 +250,9 @@ periodically 定期的
 query 查询  
 
 # R
+remedy 补救  
+recall 召回 回忆   
+rectangle 矩形  
 rudimentary 基本的 发育不全的   
 regular 有规律的  
 recursion 递归  
@@ -300,6 +311,7 @@ scenario 方案
 subsequent 随后的
 
 # T
+transformation 转化  
 tradeoff 权衡
 trivial 琐碎的  
 trailing 后面的  
@@ -314,6 +326,7 @@ take place 发生
 truncate 截断
 
 # U
+unwary 粗心的  
 uninitiated 缺少经验的 外行的
 unexpected 意想不到的
 unfortunate 不幸的 不成功的

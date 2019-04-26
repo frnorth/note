@@ -46,3 +46,7 @@ commit;
 select * from t1;  (什么都没了)
 ```
 
+10. postgres性能分析报告, 可以用pgbadger, 先将postgresql.conf的日志注释去掉, 然后重启, 记录一段时间, 然后:
+```
+pgbadger -j 10 --prefix '%t [%p]: [%l-1] user=%u,db=%d,app=%a,client=%h' /var/log/postgresql/postgresql-9.6-main.log
+```

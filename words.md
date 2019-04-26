@@ -91,6 +91,7 @@ duplicate 重复 复制
 delimited 划定界限的 
 
 # E
+enhancement 增大  
 end to end 首尾相连  
 enforce 实施  
 exploit 开发  
@@ -131,6 +132,8 @@ hand out 分发
 heavy write activity 大负载写行为
 
 # I
+inversion 倒置 反转  
+introduce 介绍 引进  
 integration 集合  
 indirection 间接  
 in effect 实际上 生效  

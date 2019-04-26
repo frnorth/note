@@ -14,10 +14,11 @@
 val = *--p; /* pop top of stck into val */
 ```
 11. Statments like: `*p = "Hello World";` `*p = malloc(xxx); *p++ = 'H';`, p would be alloced in differet places in computer.
-12. If a two-dimensional array was defined below, daytab[0][13] is daytab[1][0], and daytab[0][14] is daytab[1][1] ... interesting ... more, daytab[1] is just the address of first element of the second row, and dereferencing of it like `char it_value = *daytab[1]` is right. After all, two-dimensional array is one-dimensional internally. Although, initialization like `char *d = daytab` would be warned not compatible, which should be `char *d = daytab[0]` ...  
+12. C/learn/chapter5/daymonthyear.c -- If a two-dimensional array was defined below, daytab[0][13] is daytab[1][0], and daytab[0][14] is daytab[1][1] ... interesting ... more, daytab[1] is just the address of first element of the second row, and dereferencing of it like `char it_value = *daytab[1]` is right. After all, two-dimensional array is one-dimensional internally. Although, initialization like `char *d = daytab` would be warned not compatible, which should be `char *d = daytab[0]` ...  more, the boundary issue like month 12 or 13, needed to be considered ...  
 ```
 static char daytab[2][13] = {
     {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
     {0, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
 };
 ```
+13. C programing languange page 116 -- This shows that the format argument of printf can be an expression too: `printf((argc > 1) ? "%s " : "%s", *++argv);`  

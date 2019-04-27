@@ -22,3 +22,4 @@ static char daytab[2][13] = {
 };
 ```
 13. C programing languange page 116 -- This shows that the format argument of printf can be an expression too: `printf((argc > 1) ? "%s " : "%s", *++argv);`  
+14. C programing languange page 117 -- C/learn/chapter5/find0 -- 书里的原版程序还是有点666啊...  

@@ -21,3 +21,5 @@ int strindex(char s[], char t[])
     return -1;
 }
 ```
+
+2. C programing languange page 118 exer5-11 -- Seems like impossible  to modify entab, cause when printf("\t") would always be 8 spaces ...   

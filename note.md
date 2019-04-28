@@ -167,3 +167,4 @@ for i in `find ./ -type f`; do echo $i; cat $i | grep itoa; done
 ```
 
 41. ps aux | grep xxx -- 第3列, 第4列, 就是占用的cpu, men多少.  
+

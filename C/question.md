@@ -26,3 +26,4 @@
 18. C programing languange page 103 ...(There is oneexception: the address of the first element past the end of an array can be used in pointer arithmetic.) ...?  
 19. C/learn/chapter5/trcpy.c -- 编译好运行, 每次运行s的地址不变, t的地址会变. ..?
 20. Why some self-defined functions (white behind main() in the xxx.c) can be used without declareation, some would not then can be used?  
+21. C/learn/chapter5/exer5-11-tab/exer5-12-detab.c -- /* is that right to define marco like this? */ ? ... more, This is a so amazing program ...!   

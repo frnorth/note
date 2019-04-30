@@ -1,4 +1,5 @@
 # A
+assure 保证  
 at most 至多   
 acquire 获得
 ampersand &
@@ -33,6 +34,10 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+category 种类 分类  
+conjunction 结合  
+be cast to 转换为  
+criteria 标准 条件  
 concurrency 并发性  
 costum 习惯 定制的  
 consequence 重要性 结果
@@ -132,6 +137,7 @@ hand out 分发
 heavy write activity 大负载写行为
 
 # I
+intuitive 直觉 直观的  
 inversion 倒置 反转  
 introduce 介绍 引进  
 integration 集合  
@@ -214,6 +220,7 @@ optional 可选择的
 operand 操作数
 
 # P
+procedure 程序 步骤  
 phrase 习语 措辞
 phony 假的  
 premium 额外费用  
@@ -278,6 +285,7 @@ representation 表示
 recipe 配方
 
 # S
+skimp 节省  
 stripped-down 简装的  
 sole 仅有的  
 syntactically 语法上的  

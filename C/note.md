@@ -26,3 +26,20 @@ static char daytab[2][13] = {
 15. 如果想用标准库的atof, 还是要老老实实的包含到<stdlib.h>  
 16. C/learn/chapter5/exer5-10-expr/main.c -- subsequence "++" would be calculate after calling of the function with a parameter processing it: `isnum(\*argv++)`; ... and if wanna execute expr for multiplication: `./expr 2.2 3.3 \*`, notice the '\*', or use the '*' ...  
 17. defprintf(atof("1.0E+02")); it is amazing to use atof() like this!  
+18. C programing languange page 118 -- ... (An alternate calid form would be **++argv.) ... [] binds tighter than * and ++, ...  
+19. C programing languange page 120 -- The generic pointer type void * is used for the pointer arguments. Any pointer can be cast to void * and back again without loss of information, so we can call qsort by casting arguments to void *.  
+20. C/learn/chapter5/sortlines2 in C programing languange page 120 -- This program contains casting pointer arguments to void *, which is very interesting ...  
+```C
+/* Recalling C/learn/chapter4/qsort.c, shows that: one can define another void pointer to the already defined int array[], and calling qsort using the void one, but, defining and decaleration of qsort must use the int v[] and not changing it into void. */
+void qsort(int v[], int left, int j);
+main()
+{
+    int array[] = {54, 57, 214, 36, 21, 1, 35, 3, 68, 87, 156, 233, 124};
+    void *a = array;
+    qsort(a, 1, 11);
+}
+
+/* C/learn/chapter5/sortlines2 -- `num ? x : y` require the statement x and y possessing same type, so, arguments of `int numcmp()` need to be const char * just like strcmp dose */
+int numcmp(const char *, const char *);
+        qsort2((void **)lineptr, 0, nlines - 1, (int (*)(void *, void *))(num ? numcmp : strcmp));
+```

@@ -27,3 +27,9 @@
 19. C/learn/chapter5/trcpy.c -- 编译好运行, 每次运行s的地址不变, t的地址会变. ..?
 20. Why some self-defined functions (white behind main() in the xxx.c) can be used without declareation, some would not then can be used?  
 21. C/learn/chapter5/exer5-11-tab/exer5-12-detab.c -- /* is that right to define marco like this? */ ? ... more, This is a so amazing program ...!   
+22. C programing languange page 119 -- What would happen not cast lineptr to (void **) when calling the qsort?  
+```C
+void qsort(void *lineptr[], int left, int right, int (*comp)(void*, void*));
+qsort(lineptr, ....)
+```
+23. <stdlib.h> contains the qsort function, but how to use it?  

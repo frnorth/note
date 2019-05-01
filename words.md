@@ -1,4 +1,8 @@
 # A
+adopt 采取  
+attainable 可得到的 　
+assign 指派 分配  
+acquaintance 熟人   
 assure 保证  
 at most 至多   
 acquire 获得
@@ -34,6 +38,7 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)
 
 # C 
+controversy 争论  
 category 种类 分类  
 conjunction 结合  
 be cast to 转换为  
@@ -96,6 +101,8 @@ duplicate 重复 复制
 delimited 划定界限的 
 
 # E
+effective 实际的 有效的  
+emphasize 强调  
 enhancement 增大  
 end to end 首尾相连  
 enforce 实施  
@@ -183,6 +190,7 @@ incorporate 包含 合并
 # K
 
 # L
+likelihoood 可能性  
 legitimate 合理的  
 leap year 闰年  
 lexicographical 词典编纂的  
@@ -214,12 +222,14 @@ naive 天真的
 negation 否定
 
 # O
+outcome 结果  
 obscurity 朦胧  
 occupy 占据  
 optional 可选择的
 operand 操作数
 
 # P
+parse 解析  
 procedure 程序 步骤  
 phrase 习语 措辞
 phony 假的  
@@ -260,12 +270,15 @@ periodically 定期的
 query 查询  
 
 # R
+reveal 揭露  
+recognition 承认 识别  
 remedy 补救  
 recall 召回 回忆   
 rectangle 矩形  
 rudimentary 基本的 发育不全的   
 regular 有规律的  
 recursion 递归  
+recursive 递归的  
 repetition 副本  
 respective 各自的  
 realistic 现实存在的  
@@ -285,6 +298,9 @@ representation 表示
 recipe 配方
 
 # S
+salutary 有益的  
+subjective 主观的  
+synthesize 合成  
 skimp 节省  
 stripped-down 简装的  
 sole 仅有的  
@@ -322,6 +338,7 @@ scenario 方案
 subsequent 随后的
 
 # T
+toss 掷硬币做决定  
 transformation 转化  
 tradeoff 权衡
 trivial 琐碎的  
@@ -344,6 +361,7 @@ unfortunate 不幸的 不成功的
 unary 一元的(操作)
 
 # V
+vague 含糊的  
 variable-length 可变长度  
 vacate 空出
 

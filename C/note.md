@@ -30,7 +30,7 @@ static char daytab[2][13] = {
 19. C programing languange page 120 -- The generic pointer type void * is used for the pointer arguments. Any pointer can be cast to void * and back again without loss of information, so we can call qsort by casting arguments to void *.  
 20. C/learn/chapter5/sortlines2 in C programing languange page 120 -- This program contains casting pointer arguments to void *, which is very interesting ...  
 ```C
-/* Recalling C/learn/chapter4/qsort.c, shows that: one can define another void pointer to the already defined int array[], and calling qsort using the void one, but, defining and decaleration of qsort must use the int v[] and not changing it into void. */
+/* 1 -- Recalling C/learn/chapter4/qsort.c, shows that: one can define another void pointer to the already defined int array[], and calling qsort using the void one, but, defining and decaleration of qsort must use the int v[] and not changing it into void. */
 void qsort(int v[], int left, int j);
 main()
 {
@@ -39,7 +39,15 @@ main()
     qsort(a, 1, 11);
 }
 
-/* C/learn/chapter5/sortlines2 -- `num ? x : y` require the statement x and y possessing same type, so, arguments of `int numcmp()` need to be const char * just like strcmp dose */
+/* 2 -- C/learn/chapter5/sortlines2 -- `num ? x : y` require the statement x and y possessing same type, so, arguments of `int numcmp()` need to be const char * just like strcmp dose */
 int numcmp(const char *, const char *);
         qsort2((void **)lineptr, 0, nlines - 1, (int (*)(void *, void *))(num ? numcmp : strcmp));
+
+/* 3 -- C/learn/chapter5/sortlines2 -- main.c calling of the qsort, the (int (*)(void *, void *)) was not nesserary, unless function type need to be cast. So recursively calling qsort during qsort function, the qsort argument was simply qsort. (the (int ..) above maybe not eliminated) */
+		/* main.c */
+        qsort2((void **)lineptr, 0, nlines - 1,
+            (int (*)(void *, void *))(numeric ? numcmp : (fold? strcmpf : strcmp)),
+            reverse);
+	/* qsort2 */
+	qsort2(v, left, last - 1, comp, reverse);
 ```

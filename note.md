@@ -168,3 +168,10 @@ for i in `find ./ -type f`; do echo $i; cat $i | grep itoa; done
 
 41. ps aux | grep xxx -- 第3列, 第4列, 就是占用的cpu, men多少.  
 
+42. windows 上竟然也可以用ubuntu! linux 子系统:
+```
+设置 --> 更新与安全 --> 开发者选项 --> 开发人员模式
+控制版面 --> 启用或关闭Windows功能 --> 适用于Linux的Windows子系统
+打开cmd --> C:\Users\WangJie>bash --> 有提示, 访问连接, 是到了应用商店里, 下载安装ubuntu就可以了
+在cmd 输入bash或者, 开始菜单点ubuntu就可以进去了.
+```

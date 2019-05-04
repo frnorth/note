@@ -51,3 +51,4 @@ int numcmp(const char *, const char *);
 	/* qsort2 */
 	qsort2(v, left, last - 1, comp, reverse);
 ```
+21. Search for "C reference" which in `https://en.cppreference.com/w/c`, may find help for refer standard library.  

@@ -44,6 +44,10 @@ git branch back-test-hahaha 022f98d2993635270b7db00931d5a51d368a3812
 git checkout back-test-hahaha 
 git push origin back-test-hahaha 
 ```
+3. git push 记住用户名和密码, 在.git/config中追加:
+``[credential]
+    helper = store
+```
 
 ## gitlab  
 配置smtp, 新建用户发送邮件:  

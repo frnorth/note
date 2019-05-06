@@ -121,6 +121,7 @@ exemplify 例证
 enumeration 列举
 
 # F
+fleet 舰队 车队  
 facet 方面  
 formal parameter 形式参数  
 fate 命运  

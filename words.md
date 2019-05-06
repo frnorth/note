@@ -1,4 +1,5 @@
 # A
+abbreviate 缩写 使简短
 adopt 采取  
 attainable 可得到的 　
 assign 指派 分配  
@@ -7,7 +8,7 @@ assure 保证
 at most 至多   
 acquire 获得
 ampersand &
-arcane 神秘的  
+arcane [ɑː^keɪn] 神秘的  
 advise 建议  
 analogous 类似  
 adjective 形容词  

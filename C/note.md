@@ -52,3 +52,4 @@ int numcmp(const char *, const char *);
 	qsort2(v, left, last - 1, comp, reverse);
 ```
 21. Search for "C reference" which in `https://en.cppreference.com/w/c`, may find help for refer standard library.  
+22. C/learn/chapter5/dcl -- There are three judgement in while while(..gettoken..), so int the worst condition, one need to tab times EOF to end the program.  

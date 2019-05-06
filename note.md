@@ -127,6 +127,14 @@ sudo apt-get install openssh-server
 ps -e | grep ssh    ps auz | grep ssh
 sudo /etc/init.d/ssh start
 ```
+如果时启了一个centos的docker, 那么:
+```
+yum -y install openssh-server
+ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
+ssh-keygen -t rsa -f /etc/ssh/ssh_host_ed25519_key
+ssh-keygen -t rsa -f /etc/ssh/ssh_host_ecdsa_key
+/usr/sbin/sshd
+```
 
 37. 用户空间与权限
 我是服务器的管理员, 我要给其他人添加账号到服务器上, 并把他的公钥拷到电脑, 让他能ssh登陆:  
@@ -175,3 +183,5 @@ for i in `find ./ -type f`; do echo $i; cat $i | grep itoa; done
 打开cmd --> C:\Users\WangJie>bash --> 有提示, 访问连接, 是到了应用商店里, 下载安装ubuntu就可以了
 在cmd 输入bash或者, 开始菜单点ubuntu就可以进去了.
 ```
+
+43. frp内网穿透: `https://github.com/fatedier/frp`  

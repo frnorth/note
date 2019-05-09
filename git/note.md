@@ -12,6 +12,14 @@ git branch test
 git push origin test
 ```
 
+3. 系统yum源安装的git版本可能太低, 源码包编译安装
+```
+./configure --prefix=/usr/local/git
+make prefix=/usr/local/git with-curl=/usr/include/curl/ all
+make prefix=/usr/local/git install
+```
+
+
 ## 回滚
 1. 准备:
 ```

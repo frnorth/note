@@ -10,6 +10,7 @@ element zero of the array
 location of the initial element 
 
 # I
+in turn 轮流 转而  
 ..incrementing it is perfectly legal
 
 # L

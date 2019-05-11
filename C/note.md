@@ -57,3 +57,7 @@ int numcmp(const char *, const char *);
 *1 -- There are three judgement in while while(..gettoken..), so int the worst condition, one need to tab times EOF to end the program.  
 *2 -- The program internally find out priority in the declaration, and print the words to dricribe the declaration, on the basis of the priority ... !?
 ```
+23. C/learn/chapter6/struct2.c -- an interesting defprint marco
+```
+#define defprint(type, x) printf(#x ": %" #type"\n", x)
+```

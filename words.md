@@ -18,13 +18,13 @@ archive 归档
 aid 帮助  
 asynchronous 异步的  
 adapt 改编  
+adapter 适配器  
 adjacent 邻近的  
 arithmetic progression 等差数列  
 analog 类似  
 attribute 属性 把.. 归于  
 associativity 结合性  
 advisable 可取的  
-adapter 适配器  
 as if 犹如  
 alphabet 字母表  
 attempted 企图  
@@ -39,6 +39,7 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)  
   
 # C  
+canonical 准确的  
 corner 拐角  
 coordinate 坐标  
 controversy 争论  
@@ -311,6 +312,7 @@ representation 表示
 recipe 配方  
   
 # S  
+stress 强调  
 salutary 有益的  
 subjective 主观的  
 synthesize 合成  

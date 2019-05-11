@@ -15,8 +15,28 @@ git push origin test
 3. 系统yum源安装的git版本可能太低, 源码包编译安装
 ```
 ./configure --prefix=/usr/local/git
+# 然而如果普通make, git不支持https, 所以要让git支持https:
 make prefix=/usr/local/git with-curl=/usr/include/curl/ all
 make prefix=/usr/local/git install
+```
+
+4. 合并代码:
+```
+# 看目前在哪个分支
+git branch
+# if the source branch needed merging was not shown in ouput of command `git branch`, one need to checkout out the source branch:
+git checkout release-1.0.0
+# now there is the source branch and target branch, both shown
+git branch
+# checkout to the target branch, which is master here:
+git checkout master
+# merge
+git merge release-1.0.0
+# now, ctrl + x to exit the log, and git log to see if it were succeec
+git log
+# push
+git status
+git push origin master
 ```
 
 

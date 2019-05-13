@@ -39,6 +39,12 @@ git status
 git push origin master
 ```
 
+5. 误删文件找回:
+```
+git reset HEAD
+git checkout xx
+```
+
 
 ## 回滚
 1. 准备:

@@ -41,3 +41,5 @@ qsort(lineptr, ....)
 ```
 23. <stdlib.h> contains the qsort function, but how to use it?  
 24. C programing languange page 128 -- An automatic structure may also be initialized by assignment or ... what is a automatic structure?  
+25. C/learn/chapter6/struct2.c -- 102 row `(--tp)->n += YLEN - 5;`, why segment fault when `YLEN - 2`?  
+

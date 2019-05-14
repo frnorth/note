@@ -147,6 +147,7 @@ granularity 粒度
 generalize 概括 推广  
   
 # H  
+hierarchy 层级 等级制度  
 hath have的第三人称单数现在式  
 high overhead 高开销  
 henceforth 从今以后  
@@ -241,6 +242,7 @@ optional 可选择的
 operand 操作数  
   
 # P  
+parenthesize 加上括号  
 payroll 工资单  
 parse 解析  
 procedure 程序 步骤  

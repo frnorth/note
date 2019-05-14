@@ -61,3 +61,4 @@ int numcmp(const char *, const char *);
 ```
 #define defprint(type, x) printf(#x ": %" #type"\n", x)
 ```
+24. C/learn/chapter5/pointer.c -- same string constant has the same address. And for `int a[10];`,`a` and `&a` both means the address of `a[10]`.  

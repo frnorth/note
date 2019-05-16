@@ -185,3 +185,8 @@ for i in `find ./ -type f`; do echo $i; cat $i | grep itoa; done
 ```
 
 43. frp内网穿透: `https://github.com/fatedier/frp`  
+
+44. ssh 连接经常掉线
+```
+echo "    ServerAliveInterval 60" >> /etc/ssh/ssh_config
+```

@@ -84,6 +84,8 @@ concurrent 并发的
 churn 搅动  
   
 # D  
+derived 导出的 衍生的 -- ... or a derived type like a structure or a pointer. ...  
+derive 推断
 diagonally 对角的  
 denote 表示 指示  
 defect 不足之处  
@@ -107,6 +109,7 @@ duplicate 重复 复制
 delimited 划定界限的  
   
 # E  
+entry 入口 条目 -- The size of the array is the size of one entry times the number of entries, so the number of entries is just size of keytab / size of struct key ...  
 entity 实体 存在  
 effective 实际的 有效的  
 emphasize 强调  
@@ -355,6 +358,7 @@ scenario 方案
 subsequent 随后的  
   
 # T  
+terminate 使结束 结束 -- ... One possibility would be to terminate the list of initializers with a null pointer, then loop along keytab until the end is found. ...
 toss 掷硬币做决定  
 transformation 转化  
 tradeoff 权衡  
@@ -390,5 +394,6 @@ wraps 包裹
 # X  
   
 # Y  
+yield 屈服 产生 -- ... sizeof object and sizeof(type name) yield an integer equal to the size of the specified object or type in bytes. ...
   
 # Z  

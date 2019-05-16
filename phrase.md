@@ -17,6 +17,9 @@ in turn 轮流 转而
 # L
 last-in first-out list  
 
+#M
+more than 太过了 -- ... But this is more than is needed, ...  
+
 # P
 pointer arithmetic 搜嘎.. 可以理解为对于指针的算术运算
 pointer and offset 指针和偏移量  
@@ -24,6 +27,7 @@ pointer and offset 指针和偏移量
 # S
 several important facets ...
 strong relationship
+subject to 倾向于 服从 -- ...it is a lot easier and safer to do it by machine, expecially if the list is subject to change.  
 
 # T
 This is an obscurity that catches the unwary ??

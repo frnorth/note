@@ -42,4 +42,4 @@ qsort(lineptr, ....)
 23. <stdlib.h> contains the qsort function, but how to use it?  
 24. C programing languange page 128 -- An automatic structure may also be initialized by assignment or ... what is a automatic structure?  
 25. C/learn/chapter6/struct2.c -- 102 row `(--tp)->n += YLEN - 5;`, why segment fault when `YLEN - 2`?  
-
+26. C programing languange page 135 ... A sizeof can not be used in a #if line, because the preprocessor does not parse type names. ... what exactly means is this?  

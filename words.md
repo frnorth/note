@@ -27,6 +27,7 @@ associativity 结合性
 advisable 可取的  
 as if 犹如  
 alphabet 字母表  
+alphabetic 字母的 -- ... or the character itself if it is not alphabetic  
 attempted 企图  
   
 # B  

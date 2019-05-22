@@ -40,7 +40,7 @@ cd postgresql-9.6.2
 make
 make install
 adduser postgres
-// 时区设置
+// 字体设置
 apt install language-pack-zh-hans
 dpkg-reconfigure locales
 locale

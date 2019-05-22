@@ -190,3 +190,5 @@ for i in `find ./ -type f`; do echo $i; cat $i | grep itoa; done
 ```
 echo "    ServerAliveInterval 60" >> /etc/ssh/ssh_config
 ```
+
+45. rm -rf 删除 恢复? https://blog.csdn.net/yown/article/details/44836439 或 foremost  

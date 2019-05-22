@@ -110,7 +110,7 @@ duplicate 重复 复制
 delimited 划定界限的  
   
 # E  
-entry 入口 条目 -- The size of the array is the size of one entry times the number of entries, so the number of entries is just size of keytab / size of struct key ...  
+entry 入口 条目 -- the size of the array is the size of one entry times the number of entries, so the number of entries is just size of keytab / size of struct key ...  
 entity 实体 存在  
 effective 实际的 有效的  
 emphasize 强调  
@@ -159,6 +159,7 @@ hand out 分发
 heavy write activity 大负载写行为  
   
 # I  
+interfere 干涉 妨碍  
 intuitive 直觉 直观的  
 inversion 倒置 反转  
 introduce 介绍 引进  
@@ -197,7 +198,7 @@ inadvertently 无意的
 implementation 实现  
 implementation-defined 现实定义  
 internal 内部的  
-involve 包含 牵涉  
+involve 包含 牵涉 ... to illustrate some of the considerations involved with pointers to arrays of structures, let us write the keyword-counting program again, this time using pointers instead of array indices. ...   
 incorporate 包含 合并  
   
 # J  
@@ -359,6 +360,8 @@ scenario 方案
 subsequent 随后的  
   
 # T  
+throttle 节流 勒死 it is a throttling mechanism to prevent the balancer from taking too many resources from the datanode and interfering with normal cluster operations.  
+threshold 临界值 configuring the blancer threshold  
 terminate 使结束 结束 -- ... One possibility would be to terminate the list of initializers with a null pointer, then loop along keytab until the end is found. ...
 toss 掷硬币做决定  
 transformation 转化  

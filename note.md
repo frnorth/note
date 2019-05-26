@@ -192,3 +192,5 @@ echo "    ServerAliveInterval 60" >> /etc/ssh/ssh_config
 ```
 
 45. rm -rf 删除 恢复? https://blog.csdn.net/yown/article/details/44836439 或 foremost  
+
+46. 小米6电源键坏了, 怎么开机? 接上电源的瞬间, 长按音量+键, 然后进入mi-recovery, 长时间不操作, 默认重启.  

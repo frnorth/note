@@ -19,3 +19,9 @@ tailf /tmp/redis_monitor.log
 ```
 
 4. 连接redis集群, 在最后加上 -c 即可  
+
+5. 全清缓存
+```
+dbsize
+flushall
+```

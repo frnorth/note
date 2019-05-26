@@ -225,7 +225,7 @@ moderate 适度的
 marco argument  宏参数  
 marco expansion 宏展开  
 middleware 中间件  
-moral 精神上  
+moral 精神上 道德的 -- it require a moral flexibility, that goes beyond most people ...  
 multiplication 乘法 增加  
 manipulation 操作  
 marco 巨大的  

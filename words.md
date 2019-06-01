@@ -159,6 +159,8 @@ hand out 分发
 heavy write activity 大负载写行为  
   
 # I  
+ingest 摄取 -- provides near real-time access to data stored in or ingested into hadoop and hBase.  
+instantiate 例示 举例说明 -- this topic describes the procedures to create images of the mloudera manager host and worker host and how to instantiate from those images
 interfere 干涉 妨碍  
 intuitive 直觉 直观的  
 inversion 倒置 反转  
@@ -215,6 +217,7 @@ left to 由..来决定
 literal 文字的  
   
 # M  
+massive 大量的 a massively parallel processing sql engine for interactive analytics and business intelligence.  
 minor 未成年的 较小的  
 myriad 无数种  
 mastered 精通  
@@ -239,6 +242,7 @@ naive 天真的
 negation 否定  
   
 # O  
+optimize 优化 -- its highly optimized architecture makes it ideally suit for traditional bi-style queries with joins, aggregations, and including those produced by mapreduce jobs or loaded into hive tables.  
 organize 组织  
 outcome 结果  
 obscurity 朦胧  

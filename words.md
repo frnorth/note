@@ -1,4 +1,6 @@
 # A  
+affirmatively 肯定的 积极的  
+alignment 队列 校准  
 abbreviate 缩写 使简短  
 adopt 采取  
 attainable 可得到的 　  
@@ -40,6 +42,8 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)  
   
 # C  
+coerce 强制 --  in c, the proper method is to declare that malloc returns a pointer to void, then explicitly coerce the pointer into the desired type with a cast  
+chancy 冒险的 不安的 -- this recursive declaration of a node might look chancy, but it is correct  
 canonical 准确的  
 corner 拐角  
 coordinate 坐标  
@@ -131,6 +135,7 @@ exemplify 例证
 enumeration 列举  
   
 # F  
+factorial 阶乘 -- as a slightly more complex example, the following program defines a function to compute the factorial of a given number, asks the user for a number, and prints its factorial  
 fleet 舰队 车队  
 facet 方面  
 formal parameter 形式参数  
@@ -251,6 +256,7 @@ optional 可选择的
 operand 操作数  
   
 # P  
+percolate 过滤 -- at each stage, that word is compared to the word already stored at the node, and is percolated down to either the left or right subtree by a recursive call to addtree  
 parenthesize 加上括号  
 payroll 工资单  
 parse 解析  
@@ -323,6 +329,7 @@ representation 表示
 recipe 配方  
   
 # S  
+shaky 不可靠的 -- if you feel shaky about how recursion works  
 stress 强调  
 salutary 有益的  
 subjective 主观的  
@@ -390,6 +397,7 @@ unfortunate 不幸的 不成功的
 unary 一元的(操作)  
   
 # V  
+vexing 令人烦恼的 -- The question of the type declaration for a function like malloc is a vexing one for any language that takes its type-checking seriously  
 vague 含糊的  
 variable-length 可变长度  
 vacate 空出  

@@ -18,6 +18,7 @@ in turn 轮流 转而
 last-in first-out list  
 
 #M
+in a moment -- we will discuss these routines in a moment  
 more than 太过了 -- ... But this is more than is needed, ...  
 
 # P

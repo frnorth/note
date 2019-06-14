@@ -80,7 +80,7 @@ wkhtmltopdf -h
 ```
 
 30. github ssh不能用了, 可以改用https, 同时为了不每次都输入密码:
-```
+```bash
 vim /root/C/.git/config
 url = https://github.com/frnorth/C
 [credential]

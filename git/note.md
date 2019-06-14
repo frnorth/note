@@ -16,11 +16,12 @@ git push origin test
 
 ### 3. 系统yum源安装的git版本可能太低, 源码包编译安装
 ```
-yum -y install curl curl-devel gcc make openssl(不知道是否需要..)
+yum -y install curl curl-devel gcc make openssl zlib-devel (不知道是否需要..)
 ./configure --prefix=/usr/local/git (如果下面 make 有 prefix, 那么这里不需要加 --prefix)
 # 然而如果普通make, git不支持https, 所以要让git支持https:
 make prefix=/usr/local/git with-curl=/usr/include/curl/ all
 make prefix=/usr/local/git install
+export PATH ...
 ```
 --------------------------------------------------------------------------------
 

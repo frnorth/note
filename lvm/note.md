@@ -1,5 +1,5 @@
 # 将很多快硬盘做成逻辑卷
-```
+```bash
   fdisk /dev/sde ... 先将需要的硬盘分好
   pvcreate /dev/sd{c1,d1,e1,f1,g1,h1}
   pvs

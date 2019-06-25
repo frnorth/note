@@ -108,7 +108,7 @@ disintegration 瓦解
 directive 指令  
 discretion 判断力  
 declare 声明  
-distinct 独特 有区别  
+distinct 独特 有区别 -- write a program that prints the distinct words in its input sorted into decreasing order of frequency of occurrence. precede each word by its count.
 deprecate 放弃使用  
 duplicate 重复 复制  
 delimited 划定界限的  
@@ -164,6 +164,7 @@ hand out 分发
 heavy write activity 大负载写行为  
   
 # I  
+innards 内部结构  
 ingest 摄取 -- provides near real-time access to data stored in or ingested into hadoop and hBase.  
 instantiate 例示 举例说明 -- this topic describes the procedures to create images of the mloudera manager host and worker host and how to instantiate from those images
 interfere 干涉 妨碍  
@@ -193,7 +194,7 @@ indice 目录 指标
 indices index的复数  
 interval 间隔  
 interchange 交换  
-idiom 习惯  
+idiom 习惯 习语  
 indentation 缩进排版  
 interpret 解释  
 intentionally 故意的  

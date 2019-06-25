@@ -26,10 +26,10 @@ static char daytab[2][13] = {
 15. 如果想用标准库的atof, 还是要老老实实的包含到<stdlib.h>  
 16. C/learn/chapter5/exer5-10-expr/main.c -- subsequence "++" would be calculate after calling of the function with a parameter processing it: `isnum(\*argv++)`; ... and if wanna execute expr for multiplication: `./expr 2.2 3.3 \*`, notice the '\*', or use the '*' ...  
 17. defprintf(atof("1.0E+02")); it is amazing to use atof() like this!  
-18. C programing languange page 118 -- ... (An alternate calid form would be **++argv.) ... [] binds tighter than * and ++, ...  
+18. C programing languange page 118 -- ... (An alternate calid form would be \**++argv.) ... [] binds tighter than * and ++, ...  
 19. C programing languange page 120 -- The generic pointer type void * is used for the pointer arguments. Any pointer can be cast to void * and back again without loss of information, so we can call qsort by casting arguments to void *.  
-20. C/learn/chapter5/sortlines2 in C programing languange page 120 -- This program contains casting pointer arguments to void *, which is very interesting ...  
-```C
+20. C/learn/chapter5/sortlines2 in C programing languange page 120 -- This program contains casting pointer arguments to void * , which is very interesting ...  
+```
 /* 1 -- Recalling C/learn/chapter4/qsort.c, shows that: one can define another void pointer to the already defined int array[], and calling qsort using the void one, but, defining and decaleration of qsort must use the int v[] and not changing it into void. */
 void qsort(int v[], int left, int j);
 main()
@@ -63,3 +63,4 @@ int numcmp(const char *, const char *);
 ```
 24. C/learn/chapter5/pointer.c -- same string constant has the same address. And for `int a[10];`,`a` and `&a` both means the address of `a[10]`.  
 25. C programing languange page 135 -- ... since the size of the array is completely determined at compile time. ... that meas sizeof can be implemented for any object, and then, we make amazing out of the result.  
+26. 将字符串和数字同时写入一个字符串变量, 可以用 sprintf  

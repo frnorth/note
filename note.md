@@ -5,7 +5,7 @@
 
 3. vim中: 17+G ---> 跳转到第17行, shift+G ---> 跳转到最后一行  
 
-4. tab不出来? ---> yum list | grep bash ---> 有completion的,装了, 还不行? yum -y install *-completion   
+4. tab不出来? ---> yum list | grep bash ---> 有completion的,装了, 还不行? yum -y install \*-completion   
 
 5. http://www.gnu.org/software/bash/manual/bashref.html 牛逼了!  
 
@@ -80,7 +80,7 @@ wkhtmltopdf -h
 ```
 
 30. github ssh不能用了, 可以改用https, 同时为了不每次都输入密码:
-```bash
+```
 vim /root/C/.git/config
 url = https://github.com/frnorth/C
 [credential]
@@ -196,3 +196,5 @@ echo "    ServerAliveInterval 60" >> /etc/ssh/ssh_config
 46. 小米6电源键坏了, 怎么开机? 接上电源的瞬间, 长按音量+键, 然后进入mi-recovery, 长时间不操作, 默认重启.  
 
 47. 直接修改/etc/passwd, 可以改登陆的解释器  
+
+48. hash ?  

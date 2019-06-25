@@ -7,3 +7,8 @@ set cindent             //定制C语言风格的缩进
 set number            //显示行号
 set showmatch      //设置为匹配模式
 set mouse=a         //使用鼠标，用滚轮时，文本可以上下移动
+
+2. vim 插件  
+https://github.com/VundleVim/Vundle.vim
+https://github.com/plasticboy/vim-markdown
+看这个目录下的vimrc文件

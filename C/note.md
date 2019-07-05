@@ -29,6 +29,7 @@ static char daytab[2][13] = {
 18. C programing languange page 118 -- ... (An alternate calid form would be \**++argv.) ... [] binds tighter than * and ++, ...  
 19. C programing languange page 120 -- The generic pointer type void * is used for the pointer arguments. Any pointer can be cast to void * and back again without loss of information, so we can call qsort by casting arguments to void *.  
 20. C/learn/chapter5/sortlines2 in C programing languange page 120 -- This program contains casting pointer arguments to void * , which is very interesting ...  
+>> 是转换了两次? 在main中调用qsort, 将numcmp和strcmp转成了(int (*)(void *, void *)), 而在qsort中调用numcmp和strcmp时, 又将其转换成了(int (char *, char *)) ?
 ```
 /* 1 -- Recalling C/learn/chapter4/qsort.c, shows that: one can define another void pointer to the already defined int array[], and calling qsort using the void one, but, defining and decaleration of qsort must use the int v[] and not changing it into void. */
 void qsort(int v[], int left, int j);
@@ -64,3 +65,4 @@ int numcmp(const char *, const char *);
 24. C/learn/chapter5/pointer.c -- same string constant has the same address. And for `int a[10];`,`a` and `&a` both means the address of `a[10]`.  
 25. C programing languange page 135 -- ... since the size of the array is completely determined at compile time. ... that meas sizeof can be implemented for any object, and then, we make amazing out of the result.  
 26. 将字符串和数字同时写入一个字符串变量, 可以用 sprintf  
+27. 究极指针 -- C/learn/c6/tablookup -- 如果只是返回链表中的某个指针, 那么没法对这个指针本身操作, 因为返回的是个复制. lookup2 直接返回链表的某个指针的地址, 这样, uninstall就可以直接操作这个指针  

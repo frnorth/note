@@ -34,8 +34,8 @@ C/learn/chapter5/dcl -- needed review and, EOFSTATE in getch.c may need change i
 19. C/learn/chapter5/trcpy.c -- 编译好运行, 每次运行s的地址不变, t的地址会变. ..?
 20. Why some self-defined functions (white behind main() in the xxx.c) can be used without declareation, some would not then can be used?  
 21. C/learn/chapter5/exer5-11-tab/exer5-12-detab.c -- /* is that right to define marco like this? */ ? ... more, This is a so amazing program ...!   
-22. C programing languange page 119 -- What would happen not cast lineptr to (void **) when calling the qsort?  
-```C
+22. C programing languange page 119 -- What would happen not cast lineptr to (void \**) when calling the qsort?  
+```
 void qsort(void *lineptr[], int left, int right, int (*comp)(void*, void*));
 qsort(lineptr, ....)
 ```
@@ -43,3 +43,13 @@ qsort(lineptr, ....)
 24. C programing languange page 128 -- An automatic structure may also be initialized by assignment or ... what is a automatic structure?  
 25. C/learn/chapter6/struct2.c -- 102 row `(--tp)->n += YLEN - 5;`, why segment fault when `YLEN - 2`?  
 26. C programing languange page 135 ... A sizeof can not be used in a #if line, because the preprocessor does not parse type names. ... what exactly means is this?  
+27. 在定义struct之前定义这个struct的指针, 是没问题的...
+```
+typedef struct nlist *Nptr;
+typedef struct nlist {      /* table entry: */
+    struct nlist *next; /* next entry in chain */
+    char *name;         /* defined name */
+    char *defn;         /* replacement text */
+} Nlist;
+```
+28. C programing languange 第7章第1节 as we mentioned earlier, functions like getchar and putchar in <stdio.h> and tolower in <ctype.h> are often macros, thus avoiding the overhead of a function call per character. We will show how this is done in Section 8.5. Regardless of how the <ctype.h> functions are implemented on a given machine, programs that use them are shielded from knowledge of the character set ???  

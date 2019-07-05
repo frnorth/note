@@ -14,6 +14,9 @@ iptables -t nat -A PREROUTING -p udp --dport [端口号] -j DNAT --to-destinatio
 iptables -t nat -A POSTROUTING -p tcp -d [目标IP] --dport [端口号] -j SNAT --to-source [本地服务器公网IP]
 iptables -t nat -A POSTROUTING -p udp -d [目标IP] --dport [端口号] -j SNAT --to-source [本地服务器公网IP]
 
+>>> 例子: 跳板机的公网ip: 1.2.3.4, 线上服务器的其他机器有个192.168.1.222, 1.222上有个服务的端口是8080, 现在将这个8080映射到1.2.3.4的80上:
+iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.168.1.222:8080
+
 保存并重启防火墙生效
     service iptables save
     service iptables restart

@@ -12,3 +12,5 @@ set mouse=a         //使用鼠标，用滚轮时，文本可以上下移动
 https://github.com/VundleVim/Vundle.vim
 https://github.com/plasticboy/vim-markdown
 看这个目录下的vimrc文件
+
+3. set nopaste   set paste  

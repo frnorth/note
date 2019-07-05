@@ -42,6 +42,9 @@ bitwise 按位
 binary arithmetic operators 二进制 算术 运算符 --> 双目运算符(需要两个运算对象)  
   
 # C  
+carriage ['kærɪdʒ] 运输 / linefeed 换行 -- for instance, the library might convert carriage return and linefeed to newline on input and back again on output.  
+confine [kən'faɪn] 限制 约束 / facilities [fə'sɪlɪtɪz] 设施 工具 -- programs that confine their system interactions to facilities provided by the standard library can be moved from one system to another without change  
+capitalized 大写的  
 coerce 强制 --  in c, the proper method is to declare that malloc returns a pointer to void, then explicitly coerce the pointer into the desired type with a cast  
 chancy 冒险的 不安的 -- this recursive declaration of a node might look chancy, but it is correct  
 canonical 准确的  
@@ -164,6 +167,8 @@ hand out 分发
 heavy write activity 大负载写行为  
   
 # I  
+interleaved 隔行扫描的 -- calls to putchar and printf may be interleaved - output happens in the order in which the calls are made  
+implement 实施 执行  -- as we said in chapter 1, the library implements a simple model of text input and output  
 innards 内部结构  
 ingest 摄取 -- provides near real-time access to data stored in or ingested into hadoop and hBase.  
 instantiate 例示 举例说明 -- this topic describes the procedures to create images of the mloudera manager host and worker host and how to instantiate from those images
@@ -243,7 +248,7 @@ modulus 模运算
   
 # N  
 notably 尤其是  
-nonetheless 尽管如此  
+nonetheless 尽管如此 但是 -- nonetheless, programs interact with their environment in much more complicated ways than those we have shown before  
 naive 天真的  
 negation 否定  
   
@@ -257,6 +262,9 @@ optional 可选择的
 operand 操作数  
   
 # P  
+precisely [prɪ'saɪsli] 精确的 -- The ansi standard defines these library functions precisely, so that they can exist in compatible form on any system where c exists  
+presentation [,prizɛn'teʃən] 展示 描述 -- input and output are not part of the c language itself, so we have not emphasized them in our presentation thus far  
+peer 同龄人 凝视  
 percolate 过滤 -- at each stage, that word is compared to the word already stored at the node, and is percolated down to either the left or right subtree by a recursive call to addtree  
 parenthesize 加上括号  
 payroll 工资单  
@@ -330,6 +338,8 @@ representation 表示
 recipe 配方  
   
 # S  
+substitute 替代 / oblivious [ə'blɪvɪəs] 不知道的 -- in many environments, a file may be substituted for the keyboard by using the `<` convention for input redirection: if a program prog uses getchar, then the command line  prog `<`infile causes prog to read characters from infile instead. The switching of the input is done in such a way that prog itself is oblivious to the change  
+symbolic 符号的 --  The symbolic constant EOF is defined in <stdio.h>  
 shaky 不可靠的 -- if you feel shaky about how recursion works  
 stress 强调  
 salutary 有益的  
@@ -358,11 +368,10 @@ synchronous 同步的
 shipping ship的ing  
 sparingly 保守的  
 shortcut 捷径  
-specify 指定  
 succinct 简洁的  
 session 会话  
 suffice 足够  
-specify 指定  
+specify 指定 the properties of library functions are specified in more than a dozen headers; we have already seen several of these, including <stdio.h>, <string.h>, and <ctype.h>  
 subtle 微妙的  
 segmentation 分割  
 superset 超集  

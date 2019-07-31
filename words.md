@@ -117,6 +117,8 @@ duplicate 重复 复制
 delimited 划定界限的  
   
 # E  
+exhaustive 详尽的 -- this section is a summary of the most useful features, not an exhaustive list.  
+exhaust 耗尽 -- scanf stops when it exhausts its format sting, or when some input fails to match the control specification.  
 entry 入口 条目 -- the size of the array is the size of one entry times the number of entries, so the number of entries is just size of keytab / size of struct key ...  
 entity 实体 存在  
 effective 实际的 有效的  
@@ -262,6 +264,7 @@ optional 可选择的
 operand 操作数  
   
 # P  
+precision 精度  
 precisely [prɪ'saɪsli] 精确的 -- The ansi standard defines these library functions precisely, so that they can exist in compatible form on any system where c exists  
 presentation [,prizɛn'teʃən] 展示 描述 -- input and output are not part of the c language itself, so we have not emphasized them in our presentation thus far  
 peer 同龄人 凝视  
@@ -350,13 +353,15 @@ stripped-down 简装的
 sole 仅有的  
 syntactically 语法上的  
 synonym 同义字  
-star *  
+star `*`  
+sensible 明智的  
 sequence 序列  
 scalar 标量  
 scale 衡量 测量  
 substantially 充分地  
 swap 交换  
 sophisticate 复杂的  
+specification 规格 说明书 --ordinary characters, which are copied to the output stream, and conversion specifications, each of which causes conversion and printing of the next successive argument to printf  
 shatter 粉碎  
 scheme 计划  
 scope 范围  
@@ -400,6 +405,7 @@ take place 发生
 truncate 截断  
   
 # U  
+uniform 统一的 一致的 -- the implementation of this header will vary from machine to machine, but the interface it presents is uniform  
 unwary 粗心的  
 uninitiated 缺少经验的 外行的  
 unexpected 意想不到的  

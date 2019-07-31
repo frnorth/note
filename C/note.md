@@ -66,3 +66,4 @@ int numcmp(const char *, const char *);
 25. C programing languange page 135 -- ... since the size of the array is completely determined at compile time. ... that meas sizeof can be implemented for any object, and then, we make amazing out of the result.  
 26. 将字符串和数字同时写入一个字符串变量, 可以用 sprintf  
 27. 究极指针 -- C/learn/c6/tablookup -- 如果只是返回链表中的某个指针, 那么没法对这个指针本身操作, 因为返回的是个复制. lookup2 直接返回链表的某个指针的地址, 这样, uninstall就可以直接操作这个指针  
+28. (len = getline2(xxx,xxx)) 这个括号的值是len  

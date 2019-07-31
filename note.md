@@ -198,3 +198,5 @@ echo "    ServerAliveInterval 60" >> /etc/ssh/ssh_config
 47. 直接修改/etc/passwd, 可以改登陆的解释器  
 
 48. hash ?  
+
+49. nc -vz 192.168.1.121 7180

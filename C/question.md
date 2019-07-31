@@ -53,3 +53,7 @@ typedef struct nlist {      /* table entry: */
 } Nlist;
 ```
 28. C programing languange 第7章第1节 as we mentioned earlier, functions like getchar and putchar in <stdio.h> and tolower in <ctype.h> are often macros, thus avoiding the overhead of a function call per character. We will show how this is done in Section 8.5. Regardless of how the <ctype.h> functions are implemented on a given machine, programs that use them are shielded from knowledge of the character set ???  
+29. C programing languange 7.3 -- There must be at least one named argument; the final named argument is used by va_start to get started.  What this mean??  
+30. /root/C/learn/c7/minprintf.c -- 还有很多的问题, 与思考的价值  
+
+

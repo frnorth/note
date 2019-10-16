@@ -14,3 +14,20 @@ https://github.com/plasticboy/vim-markdown
 看这个目录下的vimrc文件
 
 3. set nopaste   set paste  
+4. set hlsearch 高亮搜索  
+
+5. Indent Fold
+
+使用以下命令，启用缩进折叠。所有文本将按照（选项shiftwidth 定义的）缩进层次自动折叠。
+
+:set foldmethod=indent
+
+使用zm命令，可以手动折叠缩进；而利用zr命令，则可以打开折叠的缩进。
+
+使用以下命令，将可以根据指定的级别折叠缩进：
+
+:set foldlevel=1
+
+可以使用以下命令，查看关于缩进折叠的帮助信息：
+
+:help fold-indent

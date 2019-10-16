@@ -11,15 +11,19 @@ element zero of the array
 location of the initial element 
 
 # I
+imagine if something went wrong, and we ended up a scrawny, speck git forever.
 in turn 轮流 转而  
 ..incrementing it is perfectly legal
 
 # L
 last-in first-out list  
 
-#M
+# M
 in a moment -- we will discuss these routines in a moment  
 more than 太过了 -- ... But this is more than is needed, ...  
+
+# O
+Oh to be youg, and to feel love's keen sting -- 哈利波特6台词
 
 # P
 pointer arithmetic 搜嘎.. 可以理解为对于指针的算术运算

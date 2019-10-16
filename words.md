@@ -386,6 +386,7 @@ scenario 方案
 subsequent 随后的  
   
 # T  
+trial ['traɪəl] 试验  
 throttle 节流 勒死 it is a throttling mechanism to prevent the balancer from taking too many resources from the datanode and interfering with normal cluster operations.  
 threshold 临界值 configuring the blancer threshold  
 terminate 使结束 结束 -- ... One possibility would be to terminate the list of initializers with a null pointer, then loop along keytab until the end is found. ...

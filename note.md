@@ -200,3 +200,7 @@ echo "    ServerAliveInterval 60" >> /etc/ssh/ssh_config
 48. hash ?  
 
 49. nc -vz 192.168.1.121 7180
+
+50. sudo ln -s /home/wangjie/note/sh/findcontext.sh  /usr/bin/findcontext 
+
+51. matlab: disp("Hello World!")

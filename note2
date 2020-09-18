@@ -4,4 +4,4 @@
 4. 硬链接: ln findcontext.sh /usr/bin/findcontext
 5. vim中批量插入: ctrl+v选中, 大写I, esc
 6. origin 中缩放图片时保持线条原来的粗细: 双击图 --> Display中 --> Fixed Factor
-
+7. 

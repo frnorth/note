@@ -125,6 +125,10 @@ sudo apt-get --fix-broken install
 ```
 sudo apt-get install openssh-server
 ps -e | grep ssh    ps auz | grep ssh
+/etc/ssh/sshd_config #中，要把端口打开，监听地址打开还要允许用户密码登录。
+    Port 22
+    ListenAddress 0.0.0.0
+    PasswordAuthentication yes
 sudo /etc/init.d/ssh start
 ```
 如果时启了一个centos的docker, 那么:
@@ -204,3 +208,14 @@ echo "    ServerAliveInterval 60" >> /etc/ssh/ssh_config
 50. sudo ln -s /home/wangjie/note/sh/findcontext.sh  /usr/bin/findcontext 
 
 51. matlab: disp("Hello World!")
+
+52. 改命令提示符
+```
+    PS1='${debian_chroot:+($debian_chroot)}\u\
+\033[36m@\033[0m\
+\033[35m⚡ \033[0m\
+\033[33m\h\033[0m\
+\033[35m⚡ \033[0m\
+[\033[34m\w\033[0m]\$ '
+
+```

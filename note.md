@@ -219,3 +219,45 @@ echo "    ServerAliveInterval 60" >> /etc/ssh/ssh_config
 [\033[34m\w\033[0m]\$ '
 
 ```
+
+53. ubuntu 测网速
+```
+sudo apt install speedtest-cli
+speedtest-cli
+```
+
+54. latex 安装的是Tex live, 安装完后看Testing the installation
+
+55. matlab: 改菜单字体大小
+```
+>> s = settings;s.matlab.desktop.DisplayScaleFactor
+>> s.matlab.desktop.DisplayScaleFactor.PersonalValue = 1.5
+```
+
+56. /etc/vim/vimrc 中添加 set mouse=a
+
+57. vimrc中设置了 set mouse=a后, 鼠标选中后无法ctrl+shift+c复制, 应该在选中前按中shift, 再用鼠标选择, 这样就可以了.
+
+58. 删除行首的空格和tab, \s是空格或tab的意思
+```
+:s,^\s\+,,g
+```
+
+59. sudo apt install python3-pip
+
+60. 如果想用 fortran.vim 和fortran_codecomplete.vim 两个插件, 需要在~/.vimrc文件
+
+61. vim中, 所有字母变为大写 不用进入命令模式输入gggUG, 大写转小写ggguG
+
+62. 统计行数 grep | wc -l
+
+63. fortran 中, integer, parameter::n 的意思是n是const
+
+64. openmpi -- LD_LIBRARY_PATH /usr/local/lib/openmpi 的上层目录也要被包含进去
+```
+LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH
+LD_LIBRARY_PATH=/usr/local/lib/openmpi:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH
+LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH
+LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/openmpi/lib/:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH
+
+```

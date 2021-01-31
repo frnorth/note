@@ -261,3 +261,4 @@ LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH; export LD_LIBRARY_P
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/openmpi/lib/:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH
 
 ```
+65. https://github.com/vim-scripts/darkBlue 上面有vim的主题,放到这个目录下: ~/.vim/colors/darkBlue.vim, 然后改 ~/.vimrc:加上 color darkBlue 就可以了

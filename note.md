@@ -261,7 +261,9 @@ LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH; export LD_LIBRARY_P
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/openmpi/lib/:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH
 
 ```
-
 64. fortran 不区分大小写...
 
 65. 狄拉克函数 可以有e的积分来, 在曾谨言的量子力学书I上的附录中
+66. https://github.com/vim-scripts/darkBlue 上面有vim的主题,放到这个目录下: ~/.vim/colors/darkBlue.vim, 然后改 ~/.vimrc:加上 color darkBlue 就可以了
+
+67. putty + Xming 可以实现远程图形，但是Xming得下载旧版本才能安装用，但是还要下载新版本的字体

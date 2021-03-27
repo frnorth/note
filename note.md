@@ -261,3 +261,7 @@ LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH; export LD_LIBRARY_P
 LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/openmpi/lib/:$LD_LIBRARY_PATH; export LD_LIBRARY_PATH
 
 ```
+
+64. fortran 不区分大小写...
+
+65. 狄拉克函数 可以有e的积分来, 在曾谨言的量子力学书I上的附录中

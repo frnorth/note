@@ -267,3 +267,66 @@ LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/openmpi/lib/:$LD_LIBRARY_PATH; export 
 66. https://github.com/vim-scripts/darkBlue 上面有vim的主题,放到这个目录下: ~/.vim/colors/darkBlue.vim, 然后改 ~/.vimrc:加上 color darkBlue 就可以了
 
 67. putty + Xming 可以实现远程图形，但是Xming得下载旧版本才能安装用，但是还要下载新版本的字体
+
+68. C 语言实时输出: fflush(stdout)
+
+69. fortran 调用 C
+```
+数组参数会错一位?
+fortran 数组从1开始, 对应C的从0开始
+
+```
+70. 测试项目总结, 用nvcc编译cuda c, mpif90编译,,, 如果是c++风格 -lstdc++,,, 链接的时候要加上-lcudart -Mcuda -lcufft -lstdc++
+
+71. 正则 替换 调换 941,957s/\(.*\) = \(.*\)/\2 = \1/
+
+72. cuda 学习
+```
+1.
+int deviceCount;
+cudaGetDeviceCount(&deviceCount);
+int device;
+for (device = 0; device < deviceCount; ++device) {
+    cudaDeviceProp deviceProp;
+    cudaGetDeviceProperties(&deviceProp, device);
+    printf("Device %d has compute capability %d.%d.\n",
+           device, deviceProp.major, deviceProp.minor);
+}
+
+2.
+size_t size = 1024 * sizeof(float);
+cudaSetDevice(0);            // Set device 0 as current
+float* p0;
+cudaMalloc(&p0, size);       // Allocate memory on device 0
+MyKernel<<<1000, 128>>>(p0); // Launch kernel on device 0
+cudaSetDevice(1);            // Set device 1 as current
+float* p1;
+cudaMalloc(&p1, size);       // Allocate memory on device 1
+MyKernel<<<1000, 128>>>(p1); // Launch kernel on device 1
+
+3. cudastream? samples里面有用到
+
+4. cuda 能否用extern?
+
+5. watch -n 1 -d nvidia-smi
+
+6. When compiling in the separate compilation mode (see the nvcc user manual for a description of this mode), __device__, __shared__, __managed__ and __constant__ variables can be defined as external using the extern keyword. nvlink will generate an error when it cannot find a definition for an external variable (unless it is a dynamically allocated __shared__ variable). 
+
+7. cuda __global__递归 在note目录printf中
+
+``` 
+
+73. cuda升级等
+```
+cat /proc/version
+lsb_release -a
+nvcc -v
+cat /usr/local/cuda/version.txt
+
+lspci | grep -i nvidia
+uname -m && cat /etc/*release
+
+export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+```

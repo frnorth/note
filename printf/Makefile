@@ -2,6 +2,7 @@ all: printf
 
 obj = printf2.o  main_printf1.o
 
+# arch 要与显卡的计算能力匹配
 flags = -arch=compute_61 -rdc=true
 
 printf2.o : printf2.cu

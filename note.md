@@ -314,6 +314,7 @@ MyKernel<<<1000, 128>>>(p1); // Launch kernel on device 1
 
 7. cuda __global__递归 在note目录printf中
 
+
 ``` 
 
 73. cuda升级等
@@ -330,3 +331,5 @@ export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 
 ```
+
+74. CUDA Dynamic Parallelism 非常重要 cdp CDP Cdp

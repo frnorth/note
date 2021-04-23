@@ -314,6 +314,10 @@ MyKernel<<<1000, 128>>>(p1); // Launch kernel on device 1
 
 7. cuda __global__递归 在note目录printf中
 
+8. main.c add.cu 编译链接
+[wangjie@who-T7910 add]# nvcc -c add.cu 
+[wangjie@who-T7910 add]# gcc -o add main.c add.o -lcudart -L/usr/local/cuda/lib64 -lm -lstdc++
+
 
 ``` 
 
@@ -333,3 +337,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRAR
 ```
 
 74. CUDA Dynamic Parallelism 非常重要 cdp CDP Cdp
+
+
+
+

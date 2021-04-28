@@ -338,6 +338,13 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRAR
 
 74. CUDA Dynamic Parallelism 非常重要 cdp CDP Cdp
 
+75. 昆山测试 hip amd hipMalloc hipcc 
+```
+1. malloc 放到.c文件中, hipMalloc放到.cu中
+2. hipcc编译.cu 加上 -amdgpu-target=gfx906 -fno-gpu-rdc,  gcc编译.c,  gcc链接 加上 -lstdc++ -L/opt/rocm/lib -lhip_hcc 
+3. 参数列表不能太长?
+4. 一定一定要注意看看数组的维度是否正确
+```
 
 
 

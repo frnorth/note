@@ -33,4 +33,4 @@ do
 done
 echo "-----------------------------------------"
 
-
+# sudo ln -s /home/wangjie/note/sh/findcontext.sh /usr/bin/findcontext

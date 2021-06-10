@@ -346,5 +346,10 @@ export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64${LD_LIBRARY_PATH:+:${LD_LIBRAR
 4. 一定一定要注意看看数组的维度是否正确
 ```
 
+73. windows 作为网关
+```
+windows 无线网设置为共享, 这样以太网会被默认设置为192.168.137.1
+linux 改ip和网关等就可以了
+```
 
-
+74. ^M  windows 上传到linux的文件结尾会有一个 ^M, vim中用:set ff=unix 即可
